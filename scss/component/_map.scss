@@ -1,0 +1,14 @@
+@use "../abstracts/index" as *;
+
+.wg-map {
+    position: relative;
+    .content {
+        position: absolute;
+        padding: 30px;
+        background-color: var(--White);
+        left: 64px;
+        bottom: 79px;
+        max-width: 419px;
+        right: 15px;
+    }
+}

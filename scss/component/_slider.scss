@@ -1,0 +1,97 @@
+@use "../abstracts/index" as *;
+
+.sw-dots {
+    position: relative;
+    z-index: 3;
+    .swiper-pagination-bullet {
+        background-color: #d9d9d9;
+        height: 12px;
+        width: 12px;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: var(--Secondary);
+    }
+    &.style-1 {
+        .swiper-pagination-bullet {
+            background-color: transparent;
+            height: 22px;
+            width: 22px;
+            position: relative;
+            border: 1px solid transparent;
+            &::after {
+                content: "";
+                position: absolute;
+                @include center();
+                height: 8px;
+                width: 8px;
+                background-color: #1f1f1f80;
+                border-radius: 50%;
+            }
+        }
+        .swiper-pagination-bullet-active {
+            border-color: var(--Secondary);
+            &::after {
+                background-color: var(--Secondary);
+            }
+        }
+    }
+    &.style-border {
+        .swiper-pagination-bullet {
+            border: 1px solid transparent;
+            border-radius: 50%;
+            height: 22px;
+            width: 22px;
+            position: relative;
+            background: transparent;
+            opacity: 1;
+            &::after {
+                content: "";
+                position: absolute;
+                height: 8px;
+                width: 8px;
+                background-color: var(--White);
+                border-radius: 50%;
+                @include center();
+            }
+        }
+        .swiper-pagination-bullet-active {
+            border-color: var(--White);
+        }
+    }
+}
+
+.sw-button {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include transition3();
+    &.swiper-button-disabled {
+        pointer-events: none;
+    }
+    &.style-default {
+        background-color: var(--Secondary);
+        color: var(--White);
+        &.swiper-button-disabled {
+            background-color: #f2f2f2;
+            color: var(--Secondary);
+            pointer-events: none;
+        }
+        &:hover {
+            background-color: var(--Primary);
+        }
+    }
+    &.style-border {
+        border: 1px solid var(--Secondary);
+        &.swiper-button-disabled {
+            opacity: 0.5;
+        }
+        &:hover {
+            background-color: var(--Primary);
+            color: var(--White);
+            border-color: var(--Primary);
+        }
+    }
+}

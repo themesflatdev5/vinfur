@@ -1,0 +1,276 @@
+@use "../abstracts/index" as *;
+
+.tab-product_list {
+    display: flex;
+    gap: 48px;
+
+    .tf-btn-tab {
+        padding: 6px 0;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: var(--Secondary);
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            @include transition5();
+        }
+        &.active,
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+    &.style-2 {
+        .tf-btn-tab {
+            &::after {
+                background-color: var(--Primary);
+            }
+
+            &.active,
+            &:hover {
+                color: var(--Primary);
+            }
+        }
+    }
+}
+
+.flat-animate-tab {
+    .tab-content {
+        position: relative;
+    }
+
+    .tab-pane {
+        display: block;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        -webkit-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        transform: translateY(30px);
+        transition-timing-function: ease-in;
+        transition-duration: 0.2s;
+
+        &.active {
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            z-index: 2;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            transition-timing-function: ease-out;
+            transition-duration: 0.3s;
+            transition-delay: 0.3s;
+        }
+    }
+
+    &.tab-style-1 {
+        overflow: hidden;
+
+        .tab-content {
+            margin-top: 48px;
+        }
+    }
+
+    &.tab-style-2 {
+        overflow: hidden;
+        min-width: 200px;
+    }
+
+    &.tab-style-3 {
+        overflow: hidden;
+        display: flex;
+        gap: 48px;
+
+        .menu-tab {
+            min-width: 200px;
+            flex-shrink: 0;
+        }
+
+        .tab-content {
+            border: 1px solid var(--line);
+
+            .tab-pane {
+                padding: 32px;
+            }
+        }
+    }
+
+    .menu-tab-1 {
+        border-bottom: 1px solid #ebebeb;
+        display: flex;
+        align-items: center;
+        overflow: auto;
+        gap: 64px;
+        justify-content: center;
+
+        @include res(md) {
+            justify-content: start;
+            gap: 30px;
+        }
+
+        .nav-tab-item {
+            &:first-child {
+                .tab-link {
+                    padding-left: 0 !important;
+                }
+            }
+        }
+
+        .tab-link {
+            padding: 20px 0;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 28px;
+            color: #25252580;
+            display: block;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+
+            @include res(lg) {
+                font-size: 16px;
+                line-height: 26px;
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: 0px;
+                height: 1px;
+                width: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--Primary);
+                @include transition3;
+            }
+
+            &.active {
+                color: var(--Primary);
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        @include res(lg) {
+            .tab-link {
+                padding: 0 12px 16px;
+            }
+        }
+    }
+
+    .menu-tab-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .tab-link {
+            position: relative;
+            width: 100%;
+            padding: 11px 23px;
+            border: 1px solid var(--line);
+            color: var(--text);
+            @include transition3;
+
+            &::before {
+                position: absolute;
+                content: "";
+                right: -8px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                border-top: 7px solid transparent;
+                border-bottom: 7px solid transparent;
+                border-left: 8px solid black;
+                @include transition3;
+                @include hidden;
+            }
+
+            &.active {
+                background-color: var(--black);
+                border-color: var(--black);
+                color: var(--white);
+
+                &::before {
+                    @include visible;
+                }
+            }
+        }
+
+        @include res(md) {
+            flex-direction: row;
+            overflow-x: auto;
+
+            .tab-link {
+                width: max-content;
+                padding: 8px 18px;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .menu-tab-3 {
+        border-left: 1px solid var(--line);
+        height: max-content;
+
+        .nav-tab-item {
+            &:first-child {
+                .tab-link {
+                    padding-top: 0;
+                }
+            }
+
+            &:last-child {
+                .tab-link {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .tab-link {
+            position: relative;
+            padding: 16px 0 16px 21px;
+            color: var(--text);
+
+            &::before {
+                position: absolute;
+                content: "";
+                background-color: var(--black);
+                width: 1px;
+                height: 0;
+                left: -1px;
+                top: 0;
+                bottom: auto;
+                @include transition3();
+            }
+
+            &.active {
+                color: var(--black);
+
+                &::before {
+                    height: 100%;
+                    top: auto;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}

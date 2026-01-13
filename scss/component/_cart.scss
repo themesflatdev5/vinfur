@@ -1,0 +1,201 @@
+@use "../abstracts/index" as *;
+
+.tf-table-compare {
+    border-radius: 16px;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        cursor: grab;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    thead {
+        background-color: unset;
+    }
+
+    tbody {
+        tr {
+            &:nth-child(even) {
+                background-color: unset;
+            }
+
+            &:nth-child(odd) {
+                background-color: #f8f8f8;
+            }
+        }
+    }
+
+    tr {
+        th {
+            border-top: 1px solid var(--Line);
+            border-left: 1px solid var(--Line);
+        }
+
+        td {
+            border-left: 1px solid var(--Line);
+        }
+    }
+
+    th,
+    td {
+        min-width: 360px;
+    }
+
+    .compare-col {
+        vertical-align: middle;
+    }
+
+    .item_image {
+       aspect-ratio: 1/1;
+        position: relative;
+        margin-bottom: 24px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .item_name {
+        margin-bottom: 10px;
+    }
+
+    .remove {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 40px;
+        height: 40px;
+        @include flex(center, center);
+        font-size: 16px;
+        background-color: var(--White);
+        @include transition3;
+        cursor: pointer;
+        border-radius: 50%;
+        color: var(--Black);
+
+        &:hover {
+            background-color: var(--Black);
+            color: var(--White);
+            border-color: var(--Black);
+        }
+    }
+
+    .compare-title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--Text-heading);
+    }
+
+    .compare_rate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+    }
+
+    .availability-item {
+        display: flex;
+        i {
+            font-size: 14px;
+        }
+
+        &.inStock {
+            color: #91c283;
+        }
+
+        &.outStock {
+            color: #e46565;
+        }
+    }
+
+    .compare-value {
+        text-align: center;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: var(--Black);
+    }
+
+    @include res(xl, min) {
+        tr {
+            th {
+                padding: 32px 20px;
+            }
+
+            td {
+                padding: 16px 24px;
+            }
+        }
+    }
+
+    @include res(xl) {
+        th,
+        td {
+            padding: 16px;
+            min-width: 300px;
+
+            &:first-child {
+                min-width: 250px;
+            }
+        }
+    }
+
+    @include res(md) {
+        th,
+        td {
+            min-width: 200px;
+
+            &:first-child {
+                display: none;
+            }
+        }
+    }
+}
+
+.list-compare-color {
+    display: flex;
+    gap: 8px;
+
+    .item {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 4px solid var(--White);
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 1px solid var(--Line);
+        }
+    }
+}
+
+.price-wrap {
+    .price-new {
+        color: #d63200;
+    }
+    .price-old {
+        color: #1c1c1c99;
+        text-decoration: line-through;
+    }
+
+}
+
+

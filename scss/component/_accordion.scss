@@ -1,0 +1,104 @@
+@use "../abstracts/index" as *;
+
+.accordion-item {
+
+    .accordion-title {
+        width: 100%;
+
+        .ic-accordion-custom {
+            &::before {
+                transform: rotate(90deg);
+            }
+
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.collapsed {
+            margin-bottom: 0;
+
+            .ic-accordion-custom {
+                &::before {
+                    transform: rotate(0deg);
+                }
+
+                &::after {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+
+    .accordion-content {
+        margin-top: 12px;
+        @include res(md, min) {
+            margin-top: 24px;
+        }
+    }
+
+    &.style-default{
+        padding: 32px 0;
+        border-bottom: 1px solid var(--Line);
+
+        @include res(md) {
+            padding: 24px 0;
+        }
+
+    }
+
+    &.style-1 {
+        padding: 32px 0;
+
+        @include res(md) {
+            padding: 24px 0;
+        }
+
+        .accordion-title {
+            .title {
+                color: #ff6333;
+            }
+            &.collapsed {
+                .title {
+                    color: var(--Text-heading);
+                }
+            }
+        }
+
+        .list {
+            margin-bottom: 12px;
+            @include res(md, min) {
+                margin-bottom: 21px;
+            }
+        }
+
+      
+    }
+}
+
+.ic-accordion-custom {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    @include flex(center, center);
+    transition: transform 0.35s linear;
+
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: var(--Text-heading);
+        @include transition3;
+        border-radius: 2px;
+    }
+
+    &::before {
+        height: 100%;
+        width: 2px;
+    }
+
+    &::after {
+        height: 2px;
+        width: 100%;
+    }
+}

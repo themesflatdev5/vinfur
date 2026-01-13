@@ -1,0 +1,31 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+// settings
+$font-main: "Satoshi", sans-serif;
+$fontIcon: "icomoon";
+
+:root {
+    --Black: #000000;
+    --White: #ffffff;
+    --Yellow: #ffc108;
+    --Red: #9d0101;
+    --Body-text-1: #777777;
+    --Body-text-2: #818181;
+    --Body-text-3: #545454;
+    --Primary: #a47551;
+    --Secondary: #252525;
+    --Third: #ae873e;
+    --Text-color-1: #404040;
+    --Color-246B64: #246b64;
+    --color-D4B04C: #d4b04c;
+    --color-f5ece5: #f5ece5;
+    --Text-heading: #1f1f1f;
+    --Line: #ebebeb;
+    --Line-2: #11111126;
+    --Gray-90: #101828;
+
+    //product
+    --Color-c1a286: #c1a286;
+    --Color-9C8853: #9c8853;
+}

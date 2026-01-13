@@ -1,0 +1,214 @@
+@use "../abstracts/index" as *;
+
+.hover-image {
+    * {
+        -webkit-transition: all 0.5s cubic-bezier(0.5, 1, 0.89, 1);
+        transition: all 0.5s cubic-bezier(0.5, 1, 0.89, 1);
+        will-change: transform;
+    }
+    .img-style {
+        position: relative;
+        overflow: hidden;
+        img {
+            object-fit: cover;
+        }
+    }
+    &:hover {
+        .img-style {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.hover-image-translate {
+    .img-style,
+    .article-thumb {
+        overflow: hidden;
+        img {
+            transition: all 0.5s;
+            transform: scale(1.1);
+            pointer-events: none;
+        }
+    }
+    &:hover {
+        .img-style,
+        .article-thumb {
+            img {
+                transform: scale(1.1) translateX(4%);
+            }
+        }
+    }
+}
+
+
+.hover-line-text {
+    display: inline;
+    @include transition3();
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(currentColor),
+        color-stop(98%, currentColor)
+    );
+    background-image: linear-gradient(
+        to bottom,
+        currentColor 0%,
+        currentColor 98%
+    );
+    background-size: 0 2px;
+    background-repeat: no-repeat;
+    background-position: left 94%;
+    &:hover {
+        background-size: 100% 2px;
+    }
+}
+
+.hover-underline-link {
+    width: max-content;
+    --underline-position-y: calc(100% - 1px);
+    --underline-height: 2px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+    background-position: 100% var(--underline-position-y);
+    background-size: 100% var(--underline-height);
+    &:hover {
+        animation: qode-inline-underline-initial-hover 0.8s
+            cubic-bezier(0.57, 0.39, 0, 0.86) 1 forwards;
+    }
+
+    @keyframes qode-inline-underline-initial-hover {
+        0% {
+            background-position: 100% var(--underline-position-y);
+            background-size: 100% var(--underline-height);
+        }
+
+        35% {
+            background-position: 100% var(--underline-position-y);
+            background-size: 0 var(--underline-height);
+        }
+
+        36% {
+            background-position: 0 var(--underline-position-y);
+            background-size: 0 var(--underline-height);
+        }
+
+        100% {
+            background-position: 0 var(--underline-position-y);
+            background-size: 100% var(--underline-height);
+        }
+    }
+}
+
+.hover-tooltip {
+    position: relative;
+
+    .tooltip {
+        position: absolute;
+        white-space: nowrap;
+        padding: 4px 12px;
+        border-radius: 2px;
+        bottom: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        visibility: hidden;
+        color: var(--White);
+        background-color: var(--Black);
+        transition: transform 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+        z-index: 5;
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: 400;
+        border-radius: 8px;
+        text-align: center;
+        display: none;
+
+        &::before {
+            content: "";
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            top: 26px;
+            position: absolute;
+            background: var(--Black);
+            width: 9px;
+            height: 9px;
+            z-index: -1;
+        }
+
+        @include res(xl, min) {
+            font-size: 16px;
+            line-height: 22px;
+            display: block;
+        }
+
+        &.bg-primary {
+            &::before {
+                background: var(--Primary);
+            }
+        }
+    }
+
+    &:hover {
+        .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &.tooltip-bot {
+        .tooltip {
+            top: calc(100% + 10px);
+            bottom: unset;
+
+            &::before {
+                top: -4px;
+            }
+        }
+    }
+
+    &.tooltip-left {
+        .tooltip {
+            right: 100%;
+            bottom: auto;
+            transform: translateX(0px);
+            left: unset;
+
+            &::before {
+                top: 50%;
+                left: auto;
+                transform: translateY(-50%) rotate(45deg);
+                right: -4px;
+            }
+        }
+
+        &:hover {
+            .tooltip {
+                transform: translateX(-12px);
+            }
+        }
+    }
+
+    &.tooltip-right {
+        .tooltip {
+            left: 100%;
+            bottom: auto;
+            transform: translateX(0px);
+
+            &::before {
+                top: 50%;
+                right: auto;
+                transform: translateY(-50%) rotate(45deg);
+                left: -4px;
+            }
+        }
+
+        &:hover {
+            .tooltip {
+                transform: translateX(8px);
+            }
+        }
+    }
+}

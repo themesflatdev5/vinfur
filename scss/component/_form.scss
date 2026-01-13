@@ -1,0 +1,340 @@
+@use "../abstracts/index" as *;
+
+form {
+    position: relative;
+    z-index: 30;
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+        outline: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 100%;
+        padding: 16px 10px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        background-color: var(--White);
+        border: 1px solid var(--Line);
+        border-radius: 0px;
+        color: var(--Black);
+        overflow: hidden;
+        margin-bottom: 0;
+        &::placeholder {
+            color: var(--Body-text-1);
+        }
+    }
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        background-color: transparent;
+        overflow: hidden;
+        padding: 0;
+    }
+    textarea {
+        height: 126px;
+        padding: 16px;
+    }
+}
+
+.tf-select {
+    position: relative;
+    select {
+        width: 100%;
+        padding: 16px 10px;
+        border: 1px solid var(--Line);
+        border-radius: 6px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        @include transition3;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--Body-text-1);
+    }
+    &::after {
+        font-family: $fontIcon;
+        position: absolute;
+        content: "\e904";
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        z-index: -1;
+        font-weight: 400;
+    }
+    &:hover {
+        select {
+            border-color: var(--Primary);
+        }
+    }
+    &.select-square {
+        select {
+            padding-top: 14px;
+            padding-bottom: 14px;
+            border-radius: 6px;
+            font-size: 14px;
+            line-height: 20px;
+            color: var(--text-3);
+            opacity: 0.8;
+            height: 50px;
+        }
+    }
+}
+
+.tf-check {
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border: 1px solid var(--Line);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    @include transition3;
+    &:checked {
+        border-color: var(--Secondary);
+        background-color: var(--Secondary);
+        &::before {
+            opacity: 1;
+            transform:translate(-50%, -50%) scale(1);
+        }
+    }
+    &::before {
+        font-weight: 500;
+        font-family: $fontIcon;
+        content: "\e925";
+        position: absolute;
+        color: var(--White);
+        opacity: 0;
+        font-size: 12px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        @include transition3;
+    }
+    &.v2{
+        border-radius: 50%;
+    }
+}
+
+.form-newsletter {
+    position: relative;
+    fieldset input {
+        height: 46px;
+        padding: 10px 16px;
+        font-weight: 600;
+    }
+    .btn-submit {
+        padding: 11px 30px;
+        background-color: var(--Secondary);
+        color: var(--White);
+        position: absolute;
+        right: 0;
+        top: 0;
+        @include transition4();
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        i {
+            font-size: 11px;
+        }
+    
+    }
+}
+
+.form-add_review {
+    fieldset input {
+        height: 50px;
+    }
+    textarea {
+        height: 184px;
+    }
+}
+
+.form-contact {
+    .wrap {
+        margin-bottom: 40px;
+    }
+}
+
+.tab-reviews {
+    .tab-reviews-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px 50px;
+        flex-wrap: wrap;
+        padding-bottom: 56px;
+        margin-bottom: 56px;
+        border-bottom: 1px solid var(--line);
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 750px;
+            gap: 30px;
+
+            .number {
+                display: flex;
+                align-items: end;
+                gap: 24px;
+                font-weight: 700;
+                font-size: 70px;
+                line-height: 70px;
+                margin-bottom: 9px;
+                color: var(--black);
+
+                span {
+                    font-weight: 400;
+                    font-size: 40px;
+                    line-height: 100%;
+                    color: var(--text-2);
+                }
+            }
+        }
+
+        .list-star {
+            margin-bottom: 4px;
+        }
+    }
+
+    .rating-score {
+        width: 100%;
+        max-width: 365px;
+
+        .item {
+            width: 100%;
+            gap: 5px;
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
+
+        .number-1 {
+            width: 12px;
+            text-align: end;
+            flex-shrink: 0;
+            color: var(--black);
+        }
+
+        svg {
+            flex-shrink: 0;
+        }
+
+        .icon {
+            font-size: 15px;
+            margin-left: 4px;
+            color: var(--yellow);
+        }
+
+        .number-2 {
+            width: 25px;
+            color: var(--black);
+            text-align: start;
+        }
+
+        .line-bg {
+            margin: 0 5px;
+            width: 100%;
+            height: 8px;
+            background-color: var(--line);
+
+            div {
+                height: 100%;
+                background-color: var(--black);
+            }
+        }
+    }
+
+    @include res(xl) {
+        .tab-reviews-heading .top .number {
+            gap: 5px;
+        }
+    }
+
+    @include res(md) {
+        .tab-reviews-heading {
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.write-cancel-review-wrap {
+    .btn-comment-review {
+        cursor: pointer;
+    }
+
+    .write-review-wrap,
+    .btn-cancel-review {
+        display: none;
+    }
+
+    &.write-review {
+        .cancel-review-wrap,
+        .btn-write-review {
+            display: none;
+        }
+
+        .write-review-wrap,
+        .btn-cancel-review {
+            display: block;
+        }
+    }
+}
+
+.form-review {
+    .box-rating {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 24px;
+    }
+    .note,
+    .title {
+        margin-bottom: 24px;
+    }
+    .group-2-ip {
+        margin-bottom: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .check-save {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 24px;
+    }
+    .tf-btn {
+        margin-top: 32px;
+        max-width: 171px;
+        width: 100%;
+    }
+}

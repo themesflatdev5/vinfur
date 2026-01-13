@@ -1,0 +1,332 @@
+@use "../abstracts/index" as *;
+
+.icon-grid-2 {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: 1fr 1fr;
+
+    span {
+        display: inline-block;
+        width: 5px;
+        height: 23px;
+        background-color: #e0e0e0;
+        @include transition3;
+    }
+}
+
+.icon-grid-3 {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    span {
+        display: inline-block;
+        width: 5px;
+        height: 23px;
+        background-color: #e0e0e0;
+        @include transition3;
+    }
+}
+
+.icon-grid-4 {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(4, 1fr);
+
+    span {
+        display: inline-block;
+        width: 5px;
+        height: 23px;
+        background-color: #e0e0e0;
+        @include transition3;
+    }
+}
+
+.tf-btn-filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid var(--Line);
+    border-radius: 999px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 0px 24px;
+    height: 50px;
+    color: var(--Secondary);
+    background-color: transparent;
+    @include transition3();
+    .icon {
+        font-size: 24px;
+    }
+
+    &.active,
+    &:hover {
+        background-color: var(--Primary);
+        border-color: var(--Primary);
+        color: var(--Secondary);
+    }
+}
+
+.tf-control-layout {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .tf-view-layout-switch {
+        @include flex(center, center);
+        @include transition3;
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+            .item {
+                span {
+                    background-color: var(--Secondary);
+                }
+            }
+        }
+    }
+
+    @include res(lg, min) {
+        gap: 24px;
+    }
+}
+
+.meta-filter-shop {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-bottom: 48px;
+
+    #applied-filters {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .filter-tag,
+    .remove-all-filters {
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        gap: 14px;
+        padding: 6px 20px;
+        border-radius: 30px;
+        color: var(--Secondary);
+        @include transition3;
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        background-color: var(--Line);
+
+        .icon {
+            font-size: 10px;
+        }
+
+        &:hover {
+            background: var(--Primary);
+            color: var(--White);
+        }
+
+        @include res(sm) {
+            gap: 6px;
+            padding: 6px 12px;
+        }
+    }
+
+    &.type-drop {
+        margin-bottom: 20px;
+    }
+
+    @include res(lg) {
+        margin-bottom: 30px;
+    }
+}
+
+.widget-facet {
+    &:not(:last-child) {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .tf-check {
+        &.style-2 {
+            &:checked {
+                border-color: var(--main);
+                background-color: var(--main);
+
+                &::before {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    .facet-title {
+        @include flex(center, space-between);
+        padding: 16px 0px;
+        margin-bottom: 16px;
+        @include transition3;
+
+        .icon {
+            &::before {
+                transform: rotate(90deg);
+            }
+
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.collapsed {
+            margin-bottom: 0px;
+
+            .icon {
+                &::before {
+                    transform: rotate(0deg);
+                }
+
+                &::after {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+
+    .tf-social-icon {
+        a {
+            span {
+                font-size: 12px;
+            }
+            @include res(xl, min) {
+                height: 47px;
+                width: 47px;
+            }
+        }
+    }
+
+    .filter-group-check {
+        padding-bottom: 31px;
+    }
+}
+
+.sidebar-filter {
+    .canvas-body {
+        padding: 0;
+    }
+}
+
+.widget-price {
+    display: grid;
+    gap: 16px;
+
+    .price-val-range {
+        padding: 0px 8px;
+        margin: 7px 0px;
+    }
+
+    .price-box,
+    .box-value-price {
+        display: flex;
+        gap: 8px;
+    }
+
+    .price-box {
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        .line-price {
+            display: block;
+            width: 12px;
+            height: 1px;
+            background-color: var(--Secondary);
+        }
+    }
+
+    .price-val {
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--black);
+        position: relative;
+        padding: 8px 10px;
+        border: 1px solid var(--Line);
+        width: 77px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 4px;
+        &::before {
+            content: attr(data-currency);
+        }
+    }
+
+    .box-value-price{
+        display: flex;
+        align-items: center;
+    }
+
+    @include res(xl, min) {
+        gap: 24px;
+
+        .box-value-price {
+            gap: 12px;
+        }
+    }
+}
+
+.filter-group-check {
+    &.group-category {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            color: var(--text);
+        }
+    }
+
+    .list-item {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+        span {
+            color: var(--Body-text-1);
+        }
+        > * {
+            &:first-child {
+                flex: 1;
+            }
+        }
+    }
+
+    @include res(xl, min) {
+        .list-item {
+            font-size: 18px;
+            line-height: 24px;
+            color: var(--text);
+        }
+    }
+}

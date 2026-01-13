@@ -1,0 +1,70 @@
+@use "../abstracts/index" as *;
+
+.testimonial-item {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .rating {
+        i {
+            color: var(--Yellow);
+        }
+    }
+    .sub {
+        color: #6b6b6b;
+    }
+
+    &.style-2 {
+        text-align: center;
+        .icon {
+            margin-bottom: 64px;
+        }
+
+        p {
+            max-width: 1087px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.s-testimonials {
+    .heading {
+        margin-bottom: 28px;
+    }
+
+    .icon {
+        font-size: 64px;
+        color: var(--Primary);
+        margin-bottom: 28px;
+    }
+
+    .wrap-group-img {
+        display: flex;
+        gap: 30px;
+
+        .col-image {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .left {
+            margin-top: 123px;
+        }
+    }
+
+    .wrap-sw-button {
+        margin-top: 52px;
+    }
+}
+
+.s-testimonials-v02 {
+    padding: 142px 0 94px;
+    background-color: #f9f9f9;
+    .sw-dots {
+        @include res(md, min) {
+            margin-top: 64px;
+        }
+    }
+}
