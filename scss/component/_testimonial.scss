@@ -1,4 +1,4 @@
-@use "../abstracts/index" as *;
+@use "../abstracts/index"as *;
 
 .testimonial-item {
     display: flex;
@@ -10,20 +10,69 @@
             color: var(--Yellow);
         }
     }
+
     .sub {
         color: #6b6b6b;
     }
 
     &.style-2 {
         text-align: center;
-        .icon {
-            margin-bottom: 64px;
-        }
+        gap: 64px;
 
         p {
             max-width: 1087px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        @include res(lg) {
+            gap: 40px;
+        }
+
+        @include res(md) {
+            .icon {
+                max-width: 230px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            gap: 24px;
+
+        }
+    }
+
+    &.style-3 {
+
+        .heading {
+            margin-bottom: 19px;
+        }
+
+        .icon {
+            margin-bottom: 17px;
+
+        }
+
+        .rating {
+            i {
+                font-size: 15px;
+            }
+        }
+
+        .wrap-sw-button {
+            margin-top: 50px;
+        }
+
+        @include res(lg, min) {
+            .box-img {
+                max-width: 603px;
+            }
+        }
+
+        @include res(xxl, min) {
+            .box-content {
+                padding-top: 75px;
+                margin-left: -10px;
+            }
         }
     }
 }
@@ -31,6 +80,10 @@
 .s-testimonials {
     .heading {
         margin-bottom: 28px;
+    }
+
+    .row {
+        row-gap: 40px;
     }
 
     .icon {
@@ -47,24 +100,62 @@
             display: flex;
             flex-direction: column;
             gap: 25px;
+
+            @include res(md) {
+                width: 50%;
+                gap: 15px;
+            }
         }
 
         .left {
-            margin-top: 123px;
+            @include res(lg, min) {
+                margin-top: 123px;
+
+            }
+        }
+
+        @include res(xxl, min) {
+            margin-left: -13px;
+        }
+
+        @include res(md) {
+
+            gap: 15px;
         }
     }
 
     .wrap-sw-button {
         margin-top: 52px;
     }
+
+    @include res(lg, min) {
+        .content-inner {
+            max-width: 717px;
+        }
+    }
+
+    @include res(xxl, min) {
+        .content-inner {
+            margin-top: 122px;
+        }
+    }
 }
 
 .s-testimonials-v02 {
     padding: 142px 0 94px;
     background-color: #f9f9f9;
+
+    @include res(lg) {
+        padding: 80px 0;
+    }
+
+    @include res(md) {
+        padding: 60px 0;
+    }
+
     .sw-dots {
         @include res(md, min) {
-            margin-top: 64px;
+            margin-top: 71px;
         }
     }
 }

@@ -401,12 +401,11 @@
         const filters = {
             minPrice: minPrice,
             maxPrice: maxPrice,
-            size: null,
-            color: null,
+            category: [],
+            style: [],
+            material: [],
             availability: null,
-            // brands: null,
-            brands: [],
-            sales: null,
+            room: [],
         };
 
         priceSlider.noUiSlider.on("update", function (values) {
@@ -420,50 +419,78 @@
             updateMetaFilter();
             updatePagination();
         });
-
-        $(".size-check").on("click", function () {
-            filters.size = $(this).find(".size").text().trim();
-            applyFilters();
-            updateMetaFilter();
-            updatePagination();
-        });
-
-        $(".color-check").on("click", function () {
-            filters.color = $(this).find(".color-text").text().trim();
-            applyFilters();
-            updateMetaFilter();
-            updatePagination();
-        });
-
-        $('input[name="availability"]').on("change", function () {
-            filters.availability =
-                $(this).attr("id") === "inStock" ? "In stock" : "Out of stock";
-            applyFilters();
-            updateMetaFilter();
-            updatePagination();
-        });
-
-        $('input[name="brand"]').change(function () {
-            const brandId = $(this).attr("id");
-            let brandLabel = $(this).next("label").text().trim();
-            brandLabel = brandLabel.replace(/\s*\(\d+\)$/, "");
+        $('input[name="category"]').on("change", function () {
+            const categoryId = $(this).attr("id");
+            const label = $(`label[for="${categoryId}"]`);
+            const categoryLabel = label.find(".cate-text").text().trim();
 
             if ($(this).is(":checked")) {
-                filters.brands.push({ id: brandId, label: brandLabel });
+                filters.category.push({ id: categoryId, label: categoryLabel });
             } else {
-                filters.brands = filters.brands.filter(
-                    (brand) => brand.id !== brandId
+                filters.category = filters.category.filter(
+                    (cate) => cate.id !== categoryId
                 );
             }
             applyFilters();
             updateMetaFilter();
             updatePagination();
         });
-        $('input[name="sale"]').on("change", function () {
+        $('input[name="material"]').off("change").on("change", function () {
+            const materialId = $(this).attr("id");
+            const label = $(`label[for="${materialId}"]`);
+            const materialLabel = label.find(".material-text").text().trim();
+        
             if ($(this).is(":checked")) {
-                filters.sales = $(this).attr("id");
+                if (!filters.material.some(m => m.id === materialId)) {
+                    filters.material.push({ id: materialId, label: materialLabel });
+                }
             } else {
-                delete filters.sales;
+                filters.material = filters.material.filter(
+                    mat => mat.id !== materialId
+                );
+            }
+        
+            applyFilters();
+            updateMetaFilter();
+        });
+        $('input[name="style"]').off("change").on("change", function () {
+            const styleId = $(this).attr("id");
+            const label = $(`label[for="${styleId}"]`);
+            const styleLabel = label.find(".style-text").text().trim();
+        
+            if ($(this).is(":checked")) {
+                if (!filters.style.some(m => m.id === styleId)) {
+                    filters.style.push({ id: styleId, label: styleLabel });
+                }
+            } else {
+                filters.style = filters.style.filter(
+                    sty => sty.id !== styleId
+                );
+            }
+        
+            applyFilters();
+            updateMetaFilter();
+            updatePagination();
+        });
+        $('input[name="availability"]').on("change", function () {
+            filters.availability =
+                $(this).attr("id") === "inStock" ? "In Stock" : "Out of stock";
+            applyFilters();
+            updateMetaFilter();
+            updatePagination();
+        });
+
+        $('input[name="room"]').on("change", function () {
+            const roomId = $(this).attr("id");
+            const label = $(`label[for="${roomId}"]`);
+            console.log(label);
+            const roomLabel = label.find(".room-text").text().trim();
+            if ($(this).is(":checked")) {
+                filters.room.push({ id: roomId, label: roomLabel });
+            } else {
+                filters.room = filters.room.filter(
+                    (room) => room.id !== roomId
+                );
             }
             applyFilters();
             updateMetaFilter();
@@ -472,59 +499,96 @@
 
         function updatePagination() {
             if ($(".meta-filter-shop").hasClass("active") == true) {
-                $("#listLayout .wg-pagination").css("display", "none");
-                $("#gridLayout .wg-pagination").css("display", "none");
+                $("#listLayout .wd-full").css("display", "none");
+                $("#gridLayout .wd-full").css("display", "none");
             }
         }
         function updateMetaFilter() {
             const appliedFilters = $("#applied-filters");
             const metaFilterShop = $(".meta-filter-shop");
-            appliedFilters.empty();
-            // $(".meta-filter-shop").removeClass("active");
-
-            if (filters.availability) {
-                appliedFilters.append(
-                    `<span class="filter-tag remove-tag" data-filter="availability"> Availability: ${filters.availability} <span class="icon icon-close"></span></span>`
-                );
+        
+            appliedFilters.html("");
+        
+            if (filters.minPrice > minPrice || filters.maxPrice < maxPrice) {
+                appliedFilters.append(`
+                    <span class="filter-tag remove-tag" data-filter="price">
+                        <span class="icon icon-close"></span>
+                        $${filters.minPrice} - $${filters.maxPrice}
+                    </span>
+                `);
             }
-            // if (filters.brands) {
-            //     appliedFilters.append(
-            //         `<span class="filter-tag remove-tag" data-filter="brand"><span class="icon icon-close"></span>Brand: ${filters.brands}</span>`
-            //     );
-            // }
-            if (filters.brands.length > 0) {
-                filters.brands.forEach((brand) => {
-                    appliedFilters.append(
-                        `<span class="filter-tag remove-tag" data-filter="brand" data-value="${brand.id}"> ${brand.label}<span class="icon icon-close"></span></span>`
-                    );
+        
+            if (filters.category.length > 0) {
+                filters.category.forEach(cate => {
+                    appliedFilters.append(`
+                        <span class="filter-tag remove-tag"
+                              data-filter="category"
+                              data-value="${cate.id}">
+                            <span class="icon icon-close"></span>
+                            ${cate.label}
+                        </span>
+                    `);
                 });
             }
-            if (filters.minPrice > minPrice || filters.maxPrice < maxPrice) {
-                appliedFilters.append(
-                    `<span class="filter-tag remove-tag" data-filter="price"></span>Price: $${filters.minPrice} - $${filters.maxPrice}<span class="icon icon-close"></span>`
-                );
+        
+            if (filters.material.length > 0) {
+                filters.material.forEach(mat => {
+                    appliedFilters.append(`
+                        <span class="filter-tag remove-tag"
+                              data-filter="material"
+                              data-value="${mat.id}">
+                            <span class="icon icon-close"></span>
+                            ${mat.label}
+                        </span>
+                    `);
+                });
             }
-            if (filters.color) {
-                appliedFilters.append(
-                    `<span class="filter-tag remove-tag " data-filter="color">Color: ${filters.color}<span class="icon icon-close"></span></span>`
-                );
+        
+ 
+            if (filters.style.length > 0) {
+                filters.style.forEach(sty => {
+                    appliedFilters.append(`
+                        <span class="filter-tag remove-tag"
+                              data-filter="style"
+                              data-value="${sty.id}">
+                            <span class="icon icon-close"></span>
+                            ${sty.label}
+                        </span>
+                    `);
+                });
             }
-            if (filters.size) {
-                appliedFilters.append(
-                    `<span class="filter-tag remove-tag" data-filter="size">Size: ${filters.size}<span class="icon icon-close"></span></span>`
-                );
+        
+            // AVAILABILITY (radio – single)
+            if (filters.availability) {
+                appliedFilters.append(`
+                    <span class="filter-tag remove-tag" data-filter="availability">
+                        <span class="icon icon-close"></span>
+                        ${filters.availability}
+                    </span>
+                `);
             }
-            if (filters.sales) {
-                appliedFilters.append(
-                    `<span class="filter-tag on-sale d-none remove-tag" data-filter="sale">On Sale <span class="icon icon-close"></span></span>`
-                );
+        
+            // ROOM (checkbox – multiple)
+            if (filters.room.length > 0) {
+                filters.room.forEach(room => {
+                    appliedFilters.append(`
+                        <span class="filter-tag remove-tag"
+                              data-filter="room"
+                              data-value="${room.id}">
+                            <span class="icon icon-close"></span>
+                            ${room.label}
+                        </span>
+                    `);
+                });
             }
-
+        
+            // TOGGLE UI
             const hasFiltersApplied = appliedFilters.children().length > 0;
             metaFilterShop.toggle(hasFiltersApplied);
             metaFilterShop.toggleClass("active", hasFiltersApplied);
             $("#remove-all").toggle(hasFiltersApplied);
-            if ($(".meta-filter-shop").hasClass("active") == false) {
+        
+            if (!hasFiltersApplied) {
                 limitLayout();
             }
         }
@@ -533,54 +597,72 @@
             const filterType = $(this).data("filter");
             const filterValue = $(this).data("value");
 
-            if (filterType === "size") {
-                filters.size = null;
-                $(".size-check").removeClass("active");
-            }
-            if (filterType === "color") {
-                filters.color = null;
-                $(".color-check").removeClass("active");
-            }
-            if (filterType === "availability") {
-                filters.availability = null;
-                $('input[name="availability"]').prop("checked", false);
-            }
-            if (filterType === "brand") {
-                filters.brands = filters.brands.filter(
-                    (brand) => brand.id !== filterValue
-                );
-                $(`input[name="brand"][id="${filterValue}"]`).prop(
-                    "checked",
-                    false
-                );
-            }
             if (filterType === "price") {
                 filters.minPrice = minPrice;
                 filters.maxPrice = maxPrice;
                 priceSlider.noUiSlider.set([minPrice, maxPrice]);
             }
-            if (filterType === "sale") {
-                filters.sales = null;
-                $('input[name="sale"]').prop("checked", false);
+            if (filterType === "category") {
+                filters.category = filters.category.filter(
+                    (cate) => cate.id !== filterValue
+                );
+                $(`input[name="category"][id="${filterValue}"]`).prop(
+                    "checked",
+                    false
+                );
             }
+            if (filterType === "material") {
+                filters.material = filters.material.filter(
+                    (mat) => mat.id !== filterValue
+                );
+                $(`input[name="material"][id="${filterValue}"]`).prop(
+                    "checked",
+                    false
+                );
+            }
+            if (filterType === "style") {
+                filters.style = filters.style.filter(
+                    (sty) => sty.id !== filterValue
+                );
+                $(`input[name="style"][id="${filterValue}"]`).prop(
+                    "checked",
+                    false
+                );
+            }
+            if (filterType === "availability") {
+                filters.availability = null;
+                $('input[name="availability"]').prop("checked", false);
+            }
+
+            if (filterType === "room") {
+                filters.room = filters.room.filter(
+                    (room) => room.id !== filterValue
+                );
+                $(`input[name="room"][id="${filterValue}"]`).prop(
+                    "checked",
+                    false
+                );
+            }
+
             applyFilters();
             updateMetaFilter();
         });
 
         function resetAllFilters() {
-            filters.size = null;
-            filters.color = null;
             filters.availability = null;
-            filters.brands = [];
             filters.minPrice = minPrice;
             filters.maxPrice = maxPrice;
-            filters.sales = null;
+            filters.category = [];
+            filters.material = [];
+            filters.style = [];
+            filters.room = [];
 
-            $('input[name="brand"]').prop("checked", false);
-            $('input[name="sale"]').prop("checked", false);
-            $('input[name="availability"]').prop("checked", false);
-            $(".size-check, .color-check").removeClass("active");
             priceSlider.noUiSlider.set([minPrice, maxPrice]);
+            $('input[name="category"]').prop("checked", false);
+            $('input[name="material"]').prop("checked", false);
+            $('input[name="style"]').prop("checked", false);
+            $('input[name="availability"]').prop("checked", false);
+            $('input[name="room"]').prop("checked", false);
 
             applyFilters();
             updateMetaFilter();
@@ -615,24 +697,28 @@
                     .text()
                     .replace("$", "");
                 const price = parseFloat(priceText);
+
                 if (price < filters.minPrice || price > filters.maxPrice) {
                     showProduct = false;
                 }
-
-                if (
-                    filters.size &&
-                    !product.find(`.size-item:contains('${filters.size}')`)
-                        .length
-                ) {
-                    showProduct = false;
+                if (filters.category.length > 0) {
+                    const cateId = product.data("category");
+                    if (!filters.category.some((c) => c.id === cateId)) {
+                        showProduct = false;
+                    }
+                }
+                if (filters.material.length > 0) {
+                    const mateId = product.data("material");
+                    if (!filters.material.some((m) => m.id === mateId)) {
+                        showProduct = false;
+                    }
                 }
 
-                if (
-                    filters.color &&
-                    !product.find(`.color-swatch:contains('${filters.color}')`)
-                        .length
-                ) {
-                    showProduct = false;
+                if (filters.style.length > 0) {
+                    const styleId = product.data("style");
+                    if (!filters.style.some((s) => s.id === styleId)) {
+                        showProduct = false;
+                    }
                 }
 
                 if (filters.availability) {
@@ -641,24 +727,20 @@
                         showProduct = false;
                     }
                 }
-                if (filters.sales) {
-                    const brandId = product.attr("data-sale");
-                    if (filters.sales !== brandId) {
+
+                if (filters.room.length > 0) {
+                    const roomId = product.data("room");
+                    if (!filters.room.some((r) => r.id === roomId)) {
                         showProduct = false;
                     }
                 }
-                if (filters.brands.length > 0) {
-                    const brandId = product.attr("data-brand");
-                    if (!filters.brands.some((brand) => brand.id === brandId)) {
-                        showProduct = false;
-                    }
-                }
+
                 product.toggle(showProduct);
 
                 if (showProduct) {
                     if (product.hasClass("grid")) {
                         visibleProductCountGrid++;
-                    } else if (product.hasClass("product-style_list")) {
+                    } else if (product.hasClass("product-list")) {
                         visibleProductCountList++;
                     }
                 }
@@ -680,50 +762,119 @@
 
     /* Limit Layout
     -------------------------------------------------------------------------------------*/
-    var limitLayout = function () {
+    function limitLayout() {
+        const $gridLayout = $("#gridLayout");
+        const $listLayout = $("#listLayout");
         const gridItems = $("#gridLayout .card-product");
-        const layoutClassGrid = $("#gridLayout").attr("class");
         const listItems = $("#listLayout .card-product");
-        const layoutClassList = $("#listLayout").attr("class");
+        const layoutClassGrid = $gridLayout.attr("class") || "";
+        const $btn = $("#loadMoreBtn");
+
         let maxItems = 0;
+        let initItem = 0;
         let maxItemList = 5;
 
-        if (layoutClassGrid.includes("tf-col-2")) {
+        if (layoutClassGrid.includes("tf-grid-1")) {
+            maxItems = 3;
+            initItem = 1;
+        } else if (layoutClassGrid.includes("tf-col-2")) {
             maxItems = 6;
+            initItem = 2;
         } else if (layoutClassGrid.includes("tf-col-3")) {
             maxItems = 12;
+            initItem = 3;
         } else if (layoutClassGrid.includes("tf-col-4")) {
-            maxItems = 12;
+            maxItems = 16;
+            initItem = 4;
         } else if (layoutClassGrid.includes("tf-col-5")) {
-            maxItems = 15;
+            maxItems = 10;
+            initItem = 5;
         } else if (layoutClassGrid.includes("tf-col-6")) {
-            maxItems = 18;
+            maxItems = 12;
+            initItem = 6;
         } else if (layoutClassGrid.includes("tf-col-7")) {
-            maxItems = 21;
+            maxItems = 14;
+            initItem = 7;
         }
 
-        gridItems.each(function (index) {
-            if (index < maxItems) {
-                $(this).css("display", "flex");
-            } else {
-                $(this).hide();
-            }
-        });
+        function renderGrid() {
+            gridItems.each(function (index) {
+                if (index < maxItems) $(this).css("display", "flex");
+                else $(this).hide();
+            });
 
-        listItems.each(function (index) {
-            if (index < maxItemList) {
-                $(this).css("display", "flex");
-            } else {
-                $(this).hide();
-            }
-        });
-
-        if (gridItems.length <= maxItems - 1) {
-            $(".wg-pagination").hide();
-        } else {
-            $(".wg-pagination").css("display", "flex");
+            const $wdFullGrid = $gridLayout.find(".wd-full");
+            if (gridItems.length <= maxItems) $wdFullGrid.hide();
+            else $wdFullGrid.css("display", "flex");
         }
-    };
+
+        function renderList() {
+            listItems.each(function (index) {
+                if (index < maxItemList) $(this).css("display", "flex");
+                else $(this).hide();
+            });
+        }
+
+        function isElementAtHalfViewport($el) {
+            if (!$el.length || !$el.is(":visible")) return false;
+
+            const rect = $el[0].getBoundingClientRect();
+            const vh =
+                window.innerHeight || document.documentElement.clientHeight;
+
+            return rect.top <= vh * 0.6;
+        }
+
+        let isLoading = false;
+
+        function loadMore() {
+            if (isLoading) return;
+            if (gridItems.length <= maxItems) return;
+
+            isLoading = true;
+            $btn.addClass("loading").prop("disabled", true);
+
+            setTimeout(function () {
+                maxItems += initItem;
+                renderGrid();
+
+                isLoading = false;
+                $btn.removeClass("loading").prop("disabled", false);
+
+                if (
+                    $btn.hasClass("infinite-scroll") &&
+                    gridItems.length > maxItems
+                ) {
+                    if (isElementAtHalfViewport($btn)) {
+                        loadMore();
+                    }
+                }
+            }, 500);
+        }
+
+        renderGrid();
+        renderList();
+
+        $btn.off("click.limitLayout").on("click.limitLayout", function () {
+            loadMore();
+        });
+
+        $(window)
+            .off("scroll.limitLayout")
+            .on("scroll.limitLayout", function () {
+                if (!$btn.hasClass("infinite-scroll")) return;
+
+                if (!$gridLayout.is(":visible")) return;
+
+                if (isElementAtHalfViewport($btn)) {
+                    loadMore();
+                }
+            });
+
+        if ($btn.hasClass("infinite-scroll")) {
+            $(window).trigger("scroll.limitLayout");
+        }
+    }
 
     // Dom Ready
     $(function () {

@@ -1,19 +1,32 @@
-@use "../abstracts/index" as *;
+@use "../abstracts/index"as *;
 
 .blog-item {
     height: 100%;
     display: flex;
     flex-direction: column;
+
     .img-style {
+        display: block;
         position: relative;
+        width: 100%;
     }
 
     .content {
         flex: 1;
+
+        >div {
+            &:first-child {
+                @include res(md) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
     }
 
     .title {
         text-transform: uppercase;
+
+
     }
 
     .meta {
@@ -23,13 +36,14 @@
                 display: flex;
                 align-items: center;
                 gap: 20px;
+
                 &::after {
                     content: "";
                     position: relative;
                     width: 1px;
                     height: 16px;
                     background-color: var(--Line-2);
-                    margin-right: 20px;
+                    margin-right: 18px;
                 }
             }
         }
@@ -39,6 +53,7 @@
         position: absolute;
         bottom: 12px;
         left: 12px;
+
         .tag {
             padding: 6px 10px;
             background-color: var(--White);
@@ -48,6 +63,7 @@
     .btn-readmore {
         padding: 4px 0;
         text-transform: uppercase;
+
         i {
             font-size: 10px;
         }
@@ -62,11 +78,28 @@
     &.style-list {
         display: flex;
         gap: 30px;
-        flex-direction: row;
         align-items: center;
+
+        .img-style {
+            flex: 22%;
+        }
 
         .content {
             justify-content: unset;
+        }
+
+        @include res(lg, min) {
+
+            flex-direction: row;
+
+            .img-style {
+                flex: 22%;
+            }
+
+            .content {
+                flex: 20%;
+                justify-content: unset;
+            }
         }
     }
 }
@@ -78,8 +111,8 @@
 
     .sb-item {
         &:not(:last-child) {
-            padding-bottom: 32px;
-            margin-bottom: 32px;
+            padding-bottom: 31px;
+            margin-bottom: 33px;
             border-bottom: 1px solid var(--Line-2);
         }
     }
@@ -89,12 +122,14 @@
         align-items: center;
         flex-wrap: wrap;
         gap: 10px;
+
         li {
             &:not(:first-child) {
                 position: relative;
                 display: flex;
                 align-items: center;
                 gap: 10px;
+
                 &::before {
                     color: var(--Body-text-2);
                     position: relative;
@@ -114,6 +149,7 @@
 
         .info {
             margin-bottom: 22px;
+
             @include res(lg, min) {
                 margin-bottom: 40px;
             }
@@ -123,6 +159,7 @@
             display: flex;
             gap: 15px;
             justify-content: center;
+
             a {
                 height: 38px;
                 width: 38px;
@@ -167,9 +204,11 @@
             align-items: center;
         }
     }
+
     .item-post {
         .list {
-            padding-left: 30px;
+            padding-left: 26px;
+
             li {
                 list-style: disc;
             }
@@ -177,6 +216,7 @@
 
         .tf-grid-layout {
             margin-top: 24px;
+
             @include res(lg, min) {
                 margin-top: 40px;
             }
@@ -189,6 +229,7 @@
 
         &:not(:last-child) {
             margin-bottom: 40px;
+
             @include res(lg, min) {
                 margin-bottom: 64px;
             }
@@ -202,17 +243,19 @@
 
 .tag-share {
     margin-bottom: 24px;
+
     @include res(md, min) {
         margin-bottom: 32px;
     }
 
     .tags-item {
-        padding: 6px 12px;
+        padding: 6px 20px;
         background-color: var(--Primary);
         color: var(--White);
-        font-size: 14px;
+        font-size: 16px;
         line-height: 20px;
         @include transition4();
+
         &:hover {
             background-color: var(--Secondary);
         }
@@ -225,6 +268,7 @@
     border-top: 1px solid var(--Line-2);
     border-bottom: 1px solid var(--Line-2);
     padding: 24px 0;
+
     @include res(md, min) {
         padding: 32px 0;
     }
@@ -241,9 +285,11 @@
     line-height: 26px;
     color: var(--Secondary);
     @include transition4();
+
     @include res(md) {
         width: 160px;
     }
+
     &:hover {
         background-color: var(--Secondary);
         border-color: var(--Secondary);
@@ -266,7 +312,7 @@
 
 .blog-detail_add_review {
     display: grid;
-    gap: 32px;
+    gap: 31px;
 
     .form-action {
         margin-top: 32px;
@@ -276,9 +322,33 @@
 .s-blog-grid-s1 {
     .tf-grid-layout {
         margin-bottom: 40px;
+
         @include res(lg, min) {
-            row-gap: 64px;
-            margin-bottom: 80px;
+            row-gap: 96px;
+            margin-bottom: 65px;
+        }
+    }
+
+    .wrap-blog-grid {
+        @include res(xxl, min) {
+            margin-right: -54px;
+        }
+    }
+}
+
+.s-blog-grid-s2 {
+    .wrap-blog-grid {
+        @include res(xxl, min) {
+            margin-left: -51px;
+        }
+    }
+
+    .tf-grid-layout {
+        margin-bottom: 40px;
+
+        @include res(lg, min) {
+            row-gap: 98px;
+            margin-bottom: 64px;
         }
     }
 }
@@ -287,17 +357,33 @@
     .tf-grid-layout {
         margin-top: 32px;
         border-top: 1px solid var(--Line-2);
-        padding-top: 80px;
-        margin-bottom: 110px;
+        padding-top: 40px;
+        margin-bottom: 40px;
+
+
+        @include res(lg, min) {
+            padding-top: 80px;
+        }
 
         @include res(llg, min) {
-            row-gap: 122px;
+            row-gap: 64px;
+            margin-bottom: 78px;
         }
     }
 }
 
 .s-blog-post {
-    margin-bottom: 48px;
+    margin-bottom: 120px;
+
+    @include res(lg) {
+        margin-bottom: 80px;
+
+    }
+
+    @include res(lg) {
+        margin-bottom: 60px;
+
+    }
 
     .row {
         @include res(lg) {
@@ -313,8 +399,6 @@
     }
 
     .page-title {
-        font-size: 36px;
-        line-height: 46px;
         text-transform: uppercase;
     }
 
@@ -326,7 +410,14 @@
         margin-bottom: 120px;
     }
 
+    @include res(xl, min) {
+        .tf-sidebar {
+            margin-right: -10px;
+        }
+    }
+
     @include res(lg) {
+
         .post-detail,
         .bot {
             margin-bottom: 60px;

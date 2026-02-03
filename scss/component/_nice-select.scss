@@ -16,7 +16,7 @@
 
         > .dropdown-toggle {
             padding: 0px;
-            padding-right: 22px;
+            padding-right: 18px;
             background-color: transparent !important;
             border: 0;
             outline: none !important;
@@ -44,8 +44,9 @@
             gap: 8px;
 
             img {
-                height: 24px;
-                width: 24px;
+                height: 13px;
+                width: 17px;
+                object-fit: cover;
             }
         }
 

@@ -1,8 +1,9 @@
-@use "../abstracts/index" as *;
+@use "../abstracts/index"as *;
 
 form {
     position: relative;
     z-index: 30;
+
     textarea,
     input[type="text"],
     input[type="password"],
@@ -23,7 +24,7 @@ form {
         -moz-box-shadow: none;
         box-shadow: none;
         width: 100%;
-        padding: 16px 10px;
+        padding: 12px 12px;
         font-size: 16px;
         font-weight: 400;
         line-height: 24px;
@@ -33,10 +34,12 @@ form {
         color: var(--Black);
         overflow: hidden;
         margin-bottom: 0;
+
         &::placeholder {
             color: var(--Body-text-1);
         }
     }
+
     button,
     input[type="button"],
     input[type="reset"],
@@ -45,14 +48,16 @@ form {
         overflow: hidden;
         padding: 0;
     }
+
     textarea {
         height: 126px;
-        padding: 16px;
+        padding: 12px 13px;
     }
 }
 
 .tf-select {
     position: relative;
+
     select {
         width: 100%;
         padding: 16px 10px;
@@ -66,6 +71,7 @@ form {
         line-height: 24px;
         color: var(--Body-text-1);
     }
+
     &::after {
         font-family: $fontIcon;
         position: absolute;
@@ -77,11 +83,13 @@ form {
         z-index: -1;
         font-weight: 400;
     }
+
     &:hover {
         select {
             border-color: var(--Primary);
         }
     }
+
     &.select-square {
         select {
             padding-top: 14px;
@@ -111,14 +119,17 @@ form {
     align-items: center;
     border-radius: 3px;
     @include transition3;
+
     &:checked {
         border-color: var(--Secondary);
         background-color: var(--Secondary);
+
         &::before {
             opacity: 1;
-            transform:translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
         }
     }
+
     &::before {
         font-weight: 500;
         font-family: $fontIcon;
@@ -132,18 +143,21 @@ form {
         transform: translate(-50%, -50%) scale(0);
         @include transition3;
     }
-    &.v2{
+
+    &.v2 {
         border-radius: 50%;
     }
 }
 
 .form-newsletter {
     position: relative;
+
     fieldset input {
         height: 46px;
         padding: 10px 16px;
         font-weight: 600;
     }
+
     .btn-submit {
         padding: 11px 30px;
         background-color: var(--Secondary);
@@ -155,10 +169,11 @@ form {
         display: flex;
         align-items: center;
         gap: 10px;
+
         i {
             font-size: 11px;
         }
-    
+
     }
 }
 
@@ -166,14 +181,38 @@ form {
     fieldset input {
         height: 50px;
     }
+
     textarea {
         height: 184px;
+    }
+
+    .tf-btn {
+        @include res(lg, min) {
+            padding-left: 35px;
+            padding-right: 35px;
+        }
     }
 }
 
 .form-contact {
     .wrap {
         margin-bottom: 40px;
+    }
+
+    fieldset input {
+        height: 50px;
+        padding: 16px 20px;
+    }
+
+    textarea {
+        padding: 12px 20px;
+        height: 229px;
+    }
+
+    .tf-btn {
+        @include res(lg, min) {
+            height: 52px;
+        }
     }
 }
 
@@ -297,6 +336,7 @@ form {
     }
 
     &.write-review {
+
         .cancel-review-wrap,
         .btn-write-review {
             display: none;
@@ -316,25 +356,38 @@ form {
         gap: 20px;
         margin-bottom: 24px;
     }
+
     .note,
     .title {
         margin-bottom: 24px;
     }
+
     .group-2-ip {
         margin-bottom: 10px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
+
     .check-save {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 12px;
         margin-top: 24px;
     }
+
     .tf-btn {
-        margin-top: 32px;
-        max-width: 171px;
-        width: 100%;
+        margin-top: 40px;
+        padding: 0 47px;
+
+        @include res(lg){
+            margin-top: 24px;
+        }
+    }
+
+    @include res(lg, min) {
+        textarea {
+            height: 249px;
+        }
     }
 }

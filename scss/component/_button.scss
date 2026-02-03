@@ -3,13 +3,16 @@
 .tf-btn {
     font-size: 16px;
     line-height: 24px;
-    padding: 14px 24px;
+    height: 48px;
+    padding: 0 24px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     max-width: max-content;
     font-weight: 500;
+    @include transition3();
+    cursor: pointer;
     i {
         font-size: 24px;
     }
@@ -43,20 +46,45 @@
         color: var(--Primary);
     }
 
+    &.btn-border-secondary {
+        border: 1px solid var(--Secondary);
+        color: var(--Secondary);
+    }
 
     &.btn-rounded {
         border-radius: 30px;
     }
+
+    &.btn-px-34 {
+        @include res(md, min) {
+            padding-left: 34px;
+            padding-right: 34px;
+        }
+    }
+
     &.btn-px-40 {
         @include res(md, min) {
             padding-left: 40px;
             padding-right: 40px;
         }
     }
+
     &.btn-px-70 {
         @include res(md, min) {
             padding-left: 70px;
             padding-right: 70px;
+        }
+    }
+
+    &.btn-h-52{
+        @include res(lg,min){
+            height: 52px;
+        }
+    }
+
+    &.btn-h-54{
+        @include res(lg,min){
+            height: 54px;
         }
     }
 }
@@ -77,6 +105,14 @@
             animation: shine-reverse 1s forwards;
         }
     }
+
+    &.w-100 {
+        &:hover {
+            &::after {
+                animation: shine-reverse 1.5s forwards;
+            }
+        }
+    }
 }
 
 .animate-btn:after {
@@ -84,12 +120,10 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0) 30%,
-        rgba(255, 255, 255, 0.8),
-        rgba(255, 255, 255, 0) 70%
-    );
+    background-image: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0) 70%);
     top: 0;
     left: -100%;
     opacity: 0.6;
@@ -97,19 +131,13 @@
 
 button.animate-btn::after,
 .animate-btn.tf-btn::after {
-    background-image: linear-gradient(
-        120deg,
-        rgba(0, 0, 0, 0) 20%,
-        rgba(255, 255, 255, 0.4),
-        rgba(0, 0, 0, 0) 70%
-    );
+    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0) 20%, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0) 70%);
 }
 
 .animate-btn.animate-dark::after {
-    background-image: linear-gradient(
-        90deg,
-        transparent,
-        rgb(0 0 0 /0.25),
-        transparent
-    );
+    background-image: linear-gradient(90deg, transparent, rgb(0 0 0 /0.7), transparent);
+}
+
+.animate-btn.animate-primary::after {
+    background-image: linear-gradient(90deg, transparent, rgb(220, 70, 70), transparent);
 }

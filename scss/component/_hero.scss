@@ -1,52 +1,112 @@
-@use "../abstracts/index" as *;
+@use "../abstracts/index"as *;
 
 .hero-banner-v01 {
     .hero-content {
         padding-top: 82px;
-        padding-bottom: 66px;
+        padding-bottom: 90px;
+
+        @include res(lg) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
     }
+
     .btn_link {
         padding: 6px 0;
+    }
+
+    .thumb {
+        img {
+            width: 100%;
+            object-fit: cover;
+            min-height: 350px;
+        }
+    }
+
+    .content {
+        @include res(xl, min) {
+            padding-left: 55px;
+        }
+
+        p {
+            @include res(lg) {
+                margin-bottom: 16px;
+            }
+        }
     }
 }
 
 .hero-banner-v02 {
     background-color: var(--Primary);
+
+    >* {
+        min-height: 400px;
+    }
+
     .hero-content {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         align-items: center;
+
+        @include res(md, min) {
+            grid-template-columns: repeat(2, 1fr);
+
+        }
     }
 
     .conetent {
-        max-width: 529px;
+        max-width: 559px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+        padding: 0 15px;
     }
 }
 
 .hero-banner-v03 {
     position: relative;
+
     .thumb {
         position: absolute;
         inset: 0;
     }
+
     .content {
         padding: 204px 0 242px;
         position: relative;
         z-index: 1;
+
+        @include res(lg) {
+            padding: 80px 0;
+        }
+
+        @include res(md) {
+            padding: 60px 0;
+        }
+
     }
+
     .content-inner {
         max-width: 620px;
         padding: 60px 52px;
         background: #ffffff1a;
         border: 1px solid #ffffff1a;
         backdrop-filter: blur(56px);
+
+        @include res(xxl, min) {
+            margin-left: -32px;
+        }
+
+        @include res(md) {
+            padding: 40px 15px;
+
+            .desc {
+                margin-bottom: 24px;
+            }
+        }
     }
 }
 
-.hero-banner-v04{
+.hero-banner-v04 {
     position: relative;
 
     .thumb {
@@ -60,15 +120,15 @@
         z-index: 1;
     }
 
-    .btn_link{
+    .btn_link {
         padding: 6px 0;
     }
 
-    .sw-dots{
+    .sw-dots {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         bottom: 32px;
     }
-    
+
 }

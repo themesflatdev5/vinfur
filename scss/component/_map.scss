@@ -1,7 +1,8 @@
-@use "../abstracts/index" as *;
+@use "../abstracts/index"as *;
 
 .wg-map {
     position: relative;
+
     .content {
         position: absolute;
         padding: 30px;
@@ -10,5 +11,14 @@
         bottom: 79px;
         max-width: 419px;
         right: 15px;
+    }
+
+    @include res(lg) {
+        .content {
+            left: 15px;
+            bottom: 60px;
+            right: 15px;
+        }
+        
     }
 }

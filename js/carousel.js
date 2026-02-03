@@ -94,12 +94,13 @@ if ($(".sw-layout").length > 0) {
         if (swiperContainer.length === 0) return;
         var preview = swiperContainer.data("preview") || 1;
         var screenXl = swiperContainer.data("screen-xl") || preview;
+        var screenXXL = swiperContainer.data("screen-xxl") || screenXl;
         var tablet = swiperContainer.data("tablet") || 1;
         var mobile = swiperContainer.data("mobile") || 1;
         var mobileSm = swiperContainer.data("mobile-sm") || mobile;
         var spacing = swiperContainer.data("space") || 0;
         var spacingMd = swiperContainer.data("space-md") || spacing;
-        var spacingLg = swiperContainer.data("space-lg") || spacing;
+        var spacingLg = swiperContainer.data("space-lg") || spacing;    
         var spacingXl = swiperContainer.data("space-xl") || spacingLg;
         var perGroup = swiperContainer.data("pagination") || 1;
         var perGroupMd = swiperContainer.data("pagination-md") || 1;
@@ -166,6 +167,11 @@ if ($(".sw-layout").length > 0) {
                 },
                 1200: {
                     slidesPerView: screenXl,
+                    spaceBetween: spacingXl,
+                    slidesPerGroup: perGroupLg,
+                },
+                1440: {
+                    slidesPerView: screenXXL,
                     spaceBetween: spacingXl,
                     slidesPerGroup: perGroupLg,
                 },

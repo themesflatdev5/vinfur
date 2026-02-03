@@ -1,12 +1,13 @@
-@use "../abstracts/index" as *;
+@use "../abstracts/index"as *;
 
 .tab-product_list {
     display: flex;
     gap: 48px;
+    padding: 6px 0;
 
     .tf-btn-tab {
-        padding: 6px 0;
         position: relative;
+        text-wrap: nowrap;
 
         &::after {
             content: "";
@@ -19,6 +20,7 @@
             transform: translateX(-50%);
             @include transition5();
         }
+
         &.active,
         &:hover {
             &::after {
@@ -26,11 +28,23 @@
             }
         }
     }
+
     &.style-2 {
+        gap: 64px;
+        padding: 6px 0;
+
+        @include res(md) {
+            gap: 24px;
+            padding: 10px 0;
+        }
+
         .tf-btn-tab {
             &::after {
                 background-color: var(--Primary);
+                top: calc(100% + 8px);
             }
+
+
 
             &.active,
             &:hover {
@@ -80,7 +94,12 @@
         overflow: hidden;
 
         .tab-content {
-            margin-top: 48px;
+            margin-top: 44px;
+
+            @include res(lg) {
+                margin-top: 30px;
+
+            }
         }
     }
 
@@ -131,7 +150,7 @@
 
         .tab-link {
             padding: 20px 0;
-            font-weight: 400;
+            font-weight: 500;
             font-size: 18px;
             line-height: 28px;
             color: #25252580;
@@ -174,103 +193,14 @@
     }
 
     .menu-tab-2 {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+        overflow-x: auto;
 
-        .tab-link {
-            position: relative;
-            width: 100%;
-            padding: 11px 23px;
-            border: 1px solid var(--line);
-            color: var(--text);
-            @include transition3;
-
-            &::before {
-                position: absolute;
-                content: "";
-                right: -8px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 0;
-                height: 0;
-                border-top: 7px solid transparent;
-                border-bottom: 7px solid transparent;
-                border-left: 8px solid black;
-                @include transition3;
-                @include hidden;
-            }
-
-            &.active {
-                background-color: var(--black);
-                border-color: var(--black);
-                color: var(--white);
-
-                &::before {
-                    @include visible;
-                }
-            }
+        @include res(sm) {
+            justify-content: start;
+            gap: 30px;
         }
 
-        @include res(md) {
-            flex-direction: row;
-            overflow-x: auto;
-
-            .tab-link {
-                width: max-content;
-                padding: 8px 18px;
-
-                &::before {
-                    display: none;
-                }
-            }
-        }
     }
 
-    .menu-tab-3 {
-        border-left: 1px solid var(--line);
-        height: max-content;
 
-        .nav-tab-item {
-            &:first-child {
-                .tab-link {
-                    padding-top: 0;
-                }
-            }
-
-            &:last-child {
-                .tab-link {
-                    padding-bottom: 0;
-                }
-            }
-        }
-
-        .tab-link {
-            position: relative;
-            padding: 16px 0 16px 21px;
-            color: var(--text);
-
-            &::before {
-                position: absolute;
-                content: "";
-                background-color: var(--black);
-                width: 1px;
-                height: 0;
-                left: -1px;
-                top: 0;
-                bottom: auto;
-                @include transition3();
-            }
-
-            &.active {
-                color: var(--black);
-
-                &::before {
-                    height: 100%;
-                    top: auto;
-                    bottom: 0;
-                }
-            }
-        }
-    }
 }

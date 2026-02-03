@@ -1,9 +1,10 @@
-@use "../abstracts/index" as *;
+@use "../abstracts/index"as *;
 
 .tf-pin-btn {
     cursor: pointer;
     @include transition3;
     position: relative;
+
     span {
         display: block;
         width: 19px;
@@ -14,6 +15,7 @@
         @include transition3;
 
         &:hover {
+
             &::after,
             &::before {
                 position: absolute;
@@ -25,20 +27,24 @@
                 border: solid 1px var(--white);
                 border-radius: 50%;
             }
+
             &::before {
                 animation: ripple-line 2s linear infinite;
             }
+
             &::after {
                 animation: ripple-line 2s 1s linear infinite;
             }
         }
     }
+
     &.style-lg {
         span {
             width: 28px;
             height: 28px;
         }
     }
+
     &.style-hover {
         &:hover {
             span {
@@ -46,12 +52,14 @@
             }
         }
     }
+
     &.style-dark {
         width: 28px;
         height: 28px;
         background-color: var(--white);
         @include flex(center, center);
         border-radius: 50%;
+
         span {
             background-color: var(--dark);
             width: 12px;
@@ -59,6 +67,7 @@
             border: 0;
             @include transition3;
         }
+
         &:hover {
             background-color: rgba(255, 255, 255, 0.7);
 
@@ -77,6 +86,7 @@
     gap: 15px;
     position: relative;
     margin: 5px 0;
+
     .content {
         display: flex;
         align-items: center;
@@ -84,16 +94,19 @@
         gap: 12px;
         width: 100%;
     }
+
     .info {
         display: grid;
         gap: 4px;
         text-align: start;
     }
+
     .price-wrap {
         display: flex;
         align-items: center;
         gap: 6px;
     }
+
     .img-style {
         border-radius: 0;
         flex-shrink: 0;
@@ -110,6 +123,7 @@
         align-items: center;
         font-size: 22px;
         @include transition3;
+
         &:hover {
             background-color: var(--Secondary);
             color: var(--White);
@@ -118,6 +132,7 @@
 
     &.style-row {
         flex-direction: row;
+
         .img-style {
             max-width: 71px;
         }
@@ -141,6 +156,7 @@
     .loobook-product {
         margin-bottom: 20px;
         margin-top: 20px;
+
         &::before {
             border-color: var(--white) transparent transparent transparent;
             bottom: -4%;
@@ -164,10 +180,15 @@
     position: relative;
     overflow: hidden;
     background-color: #f9f9f9;
+
     img {
         width: 100%;
-        height: 100%;
+
         object-fit: cover;
+    }
+
+    .img-banner {
+        min-height: 450px;
     }
 
     .lookbook-item {
@@ -177,10 +198,12 @@
         inset-block-start: var(--hotspot-y);
         margin-inline-start: calc(var(--hotspot-width) / -2);
         margin-block-start: calc(var(--hotspot-width) / -2);
+
         &.position1 {
             --hotspot-x: 18%;
             --hotspot-y: 24%;
         }
+
         &.position2 {
             --hotspot-x: 67%;
             --hotspot-y: 86%;
@@ -194,6 +217,7 @@
         &.nav-prev-layout {
             left: -60px;
         }
+
         &.nav-next-layout {
             right: -60px;
         }
@@ -203,6 +227,7 @@
 .s-banner-lookbook-v02 {
     .lookbook-item {
         position: relative;
+
         .tf-pin-btn {
             position: absolute;
             --hotspot-width: 19px;
@@ -211,18 +236,21 @@
             margin-inline-start: calc(var(--hotspot-width) / -2);
             margin-block-start: calc(var(--hotspot-width) / -2);
         }
+
         &.position1 {
             .tf-pin-btn {
                 --hotspot-x: 64%;
                 --hotspot-y: 61%;
             }
         }
+
         &.position2 {
             .tf-pin-btn {
                 --hotspot-x: 55%;
                 --hotspot-y: 49%;
             }
         }
+
         &.position3 {
             .tf-pin-btn {
                 --hotspot-x: 32%;
@@ -243,6 +271,10 @@
     }
 
     .sw-dots {
+        @include res(lg, min) {
+            margin-top: 38px;
+        }
+
         .swiper-pagination-bullet {
             height: 12px;
             width: 12px;
