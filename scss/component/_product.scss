@@ -28,7 +28,7 @@
             width: 100%;
             box-shadow: 0px 10px 25px 0px #2B344A1F;
 
-            @include res(sm){
+            @include res(sm) {
                 padding: 0 15px;
             }
         }
@@ -1536,22 +1536,24 @@
         }
     }
 
-    &.small {
+    &.style-2 {
+        padding: 0;
+        background: #f1f1f1;
 
         .btn-quantity,
         .quantity-product {
             height: 30px;
             width: 30px;
-            font-size: 18px;
+            font-size: 10px;
         }
 
         .quantity-product {
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 16.8px;
-            letter-spacing: -0.03em;
+            font-size: 16px;
+            line-height: 24px;
         }
     }
+
+    &.style-2 {}
 }
 
 .tf-main-product {
