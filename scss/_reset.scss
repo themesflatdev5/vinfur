@@ -429,10 +429,6 @@ textarea {
     /* Improves readability and alignment in all browsers */
 }
 
-input[type="checkbox"] {
-    display: inline;
-}
-
 button,
 input[type="button"],
 input[type="reset"],
@@ -1580,6 +1576,12 @@ a {
     overflow: hidden;
 }
 
+.sm-hide {
+    @include res(sm) {
+        display: none !important;
+    }
+}
+
 .md-hide {
     @include res(md) {
         display: none !important;
@@ -1923,7 +1925,11 @@ a {
     }
 }
 
-
+.heading-seciton {
+    @include res(md) {
+        margin-bottom: 40px;
+    }
+}
 
 .wg-pagination {
     display: flex;

@@ -244,7 +244,11 @@
 
         &.s2 {
             .content {
-                padding: 198px 0 197px;
+
+                @include res(lg, min) {
+                    padding: 198px 0 197px;
+
+                }
             }
         }
     }
@@ -771,9 +775,12 @@
 .s-lookbook {
     display: flex;
 
+
     .left-img,
     .right-product {
-        width: 50%;
+        @include res(lg, min) {
+            width: 50%;
+        }
     }
 
     .right-product {
@@ -783,6 +790,14 @@
 
     .cls-lookbook {
         position: relative;
+    }
+
+
+    .wrap-swiper {
+        position: relative;
+        max-width: 474px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .tf-sw-lookbook {
@@ -821,11 +836,11 @@
     }
 
     .nav-prev-lookbook {
-        right: 69.4%;
+        left: 0;
     }
 
     .nav-next-lookbook {
-        left: 69.4%;
+        right: 0;
     }
 }
 

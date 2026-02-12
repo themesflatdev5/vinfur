@@ -70,6 +70,12 @@
         }
     }
 
+    @media (max-width:1550px) {
+        .btn-buy-theme {
+            display: none;
+        }
+    }
+
     &.style-default {
         border-bottom: 1px solid var(--Line);
 
@@ -88,6 +94,11 @@
     }
 
     &.has-currencies {
+
+        .header-right {
+            gap: 20px;
+        }
+
 
         @include res(xxl, min) {
 

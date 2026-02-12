@@ -1,4 +1,4 @@
-@use "../abstracts/index" as *;
+@use "../abstracts/index"as *;
 
 .tf-btn {
     font-size: 16px;
@@ -13,6 +13,7 @@
     font-weight: 500;
     @include transition3();
     cursor: pointer;
+
     i {
         font-size: 24px;
     }
@@ -76,21 +77,45 @@
         }
     }
 
-    &.btn-h-52{
-        @include res(lg,min){
+    &.btn-h-52 {
+        @include res(lg, min) {
             height: 52px;
         }
     }
 
-    &.btn-h-54{
-        @include res(lg,min){
+    &.btn-h-54 {
+        @include res(lg, min) {
             height: 54px;
         }
+    }
+
+    &.ic-abs {
+        position: relative;
+        text-transform: none;
+        line-height: 23px;
+
+        .icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &.btn-fb {
+        background-color: #3B5998;
+        color: var(--White);
+    }
+
+    &.btn-gg {
+    
+        border: 1px solid #11111126
     }
 }
 
 .btn_link {
     padding: 4px 0;
+
     i {
         font-size: 10px;
     }

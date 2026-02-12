@@ -59,7 +59,10 @@
         }
 
         .wrap-sw-button {
-            margin-top: 50px;
+
+            @include res(md, min) {
+                margin-top: 50px;
+            }
         }
 
         @include res(lg, min) {
@@ -70,7 +73,6 @@
 
         @include res(xxl, min) {
             .box-content {
-                padding-top: 75px;
                 margin-left: -10px;
             }
         }
@@ -125,7 +127,11 @@
     }
 
     .wrap-sw-button {
-        margin-top: 52px;
+        margin-top: 24px;
+
+        @include res(md, min) {
+            margin-top: 52px;
+        }
     }
 
     @include res(lg, min) {

@@ -118,6 +118,28 @@
         padding: 324px 0 356px;
         position: relative;
         z-index: 1;
+
+        @include res(xl) {
+            padding: 200px 0;
+        }
+
+        @include res(lg) {
+            padding: 150px 0;
+
+
+        }
+
+        @include res(md) {
+            padding: 80px 0 100px;
+
+            .title {
+                margin-bottom: 12px;
+            }
+
+            .desc {
+                margin-bottom: 24px;
+            }
+        }
     }
 
     .btn_link {

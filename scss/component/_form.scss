@@ -55,6 +55,59 @@ form {
     }
 }
 
+.toggle-pass {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tf-field {
+    position: relative;
+
+    .tf-input {
+
+        border-width: 0 0 1px 0;
+        padding: 22px 0px 3px !important;
+
+        &:not(:placeholder-shown),
+        &:focus {
+            ~.tf-lable {
+                top: 0;
+                transform: translateY(0%);
+                font-size: 12px;
+                line-height: 20px;
+                letter-spacing: 0;
+
+            }
+        }
+
+        &::placeholder {
+            color: transparent;
+        }
+    }
+
+    .tf-lable {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: text;
+        @include transition3;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.32px;
+        pointer-events: none;
+
+        &.type-2 {
+            top: 22px;
+            transform: 0;
+        }
+    }
+}
+
 .tf-select {
     position: relative;
 
@@ -146,6 +199,61 @@ form {
 
     &.v2 {
         border-radius: 50%;
+    }
+}
+
+.checkbox-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input {
+        padding: 0;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    &.type-2 {
+        gap: 8px;
+
+        input+label {
+            color: var(--main-4);
+            @include transition3;
+        }
+
+        input:checked+label {
+            color: var(--main);
+        }
+    }
+}
+
+.form-log {
+    margin-bottom: 15px;
+
+    .form-content {
+        margin-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .bottom {
+        @include flex(center, space-between);
+        margin-bottom: 32px;
+        gap: 0px 10px;
+        flex-wrap: wrap;
+    }
+
+    .tf-check {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+
+        &::before {
+            font-size: 9px;
+        }
     }
 }
 
@@ -380,7 +488,7 @@ form {
         margin-top: 40px;
         padding: 0 47px;
 
-        @include res(lg){
+        @include res(lg) {
             margin-top: 24px;
         }
     }

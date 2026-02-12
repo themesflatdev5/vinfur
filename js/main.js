@@ -783,6 +783,25 @@
     };
 
 
+    /* Show Password 
+    -------------------------------------------------------------------------*/
+    var showPassword = function () {
+        $(".toggle-pass").on("click", function () {
+            const wrapper = $(this).closest(".password-wrapper");
+            const input = wrapper.find(".password-field");
+            const icon = $(this);
+
+            if (input.attr("type") === "password") {
+                input.attr("type", "text");
+                icon.removeClass("icon-show-password").addClass("icon-view");
+            } else {
+                input.attr("type", "password");
+                icon.removeClass("icon-view").addClass("icon-show-password");
+            }
+        });
+    };
+
+
     // Dom Ready
     $(function () {
         variantPicker();
@@ -803,5 +822,6 @@
         infiniteslide();
         handleSidebarFilter();
         deleteFile();
+        showPassword();
     });
 })(jQuery);
