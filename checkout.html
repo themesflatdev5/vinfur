@@ -573,295 +573,308 @@
         <!-- main-content -->
         <div class="main-content">
 
-            <!-- Shop Cart -->
-            <section class="tf-spacing-1 s-shop-cart each-list-prd">
-                <div class="tf-container w-1548 ">
-                    <div class="row">
-                        <div class="col-xl-8">
-                            <div class="left mb-xl-0">
-                                <div class="table-shop-cart table-order-detail">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th class="order_product h6 fw-normal">Product</th>
-                                                <th class="order_price h6 fw-normal">price</th>
-                                                <th class="order_quantity h6 fw-normal">quantity</th>
-                                                <th class="order_subtotal h6 fw-normal">subtotal</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="file-delete order_item each-prd">
-                                                <td>
-                                                    <div class="order_product">
-                                                        <a href="#" class="image">
-                                                            <img src="images/products/product-1.jpg" alt="">
-                                                        </a>
-                                                        <div class="infor">
-                                                            <a href="#"
-                                                                class="prd-name text-body-default text_secondary-color fw-5 link">
-                                                                Core Chair
-                                                            </a>
-                                                            <p class="text-caption-1 prd-type text_body-color-1">Powder
-                                                                Pink</p>
+            <!-- Checkout -->
+            <section class="tf-spacing-1">
+                <div class="tf-container w-1548">
+                    <div class="s-checkout flex-xl-nowrap">
+                        <div class="left-col">
+                            <div class="s-wrap">
+                                <form class="form-checkout-cart-main style-border">
+                                    <div class="box-ip-checkout">
+                                        <h5 class="checkout-title fw-5">DELIVERY</h5>
+                                        <div class="form-content-2">
+                                            <div class="cols tf-grid-layout sm-col-2">
+                                                <fieldset class="tf-field-2">
+                                                    <input class="tf-input" type="text" value="Vincent" placeholder="">
+                                                    <label class="tf-lable">First name</label>
+                                                </fieldset>
+                                                <fieldset class="tf-field-2">
+                                                    <input class="tf-input" type="text" placeholder="">
+                                                    <label class="tf-lable">Last name</label>
+                                                </fieldset>
+                                            </div>
+                                            <fieldset class="tf-field-2">
+                                                <input class="tf-input" type="text" placeholder="">
+                                                <label class="tf-lable">Country</label>
+                                            </fieldset>
+                                            <fieldset class="tf-field-2">
+                                                <input class="tf-input" type="text" placeholder="">
+                                                <label class="tf-lable">Address</label>
+                                            </fieldset>
+                                            <fieldset class="tf-field-2">
+                                                <input class="tf-input" type="text" placeholder="">
+                                                <label class="tf-lable">Apartment, suite, etc (optional)</label>
+                                            </fieldset>
+                                            <div class="cols tf-grid-layout sm-col-2 md-col-3">
+                                                <fieldset class="tf-field-2">
+                                                    <input class="tf-input" type="text" placeholder="">
+                                                    <label class="tf-lable">City</label>
+                                                </fieldset>
+                                                <fieldset class="tf-field-2">
+                                                    <!-- <input class="tf-input" type="text" placeholder="">
+                                                <label class="tf-lable">State</label> -->
+                                                    <div class="tf-select">
+                                                        <select class="w-100" id="shipping-country-form"
+                                                            name="address[country]" data-default="">
+                                                            <option value="Australia"
+                                                                data-provinces='[["Australian Capital Territory","Australian Capital Territory"],["New South Wales","New South Wales"],["Northern Territory","Northern Territory"],["Queensland","Queensland"],["South Australia","South Australia"],["Tasmania","Tasmania"],["Victoria","Victoria"],["Western Australia","Western Australia"]]'>
+                                                                Australia</option>
+                                                            <option value="Austria" data-provinces='[]'>Austria</option>
+                                                            <option value="Belgium" data-provinces='[]'>Belgium</option>
+                                                            <option value="Canada"
+                                                                data-provinces='[["Ontario","Ontario"],["Quebec","Quebec"]]'>
+                                                                Canada
+                                                            </option>
+                                                            <option value="Czech Republic" data-provinces='[]'>Czechia
+                                                            </option>
+                                                            <option value="Denmark" data-provinces='[]'>Denmark</option>
+                                                            <option value="Finland" data-provinces='[]'>Finland</option>
+                                                            <option value="France" data-provinces='[]'>France</option>
+                                                            <option value="Germany" data-provinces='[]'>Germany</option>
+                                                            <option selected value="United States"
+                                                                data-provinces='[["Alabama","Alabama"],["California","California"],["Florida","Florida"]]'>
+                                                                United States</option>
+                                                            <option value="United Kingdom"
+                                                                data-provinces='[["England","England"],["Scotland","Scotland"],["Wales","Wales"],["Northern Ireland","Northern Ireland"]]'>
+                                                                United Kingdom</option>
+                                                            <option value="India" data-provinces='[]'>India</option>
+                                                            <option value="Japan" data-provinces='[]'>Japan</option>
+                                                            <option value="Mexico" data-provinces='[]'>Mexico</option>
+                                                            <option value="South Korea" data-provinces='[]'>South Korea
+                                                            </option>
+                                                            <option value="Spain" data-provinces='[]'>Spain</option>
+                                                            <option value="Italy" data-provinces='[]'>Italy</option>
+                                                            <option value="Vietnam"
+                                                                data-provinces='[["Ha Noi","Ha Noi"],["Da Nang","Da Nang"],["Ho Chi Minh","Ho Chi Minh"]]'>
+                                                                Vietnam</option>
+                                                        </select>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset class="tf-field-2">
+                                                    <input class="tf-input" type="text" data-opend-focus placeholder=""
+                                                        id="zipcode" name="address[zip]" value="">
+                                                    <label class="tf-lable">Zipcode/Postal</label>
+                                                </fieldset>
+                                            </div>
+                                            <fieldset class="tf-field-2">
+                                                <input class="tf-input" type="number" placeholder="">
+                                                <label class="tf-lable">Phone</label>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="box-ip-contact">
+                                        <h5 class="checkout-title fw-5">
+                                            CONTACT INFORMATION
+                                            <a href="#log" data-bs-toggle="modal" class="tf-btn-line text-caption-1 hover-underline-link">
+                                                Log in
+                                            </a>
+                                        </h5>
+                                        <fieldset class="tf-field-2">
+                                            <input class="tf-input" type="text" placeholder="">
+                                            <label class="tf-lable">Email or phone number</label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="box-ip-shipping">
+                                        <h5 class="checkout-title fw-5">
+                                            SHIPPING METHOD
+                                            <a href="#log" data-bs-toggle="modal" class="tf-btn-line text-caption-1 hover-underline-link">
+                                                Log in
+                                            </a>
+                                        </h5>
+                                        <div class="form-content-2">
+                                            <label for="freeship" class="check-ship">
+                                                <input type="radio" id="freeship" class="tf-check-rounded"
+                                                    name="checkshipping">
+                                                <span class="text">
+                                                    <span>Free Shipping (Estimate in 7/10 - 10/10/2025)</span>
+                                                    <span class="price">$00.00</span>
+                                                </span>
+                                            </label>
+                                            <label for="express-ship" class="check-ship">
+                                                <input type="radio" id="express-ship" class="tf-check-rounded"
+                                                    name="checkshipping">
+                                                <span class="text">
+                                                    <span>Express Shipping (Estimate in 4/10 - 5/10/2025)</span>
+                                                    <span class="price">$10.00</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="box-ip-payment">
+                                        <h5 class="checkout-title fw-5 mb_12">PAYMENT</h5>
+                                        <p class="sub-title text_body-color-2">
+                                            All transactions are secure and encrypted.
+                                        </p>
+                                        <fieldset class="payment-item mb_12">
+                                            <label for="bank-transfer" class="check-payment">
+                                                <input type="checkbox" id="bank-transfer" class="tf-check-rounded"
+                                                    name="bank-transfer">
+                                                <span class="text-payment">Direct bank transfer</span>
+                                            </label>
+                                        </fieldset>
+                                        <p class="mb_15 text_body-color-1">Make your payment directly into our bank account.
+                                            Please use
+                                            your Order ID as the payment reference. Your order will not be shipped until
+                                            the
+                                            funds have cleared in our account.
+                                        </p>
+                                        <div class="payment-method-box" id="payment-method-box">
+                                            <div class="payment-item">
+                                                <label for="delivery" class="check-payment collapsed"
+                                                    data-bs-toggle="collapse" data-bs-target="#delivery-payment"
+                                                    aria-controls="delivery-payment">
+                                                    <input type="radio" name="payment-method" class="tf-check-rounded"
+                                                        id="delivery">
+                                                    <span class="pay-title">Cash on delivery</span>
+                                                </label>
+                                                <div id="delivery-payment" class="collapse"
+                                                    data-bs-parent="#payment-method-box"></div>
+                                            </div>
+                                            <div class="payment-item">
+                                                <label for="credit-card" class="check-payment" data-bs-toggle="collapse"
+                                                    data-bs-target="#credit-card-payment"
+                                                    aria-controls="credit-card-payment">
+                                                    <input type="radio" name="payment-method" class="tf-check-rounded"
+                                                        id="credit-card" checked>
+                                                    <span class="pay-title">Credit card</span>
+                                                </label>
+                                                <div id="credit-card-payment" class="collapse show"
+                                                    data-bs-parent="#payment-method-box">
+                                                    <div class="payment-body form-content-2">
+                                                        <fieldset class="tf-field-2 ip-card">
+                                                            <input class="tf-input" type="text" placeholder="">
+                                                            <label class="tf-lable">Card number</label>
+                                                            <img class="card-logo" width="41" height="12"
+                                                                src="images/payment/visa-2.png" alt="card">
+                                                        </fieldset>
+                                                        <div class="cols tf-grid-layout sm-col-2">
+                                                            <fieldset class="tf-field-2">
+                                                                <input class="tf-input" type="text" placeholder="">
+                                                                <label class="tf-lable">Expiration date (MM/YY) </label>
+                                                            </fieldset>
+                                                            <fieldset class="tf-field-2">
+                                                                <input class="tf-input" type="text" placeholder="">
+                                                                <label class="tf-lable">Sercurity code</label>
+                                                            </fieldset>
+                                                        </div>
+                                                        <fieldset class="tf-field-2">
+                                                            <input class="tf-input" type="text" placeholder="">
+                                                            <label class="tf-lable">Name on card</label>
+                                                        </fieldset>
+                                                        <div class="checkbox-wrap">
+                                                            <input id="this-address" type="checkbox"
+                                                                class="tf-check type-20 p-0" required="">
+                                                            <label for="this-address" class="text-body-default">Use shipping address as billing
+                                                                address</label>
                                                         </div>
                                                     </div>
-                                                </td>
-                                                <td class="order_price each-price">$130.00</td>
-                                                <td>
-                                                    <div class="order_quantity">
-                                                        <div class="wg-quantity style-2">
-                                                            <button class="btn-quantity minus-quantity"><i
-                                                                    class="icon-minus"></i></button>
-                                                            <input class="quantity-product" type="text" name="number"
-                                                                value="1">
-                                                            <button class="btn-quantity plus-quantity"><i
-                                                                    class="icon-plus"></i></button>
-                                                        </div>
-                                                        <span
-                                                            class="remove hover-underline-link text-caption-1 ">Remove</span>
-                                                    </div>
-                                                </td>
-                                                <td class="order_subtotal each-subtotal-price"></td>
-                                            </tr>
-                                            <tr class="file-delete order_item each-prd">
-                                                <td>
-                                                    <div class="order_product">
-                                                        <a href="#" class="image">
-                                                            <img src="images/products/product-2.jpg" alt="">
-                                                        </a>
-                                                        <div class="infor">
-                                                            <a href="#"
-                                                                class="prd-name text-body-default text_secondary-color fw-5 link">
-                                                                111 Lounge Chair
-                                                            </a>
-                                                            <p class="text-caption-1 prd-type text_body-color-1">Powder
-                                                                Pink</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="order_price each-price">$130.00</td>
-                                                <td>
-                                                    <div class="order_quantity">
-                                                        <div class="wg-quantity style-2">
-                                                            <button class="btn-quantity minus-quantity"><i
-                                                                    class="icon-minus"></i></button>
-                                                            <input class="quantity-product" type="text" name="number"
-                                                                value="1">
-                                                            <button class="btn-quantity plus-quantity"><i
-                                                                    class="icon-plus"></i></button>
-                                                        </div>
-                                                        <span
-                                                            class="remove hover-underline-link text-caption-1 cursus-pointer">Remove</span>
-                                                    </div>
-                                                </td>
-                                                <td class="order_subtotal each-subtotal-price"></td>
-                                            </tr>
-                                            <tr class="file-delete order_item each-prd">
-                                                <td>
-                                                    <div class="order_product">
-                                                        <a href="#" class="image">
-                                                            <img src="images/products/product-3.jpg" alt="">
-                                                        </a>
-                                                        <div class="infor">
-                                                            <a href="#"
-                                                                class="prd-name text-body-default text_secondary-color fw-5 link">
-                                                                Crystal Lounge Chair
-                                                            </a>
-                                                            <p class="text-caption-1 prd-type text_body-color-1">Powder
-                                                                Pink</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="order_price each-price">$130.00</td>
-                                                <td>
-                                                    <div class="order_quantity">
-                                                        <div class="wg-quantity style-2">
-                                                            <button class="btn-quantity minus-quantity"><i
-                                                                    class="icon-minus"></i></button>
-                                                            <input class="quantity-product" type="text" name="number"
-                                                                value="1">
-                                                            <button class="btn-quantity plus-quantity"><i
-                                                                    class="icon-plus"></i></button>
-                                                        </div>
-                                                        <span
-                                                            class="remove hover-underline-link text-caption-1 cursus-pointer">Remove</span>
-                                                    </div>
-                                                </td>
-                                                <td class="order_subtotal each-subtotal-price"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="checkbox-wrap">
-
-                                    <input type="checkbox" class="tf-check type-20 " id="checksave">
-                                    <label for="checksave" class="label text-body-default">Add gift packaging
-                                        ($10.00)</label>
-
-                                </div>
-                                <form class="style-border">
-                                    <fieldset>
-                                        <label class="label-text text-body-default mb_10">Special instructions for
-                                            seller</label>
-                                        <textarea style="height: 206px;"></textarea>
-                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="payment-item">
+                                                <label for="paypal" class="check-payment collapsed"
+                                                    data-bs-toggle="collapse" data-bs-target="#paypal-payment"
+                                                    aria-controls="paypal-payment">
+                                                    <input type="radio" name="payment-method" class="tf-check-rounded"
+                                                        id="paypal">
+                                                    <span class="pay-title">PayPal
+                                                        <img class="card-logo" width="78" height="20"
+                                                            src="images/payment/paypal-2.png" alt="apple">
+                                                    </span>
+                                                </label>
+                                                <div id="paypal-payment" class="collapse"
+                                                    data-bs-parent="#payment-method-box"></div>
+                                            </div>
+                                        </div>
+                                        <p class="text_body-color-1">
+                                            Your personal data will be used to process your order, support your
+                                            experience throughout this website, and
+                                            for
+                                            other purposes described in our
+                                            <a href="privacy.html"
+                                                class="fw-medium text_secondary-color link">privacy policy.</a>
+                                        </p>
+                                    </div>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-xl-4">
-                            <div class="right">
-                                <div class="checkout-sidebar">
-                                    <form class="form-checkout-sidebar">
-                                        <div class="form-content">
-                                            <h4 class="title-total">
-                                                TOTAL:
-                                                <span class="each-total-price"></span>
-                                            </h4>
-                                            <p class="tax-text opacity-8">
-                                                Taxes and shipping calculated at checkout
-                                            </p>
-                                            <span class="br-line"></span>
-                                            <div class="checkbox-wrap">
-                                                <input id="agree-term" type="checkbox"
-                                                    class="tf-check type-20 rounded-0" required>
-                                                <label for="agree-term" class="text-body-default">I argee <a href="#"
-                                                        class="fw-5 hover-underline-link ">Terms and
-                                                        conditions</a></label>
+                        <div class="right-col sticky-top">
+                            <div class="tf-page-cart-sidebar">
+                                <h5 class="checkout-title fw-5">YOUR CART</h5>
+                                <ul class="list-order-product">
+                                    <li class="order-item">
+                                        <div class="content">
+                                            <div class="img-product">
+                                                <img src="images/products/product-1.jpg" alt="" class="prd">
+                                                <span class="text-caption quantity">2</span>
+                                            </div>
+                                            <div class="info">
+                                                <p class="name h6 fw-5">Oslo Lounge Chair
+                                                </p>
+                                                <span class="variant text-caption-1">Walnut Frame / Grey Fabric</span>
                                             </div>
                                         </div>
-                                        <button type="button" id="checkout-btn"
-                                            class="tf-btn btn-bg-secondary w-full animate-btn btn-h-52">
-                                            CHECKOUT
-                                        </button>
-                                    </form>
-                                    <p class="text-caption text-center text-we-accept">We accept</p>
-                                    <ul
-                                        class="payment-method-list style-2 d-flex gap_8 justify-content-center flex-wrap">
-                                        <li>
-                                            <a href="#"><img width="45" height="31" src="images/payment/payment-9.png"
-                                                    alt=""></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img width="45" height="31" src="images/payment/payment-1.png"
-                                                    alt=""></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img width="45" height="31" src="images/payment/payment-2.png"
-                                                    alt=""></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img width="45" height="31" src="images/payment/payment-3.png"
-                                                    alt=""></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img width="45" height="31" src="images/payment/payment-4.png"
-                                                    alt=""></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img width="45" height="31" src="images/payment/payment-5.png"
-                                                    alt=""></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img width="45" height="31" src="images/payment/payment-6.png"
-                                                    alt=""></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="tes-slider tf-btn-swiper-item sw-layout">
-                                    <div dir="ltr" class="swiper " data-space-lg="30" data-space-md="20"
-                                        data-space="15">
-                                        <div class="swiper-wrapper">
-                                            <!-- item 1 -->
-                                            <div class="swiper-slide">
-                                                <div class="testimonial-item style-4">
-                                                    <div
-                                                        class="tes-top d-flex align-items-center justify-content-between">
-                                                        <i class="icon icon-quote-3 text-primary">
-                                                            <img width="64" height="64" src="icons/quote.svg" alt="">
-                                                        </i>
-                                                        <ul class="rating d-flex gap_5">
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="tes-text">
-                                                        I was blown away by the craftsmanship and detail of my necklace.
-                                                        It’s even more stunning in
-                                                        person! Vemus truly delivers timeless elegance.
-                                                    </p>
-                                                    <div class="tes-author d-flex align-items-center gap_10">
-                                                        <div class="author-avt">
-                                                            <img width="42" height="42" src="images/avatar/avatar-2.png"
-                                                                alt="avatar">
-                                                        </div>
-                                                        <span class="author-name text-body-default fw-5">Vincent
-                                                            P.</span>
-                                                    </div>
-                                                </div>
+                                        <h6 class="price">$260.00</h6>
+                                    </li>
+                                    <li class="order-item">
+                                        <div class="content">
+                                            <div class="img-product">
+                                                <img src="images/products/product-2.jpg" alt="" class="prd">
+                                                <span class="text-caption quantity">2</span>
                                             </div>
-                                            <!-- item 2 -->
-                                            <div class="swiper-slide">
-                                                <div class="testimonial-item style-4">
-                                                    <div
-                                                        class="tes-top d-flex align-items-center justify-content-between">
-                                                        <i class="icon icon-quote-3 text-primary">
-                                                            <img width="64" height="64" src="icons/quote.svg" alt="">
-                                                        </i>
-                                                        <ul class="rating d-flex gap_5">
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="tes-text">
-                                                        I was blown away by the craftsmanship and detail of my necklace.
-                                                        It’s even more stunning in
-                                                        person! Vemus truly delivers timeless elegance.
-                                                    </p>
-                                                    <div class="tes-author d-flex align-items-center gap_10">
-                                                        <div class="author-avt">
-                                                            <img width="42" height="42" src="images/avatar/avatar-1.png"
-                                                                alt="avatar">
-                                                        </div>
-                                                        <span class="author-name text-body-default fw-5">Mas
-                                                            P.</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- item 3 -->
-                                        </div>
-                                        <div class="wrap-sw-button d-flex gap_16 justify-content-end">
-                                            <div class="nav-prev-layout">
-                                                <svg width="22" height="12" viewBox="0 0 22 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M6.03376 0L7.01371 0.974515L2.65296 5.31093H22V6.68912H2.65296L7.01371 11.0255L6.03376 12L0 5.99998L6.03376 0Z"
-                                                        fill="#252525" />
-                                                </svg>
-                                            </div>
-                                            <div class="nav-next-layout">
-                                                <svg width="22" height="12" viewBox="0 0 22 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.9662 0L14.9863 0.974515L19.347 5.31093H0V6.68912H19.347L14.9863 11.0255L15.9662 12L22 5.99998L15.9662 0Z"
-                                                        fill="#252525" />
-                                                </svg>
-
+                                            <div class="info">
+                                                <p class="name h6 fw-5">Hudson Dining Table</p>
+                                                <span class="variant text-caption-1">8-Seater / Dark Walnut</span>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                        <h6 class="price">$260.00</h6>
+                                    </li>
+                                    <li class="order-item">
+                                        <div class="content">
+                                            <div class="img-product">
+                                                <img src="images/products/product-3.jpg" alt="" class="prd">
+                                                <span class="text-caption quantity">2</span>
+                                            </div>
+                                            <div class="info">
+                                                <p class="name h6 fw-5">Luna Bed Frame</p>
+                                                <span class="variant text-caption-1">King / Matte Black</span>
+                                            </div>
+                                        </div>
+                                        <h6 class="price">$260.00</h6>
+                                    </li>
+                                </ul>
+                                <span class="br-line"></span>
+                                <ul class="list-total">
+                                    <li class="total-item">
+                                        <span>SUBTOTAL:</span>
+                                        <span>$480.00 USD</span>
+                                    </li>
+                                    <li class="total-item">
+                                        <span>DISCOUNT:</span>
+                                        <span>-$48.00 USD</span>
+                                    </li>
+                                    <li class="total-item">
+                                        <span>SHIPPING:</span>
+                                        <span>$10.00 USD</span>
+                                    </li>
+                                    <li class="total-item">
+                                        <span>TAXES:</span>
+                                        <span>$48.00 USD</span>
+                                    </li>
+                                </ul>
+                                <span class="br-line"></span>
+                                <h5 class=" fw-5 last-total d-flex justify-content-between">
+                                    <span>SUBTOTAL:</span>
+                                    <span class="total-price-order">$490.00 USD</span>
+                                </h5>
+                                <a href="thank-you.html" class="tf-btn btn-bg-secondary  animate-btn w-full">
+                                    Place order
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- /Shop Cart -->
+            <!-- /Checkout -->
 
         </div>
         <!-- /main-content -->

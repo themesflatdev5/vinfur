@@ -160,8 +160,10 @@ ul {
 }
 
 table {
+    width: 100%;
+    overflow-x: auto;
+    table-layout: auto;
     border-collapse: collapse;
-    border-spacing: 0;
 }
 
 caption,
@@ -581,6 +583,16 @@ h6,
     line-height: 46px;
 }
 
+.text-title-2 {
+    font-size: 30px;
+    line-height: 38px;
+}
+
+.text-title-3 {
+    font-size: 32px;
+    line-height: 42px;
+}
+
 .text-body-2 {
     font-size: 17px;
     line-height: 30px;
@@ -623,7 +635,7 @@ h6,
 
     h3,
     .h3,
-    .text-title-1 {
+    .text-title-1,.text-title-3 {
         font-size: 30px;
         line-height: 38px;
     }
@@ -647,7 +659,7 @@ h6,
 
     h3,
     .h3,
-    .text-title-1 {
+    .text-title-1,.text-title-3,.text-title-2 {
         font-size: 28px;
         line-height: 30px;
     }
@@ -677,7 +689,7 @@ h6,
 
     h3,
     .h3,
-    .text-title-1 {
+    .text-title-1,.text-title-3,.text-title-2 {
         font-size: 24px;
         line-height: 32px;
     }
@@ -1305,6 +1317,10 @@ a {
     margin-bottom: 4px;
 }
 
+.mb_6 {
+    margin-bottom: 6px;
+}
+
 .mb_7 {
     margin-bottom: 7px;
 }
@@ -1502,8 +1518,10 @@ a {
     padding-bottom: 142px;
 }
 
-
-
+.tf-spacing-16 {
+    padding-top: 93px;
+    padding-bottom: 120px;
+}
 
 
 

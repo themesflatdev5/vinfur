@@ -74,7 +74,7 @@
                 if (imgURL) {
                     selectOption.attr(
                         "data-content",
-                        `<img src="${imgURL}" alt="Country" /> ${selectOption.text()}`
+                        `<img src="${imgURL}" alt="Country" /> ${selectOption.text()}`,
                     );
                 }
             });
@@ -124,7 +124,7 @@
                     if (title) {
                         const activeClass = isActive ? "active" : "";
                         $li.find(".sub-nav-menu").append(
-                            `<li><a href="${link}" class="sub-nav-link ${activeClass}">${title}</a></li>`
+                            `<li><a href="${link}" class="sub-nav-link ${activeClass}">${title}</a></li>`,
                         );
                     }
                 });
@@ -173,7 +173,7 @@
                                 $group
                                     .find(".sub-menu-level-2")
                                     .append(
-                                        `<li><a href="${linkHref}" class="sub-nav-link ${activeClass}">${title}</a></li>`
+                                        `<li><a href="${linkHref}" class="sub-nav-link ${activeClass}">${title}</a></li>`,
                                     );
                             }
                         });
@@ -187,7 +187,7 @@
                         const title = $(this).text().trim();
                         if (title !== "") {
                             $subNav.append(
-                                `<li><a href="${link}" class="sub-nav-link">${title}</a></li>`
+                                `<li><a href="${link}" class="sub-nav-link">${title}</a></li>`,
                             );
                         }
                     });
@@ -199,8 +199,8 @@
                     `<li class="nav-mb-item"><a href="${$item
                         .find("a")
                         .attr(
-                            "href"
-                        )}" class="mb-menu-link"><span>${text}</span></a></li>`
+                            "href",
+                        )}" class="mb-menu-link"><span>${text}</span></a></li>`,
                 );
             }
         });
@@ -212,30 +212,30 @@
     -------------------------------------------------------------------------*/
     var totalPriceVariant = function () {
         $(
-            ".tf-product-info-list,.tf-cart-item,.tf-mini-cart-item,.tf-sticky-btn-atc"
+            ".tf-product-info-list,.tf-cart-item,.tf-mini-cart-item,.tf-sticky-btn-atc",
         ).each(function () {
             var productItem = $(this);
             var basePrice =
                 parseFloat(
-                    productItem.find(".price-on-sale").data("base-price")
+                    productItem.find(".price-on-sale").data("base-price"),
                 ) ||
                 parseFloat(
                     productItem
                         .find(".price-on-sale")
                         .text()
                         .replace("$", "")
-                        .replace(/,/g, "")
+                        .replace(/,/g, ""),
                 );
             var quantityInput = productItem.find(".quantity-product");
             var personSale = parseFloat(
-                productItem.find(".number-sale").data("person-sale") || 5
+                productItem.find(".number-sale").data("person-sale") || 5,
             );
             var compareAtPrice = basePrice * (1 + personSale / 100);
 
             productItem.find(".compare-at-price").text(
                 `$${compareAtPrice.toLocaleString("en-US", {
                     minimumFractionDigits: 2,
-                })}`
+                })}`,
             );
             productItem.find(".color-btn, .size-btn").on("click", function () {
                 quantityInput.val(1);
@@ -263,18 +263,18 @@
                             .find(".price-on-sale")
                             .text()
                             .replace("$", "")
-                            .replace(/,/g, "")
+                            .replace(/,/g, ""),
                     );
                 var quantity = parseInt(
                     scope.find(".quantity-product").val(),
-                    10
+                    10,
                 );
                 var totalPrice = currentPrice * quantity;
 
                 scope.find(".price-add").text(
                     `$${totalPrice.toLocaleString("en-US", {
                         minimumFractionDigits: 2,
-                    })}`
+                    })}`,
                 );
             }
         });
@@ -299,7 +299,7 @@
                     icon.removeClass("icon-trash").addClass("icon-heart");
                     tooltip.text("Add to Wishlist");
                 }
-            }
+            },
         );
         $(".btn-add-wishlist2").on("click", function () {
             let $this = $(this);
@@ -373,10 +373,10 @@
     var estimateShipping = function () {
         if ($(".form-estimate-shipping").length) {
             const countrySelect = document.getElementById(
-                "shipping-country-form"
+                "shipping-country-form",
             );
             const provinceSelect = document.getElementById(
-                "shipping-province-form"
+                "shipping-province-form",
             );
             const zipcodeInput = document.getElementById("zipcode");
             const zipcodeMessage = document.getElementById("zipcode-message");
@@ -503,7 +503,7 @@
             let colIndex = $clickedCol.index();
             let $rows = $(".compare-row");
             let visibleCols = $(
-                ".compare-row:first .compare-col:visible"
+                ".compare-row:first .compare-col:visible",
             ).length;
 
             if (visibleCols > 4) {
@@ -669,25 +669,44 @@
             var total = 0;
 
             $(".list-file-delete .tf-mini-cart-item").each(function () {
-                var priceText = $(this).find(".tf-mini-card-price").text().replace("$", "").replace(",", "").trim();
+                var priceText = $(this)
+                    .find(".tf-mini-card-price")
+                    .text()
+                    .replace("$", "")
+                    .replace(",", "")
+                    .trim();
                 var price = parseFloat(priceText);
                 if (!isNaN(price)) {
                     total += price;
                 }
             });
 
-            var formatted = total.toLocaleString("en-US", { style: "currency", currency: "USD" });
+            var formatted = total.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+            });
             $(".tf-totals-total-value").text(formatted);
         }
 
         function updatePriceEach() {
             $(".each-prd").each(function () {
-                var priceText = $(this).find(".each-price").text().replace("$", "").replace(",", "").trim();
+                var priceText = $(this)
+                    .find(".each-price")
+                    .text()
+                    .replace("$", "")
+                    .replace(",", "")
+                    .trim();
                 var price = parseFloat(priceText);
-                var quantity = parseInt($(this).find(".quantity-product").val(), 10);
+                var quantity = parseInt(
+                    $(this).find(".quantity-product").val(),
+                    10,
+                );
                 if (!isNaN(price) && !isNaN(quantity)) {
                     var subtotal = price * quantity;
-                    var formatted = subtotal.toLocaleString("en-US", { style: "currency", currency: "USD" });
+                    var formatted = subtotal.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                    });
                     $(this).find(".each-subtotal-price").text(formatted);
                 }
             });
@@ -697,16 +716,27 @@
             var total = 0;
 
             $(".each-list-prd .each-prd").each(function () {
-                var priceText = $(this).find(".each-subtotal-price").text().replace("$", "").replace(",", "").trim();
+                var priceText = $(this)
+                    .find(".each-subtotal-price")
+                    .text()
+                    .replace("$", "")
+                    .replace(",", "")
+                    .trim();
                 var price = parseFloat(priceText);
-                var quantity = parseInt($(this).find(".quantity-product").val(), 10);
+                var quantity = parseInt(
+                    $(this).find(".quantity-product").val(),
+                    10,
+                );
 
                 if (!isNaN(price) && !isNaN(quantity)) {
                     total += price * quantity;
                 }
             });
 
-            var formatted = total.toLocaleString("en-US", { style: "currency", currency: "USD" });
+            var formatted = total.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+            });
             $(".each-total-price").text(formatted);
         }
 
@@ -714,7 +744,10 @@
             $(".wrap-empty_text").each(function () {
                 var $listEmpty = $(this);
                 var $textEmpty = $listEmpty.find(".box-text_empty");
-                var $otherChildren = $listEmpty.find(".list-empty").children().not(".box-text_empty");
+                var $otherChildren = $listEmpty
+                    .find(".list-empty")
+                    .children()
+                    .not(".box-text_empty");
                 var $boxEmpty = $listEmpty.find(".box-empty_clear");
                 if ($otherChildren.length > 0) {
                     $textEmpty.hide();
@@ -730,7 +763,11 @@
                 var $mainList = $(this);
 
                 $mainList.find(".clear-list-empty").on("click", function () {
-                    $mainList.find(".list-empty").children().not(".box-text_empty").remove();
+                    $mainList
+                        .find(".list-empty")
+                        .children()
+                        .not(".box-text_empty")
+                        .remove();
                     checkListEmpty();
                 });
             });
@@ -742,20 +779,27 @@
             updateTotalPrice();
         });
 
-        $(".list-file-delete,.each-prd").on("click", ".minus-quantity, .plus-quantity", function () {
-            var $quantityInput = $(this).siblings(".quantity-product");
-            var currentQuantity = parseInt($quantityInput.val(), 10);
+        $(".list-file-delete,.each-prd").on(
+            "click",
+            ".minus-quantity, .plus-quantity",
+            function () {
+                var $quantityInput = $(this).siblings(".quantity-product");
+                var currentQuantity = parseInt($quantityInput.val(), 10);
 
-            if ($(this).hasClass("plus-quantity")) {
-                $quantityInput.val(currentQuantity + 1);
-            } else if ($(this).hasClass("minus-quantity") && currentQuantity > 1) {
-                $quantityInput.val(currentQuantity - 1);
-            }
+                if ($(this).hasClass("plus-quantity")) {
+                    $quantityInput.val(currentQuantity + 1);
+                } else if (
+                    $(this).hasClass("minus-quantity") &&
+                    currentQuantity > 1
+                ) {
+                    $quantityInput.val(currentQuantity - 1);
+                }
 
-            updateTotalPrice();
-            updatePriceEach();
-            updateTotalPriceEach();
-        });
+                updateTotalPrice();
+                updatePriceEach();
+                updateTotalPriceEach();
+            },
+        );
 
         $(".remove").on("click", function (e) {
             e.preventDefault();
@@ -782,7 +826,6 @@
         updateTotalPriceEach();
     };
 
-
     /* Show Password 
     -------------------------------------------------------------------------*/
     var showPassword = function () {
@@ -801,6 +844,19 @@
         });
     };
 
+    /* Check Box Transfer Checkout Page
+    -------------------------------------------------------------------------*/
+    var checkOut = function () {
+        $("#checkout-btn").on("click", function () {
+            if ($("#agree-term").is(":checked")) {
+                window.location.href = "checkout.html";
+            } else {
+                alert(
+                    "Please agree to the Terms and Conditions before continuing.",
+                );
+            }
+        });
+    };
 
     // Dom Ready
     $(function () {
@@ -823,5 +879,6 @@
         handleSidebarFilter();
         deleteFile();
         showPassword();
+        checkOut();
     });
 })(jQuery);

@@ -885,3 +885,93 @@
         }
     }
 }
+
+.s-thankyou {
+
+    .thank-wrap {
+        margin-bottom: 40px;
+    }
+
+    .delivery-progress,
+    .box-ship-address {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    @include res(lg) {
+        .thank-wrap {
+            margin-bottom: 60px;
+        }
+
+        .delivery-progress,
+        .box-ship-address {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+    }
+
+
+    @include res(xl, min) {
+        .thank-wrap {
+            margin-bottom: 116px;
+        }
+
+        .delivery-progress {
+            margin-top: 100px;
+            margin-bottom: 80px;
+        }
+
+        .box-ship-address {
+            margin-top: 64px;
+            margin-bottom: 64px;
+        }
+    }
+
+}
+
+.banner_countdown-v3 {
+    background-color: var(--bg-24);
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 60px 15px;
+    background-image: url(../images/sections/banner-countdown-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .bn_content {
+        text-align: center;
+       
+    }
+
+    .text-top {
+        margin-bottom: 16px;
+    }
+
+    .title {
+        margin-bottom: 12px;
+    }
+
+    .sub-title {
+        margin-bottom: 25px;
+    }
+
+    @include res(xl, min) {
+        padding: 60px;
+        gap: 60px;
+
+        .sub-title {
+            margin-bottom: 40px;
+        }
+    }
+
+    @include res(xxl, min) {
+        padding: 70px 68px 69px 68px;
+        gap: 104px;
+    }
+
+    @include res(md) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

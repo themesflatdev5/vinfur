@@ -310,6 +310,75 @@
     }
 }
 
+.count-down_v02 {
+    background-color: var(--White);
+
+    .countdown__timer {
+        display: inline-flex;
+        gap: 2px;
+        padding: 16px 32px;
+        border: 1px solid #FFFFFF66;
+    }
+
+    .countdown__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        min-width: 40px;
+
+        &:last-child {
+
+            @include res(xxl, min) {
+                min-width: 50px;
+            }
+
+            @include res(xxxl, min) {
+                min-width: 60px;
+            }
+        }
+    }
+
+    .countdown__value {
+        font-size: clamp(30px, 3vw, 48px);
+        line-height: clamp(40px, 3.5vw, 60px);
+        color: var(--primary);
+        font-weight: 500;
+    }
+
+    .countdown__custom {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 100%;
+        text-align: center;
+        text-transform: capitalize;
+        margin-top: 14px;
+        min-width: 10px;
+
+        @include res(sm, min) {
+            min-width: 25px;
+        }
+
+        @include res(xl, min) {
+            .countdown__custom {
+                margin-top: 15px;
+            }
+        }
+
+        @include res(xxl, min) {
+            line-height: 30px;
+        }
+    }
+
+
+    .countdown__label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+}
+
 .colection-item {
     &.style-1 {
         position: relative;
@@ -442,5 +511,281 @@
         i {
             font-size: 40px;
         }
+    }
+}
+
+.sidebar-account-wrap {
+    @include res(xxl, min) {
+        padding-left: 96px;
+    }
+}
+
+.box-check {
+    padding: 20px 15px;
+    @include flex(center, center);
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid var(--Line);
+
+    .number {
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background-color: var(--Primary);
+        color: var(--White);
+    }
+
+    .name-type {
+        font-weight: normal;
+        text-transform: uppercase;
+        @include flex(center, center);
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+
+    &:hover {
+        color: var(--Primary);
+        border-color: var(--Primary);
+    }
+
+    @include res(xl, min) {
+        padding: 40px;
+
+        .number {
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.box-check-list {
+    display: flex;
+    gap: 24px;
+
+    >* {
+        width: 100%;
+    }
+
+    @include res(sm) {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+.my-account-nav {
+    display: grid;
+
+    .link-account {
+        padding: 15px;
+        text-transform: uppercase;
+        width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+
+        &:hover,
+        &.active {
+            background-color: var(--Secondary);
+            color: var(--White);
+
+        }
+    }
+
+    .text {
+        max-width: 220px;
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    @include res(xl, min) {
+        max-width: 357px;
+        width: 100%;
+    }
+}
+
+.my-acount-content {
+    .heading {
+        margin-bottom: 24px;
+        text-transform: uppercase;
+    }
+
+    @include res(xl, min) {
+        max-width: 912px;
+        width: 100%;
+    }
+}
+
+.account-dashboard {
+    .heading {
+        text-transform: none;
+    }
+
+    >* {
+        &:not(:last-child, .heading) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .banner_V02 {
+        .title {
+            font-size: clamp(24px, 2.8vw, 32px);
+            line-height: clamp(28px, 3.5vw, 42px);
+            margin-bottom: 12px;
+        }
+    }
+
+    @include res(lg, min) {
+        .banner_V02 {
+            .bn-content {
+                padding: 60px 15px;
+            }
+        }
+    }
+
+    @include res(xl, min) {
+        >* {
+            &:not(:last-child, .heading) {
+                margin-bottom: 48px;
+            }
+        }
+
+        .banner_V02 {
+            .bn-content {
+                padding: 68px 59px 71px 60px;
+            }
+        }
+    }
+}
+
+.account-order {
+    &.empty {
+        @include flex(center, center);
+        flex-direction: column;
+        text-align: center;
+
+        .title {
+            margin-bottom: 16px;
+        }
+    }
+
+    .ic-img {
+        margin-bottom: 0px;
+    }
+
+    .title {
+        text-transform: uppercase;
+        // margin-bottom: 16px;
+    }
+
+    .sub-title {
+        color: var(--main-4);
+        margin-bottom: 16px;
+    }
+
+    @include res(xl, min) {
+        &.empty {
+            max-width: 623px;
+            width: 100%;
+        }
+
+        .ic-img {
+            margin-bottom: 40px;
+        }
+
+        .title {
+            // margin-bottom: 16px;
+        }
+
+        .sub-title {
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.table-order-history {
+    text-align: center;
+    overflow: auto;
+    white-space: nowrap;
+
+    .title-case {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0px;
+    }
+
+
+    thead {
+        background-color: var(--Line);
+    }
+
+
+    tr {
+        th {
+            &:not(:first-child) {
+                border-left: 1px solid var(--White);
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            background-color: transparent;
+            border-bottom: 1px solid var(--Line);
+        }
+    }
+
+    .btn-action {
+        font-size: clamp(20px, 2.8vw, 32px);
+        display: flex;
+        justify-content: center;
+    }
+
+    td {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    @include res(xl, min) {
+
+        td {
+            padding: 16px 0px 15px;
+            vertical-align: middle;
+        }
+
+        th {
+            padding: 16px;
+        }
+
+        th,
+        td {
+            text-align: center;
+
+            &:nth-child(1) {
+                width: 196px;
+            }
+
+            &:nth-child(2) {
+                width: 234px;
+            }
+
+            &:nth-child(3) {
+                width: 162px;
+            }
+
+            &:nth-child(4) {
+                width: 169px;
+            }
+
+            &:nth-child(5) {
+                width: 150px;
+            }
+        }
+
     }
 }
