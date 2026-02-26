@@ -414,6 +414,10 @@ input {
     line-height: normal;
 }
 
+button{
+    background-color: transparent;
+}
+
 button,
 input,
 select,
@@ -1018,7 +1022,7 @@ a {
 /* grid-layout
 -------------------------------------------------------------- */
 .tf-grid-layout {
-    --spacing: 30px;
+    --spacing: 15px;
     display: grid;
     column-gap: var(--spacing);
     row-gap: var(--spacing);
@@ -1056,8 +1060,9 @@ a {
         grid-column: 1 / -1;
     }
 
-    .wd-full {
+    .wd-full  {
         grid-column: 1/-1;
+        display: flex;
     }
 
     &.gap30 {

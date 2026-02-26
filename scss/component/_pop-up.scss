@@ -163,6 +163,88 @@
     }
 }
 
+.modal-order-detail {
+    .modal-dialog {
+        max-width: 1125px;
+    }
+
+    .modal-top {
+        margin-bottom: 24px;
+    }
+
+    .modal-content {
+        padding: 30px 15px;
+    }
+
+    .list-infor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 24px;
+
+        .br-line {
+            height: 16px;
+            width: 1px;
+            background-color: var(--Line);
+        }
+
+        @include res(xl, min) {
+            gap: 15px;
+        }
+    }
+
+    tr:not(:last-child) {
+        border-bottom: 1px solid var(--Line);
+    }
+
+    .order-total-wrap {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .text,
+        .order-total {
+            padding-left: 24px;
+        }
+
+        .text {
+            max-width: 183px;
+            width: 100%;
+        }
+
+        .order-total {
+            max-width: 220px;
+            width: 100%;
+        }
+    }
+
+    @include res(lg, min) {
+        .modal-content {
+            padding: 32px;
+        }
+    }
+
+    @include res(xl, min) {
+        .list-infor {
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .modal-top {
+            margin-bottom: 48px;
+        }
+
+        .order-total-wrap {
+            margin-top: 32px;
+            margin-bottom: 64px;
+        }
+    }
+}
+
 .modal-quick-view {
     .icon-close-popup {
         font-size: 24px;

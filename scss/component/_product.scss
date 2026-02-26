@@ -5,6 +5,31 @@
     flex-direction: column;
     gap: 18px;
     @include transition3;
+    position: relative;
+
+    .remove {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: 21;
+        cursor: pointer;
+        border: 1px solid var(--Line);
+        font-size: 10px;
+        background-color: var(--White);
+        padding: 9px;
+        @include transition3;
+
+        &:hover {
+            background-color: var(--Primary);
+            color: var(--White);
+            border-color: var(--Primary);
+        }
+
+        @include res(xl, min) {
+            top: 20px;
+            left: 20px;
+        }
+    }
 
     .product-btn_quick {
         position: absolute;
@@ -30,6 +55,12 @@
 
             @include res(sm) {
                 padding: 0 15px;
+                height: 36px;
+                font-size: 14px;
+
+                i {
+                    font-size: 18px;
+                }
             }
         }
     }
@@ -488,6 +519,12 @@
         &:hover {
             background-color: var(--Black);
             color: var(--White);
+        }
+
+        @include res(sm) {
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
         }
     }
 

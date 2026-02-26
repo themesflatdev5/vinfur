@@ -499,8 +499,8 @@
 
         function updatePagination() {
             if ($(".meta-filter-shop").hasClass("active") == true) {
-                $("#listLayout .wd-full").css("display", "none");
-                $("#gridLayout .wd-full").css("display", "none");
+                $("#listLayout .wd-load").css("display", "none");
+                $("#gridLayout .wd-load").css("display", "none");
             }
         }
         function updateMetaFilter() {
@@ -803,7 +803,7 @@
                 else $(this).hide();
             });
 
-            const $wdFullGrid = $gridLayout.find(".wd-full");
+            const $wdFullGrid = $gridLayout.find(".wd-load");
             if (gridItems.length <= maxItems) $wdFullGrid.hide();
             else $wdFullGrid.css("display", "flex");
         }

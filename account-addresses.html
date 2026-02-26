@@ -585,7 +585,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="account-orders-empty.html" class="link-account active">
+                                        <a href="account-orders.html" class="link-account ">
                                             <span class="text">My Orders</span>
                                         </a>
                                     </li>
@@ -595,7 +595,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="account-addresses.html" class="link-account">
+                                        <a href="account-addresses.html" class="link-account active">
                                             <span class="text">Addresses</span>
                                         </a>
                                     </li>
@@ -609,60 +609,192 @@
                             </div>
                         </div>
                         <div class="col-lg-8">
-                            <div class="my-acount-content account-order">
+                            <div class="my-acount-content account-order" id="updateCountMain">
                                 <h4 class="heading fw-normal">
-                                    Order History
+                                    your addresses (<span class="count_text">2</span>)
                                 </h4>
-                                <div class="table-order-history">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th class="title-case order_code">ORDER ID</th>
-                                                <th class="title-case order_date">ORDER DATE</th>
-                                                <th class="title-case order_status">STATUS</th>
-                                                <th class="title-case order_total">TOTAL</th>
-                                                <th class="title-case order_action">ACTION</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>#1001</td>
-                                                <td>27 Mar 2025</td>
-                                                <td class="order_status delivered">Delivered</td>
-                                                <td>$870.00 / 4 items</td>
-                                                <td>
-                                                    <a href="#orderDetail" data-bs-toggle="modal"
-                                                        class="btn-action link">
-                                                        <i class="icon icon-view"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>#1002</td>
-                                                <td>29 Mar 2025</td>
-                                                <td class="order_status delivered">Delivered</td>
-                                                <td>$80.00 / 1 items</td>
-                                                <td>
-                                                    <a href="#orderDetail" data-bs-toggle="modal"
-                                                        class="btn-action link">
-                                                        <i class="icon icon-view"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>#1003</td>
-                                                <td>30 Mar 2025</td>
-                                                <td class="order_status delivered onTheWay">On the way</td>
-                                                <td>$690.00 / 3 items</td>
-                                                <td>
-                                                    <a href="#orderDetail" data-bs-toggle="modal"
-                                                        class="btn-action link">
-                                                        <i class="icon icon-view"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="widget-inner-address">
+                                    <button class="tf-btn btn-bg-secondary animate-btn fw-medium btn-add-address">
+                                        Add new address
+                                    </button>
+                                    <form class="wd-form-address style-border show-form-address">
+                                        <div class="form-content-2">
+                                            <div class="cols tf-grid-layout sm-col-2">
+                                                <fieldset>
+                                                    <label class="text-label">First Name</label>
+                                                    <input type="text" required>
+                                                </fieldset>
+                                                <fieldset>
+                                                    <label class="text-label">Last Name</label>
+                                                    <input type="text" required>
+                                                </fieldset>
+                                            </div>
+                                            <fieldset>
+                                                <label class="text-label">Company</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">Address 1</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">City</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">Country/region</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">Province</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">Postal/ZIP code</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">Phone</label>
+                                                <input type="number" required>
+                                            </fieldset>
+                                            <div class="checkbox-wrap">
+                                                <input id="set-def-1" type="checkbox" class="tf-check type-20 p-0">
+                                                <label for="set-def-1" class="text-body-default">Set as default
+                                                    address</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="group-btn-form">
+                                            <button class="tf-btn btn-bg-secondary text-uppercase fw-medium animate-btn"
+                                                type="submit">
+                                                Add Address
+                                            </button>
+                                            <a href="javascript:void(0);"
+                                                class="tf-btn btn-border animate-btn animate-dark btn-hide-address">
+                                                Cancel
+                                            </a>
+                                        </div>
+                                    </form>
+                                    <ul class="list-account-address tf-grid-layout md-col-2">
+                                        <li class="account-address-item count_item">
+                                            <p class="title">
+                                                15 Yarran st (Default address)
+                                            </p>
+                                            <div class="info-detail">
+                                                <div class="box-infor">
+                                                    <span>Vincent Pham</span>
+                                                    <span>account@vemus.com</span>
+                                                    <span>Company</span>
+                                                    <span>16 Yarran st</span>
+                                                    <span>Punchbowl</span>
+                                                    <span>Australia</span>
+                                                    <span>2196</span>
+                                                    <span>+61 1234 3435</span>
+                                                </div>
+                                                <div class="box-btn">
+                                                    <button
+                                                        class="tf-btn btn-border text-uppercase btn-px-40 btn-h-52 animate-btn animate-dark btn-edit-address"
+                                                        data-form="form-edit-1">
+                                                        Edit
+                                                    </button>
+                                                    <button
+                                                        class="tf-btn btn-border text-uppercase btn-px-40 btn-h-52 animate-btn animate-dark fw-medium btn-delete-address count_del"
+                                                        data-form="form-edit-1">
+                                                        Delete
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                        <li class="account-address-item count_item">
+                                            <p class="title">
+                                                155 GEORGE st
+                                            </p>
+                                            <div class="info-detail">
+                                                <div class="box-infor">
+                                                    <span>Mas Shin</span>
+                                                    <span>shin@vemus.com</span>
+                                                    <span>Company</span>
+                                                    <span>25 Maple Ave</span>
+                                                    <span>Bankstown</span>
+                                                    <span>Australia</span>
+                                                    <span>2200</span>
+                                                    <span>+61 412 567 890</span>
+                                                </div>
+                                                <div class="box-btn">
+                                                    <button
+                                                        class="tf-btn btn-border text-uppercase btn-px-40 btn-h-52 animate-btn animate-dark btn-edit-address"
+                                                        data-form="form-edit-2">
+                                                        Edit
+                                                    </button>
+                                                    <button
+                                                        class="tf-btn btn-border text-uppercase btn-px-40 btn-h-52 animate-btn animate-dark fw-medium btn-delete-address count_del"
+                                                        data-form="form-edit-2">
+                                                        Delete
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <form class="wd-form-address style-border edit-form-address">
+                                        <div class="form-content-2">
+                                            <div class="cols tf-grid-layout sm-col-2">
+                                                <fieldset>
+                                                    <label class="text-label">First Name</label>
+                                                    <input type="text" required>
+                                                </fieldset>
+                                                <fieldset>
+                                                    <label class="text-label">Last Name</label>
+                                                    <input type="text" required>
+                                                </fieldset>
+                                            </div>
+                                            <fieldset>
+                                                <label class="text-label">Company</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">Address 1</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">City</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">Country/region</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">Province</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">Postal/ZIP code</label>
+                                                <input type="text" required>
+                                            </fieldset>
+                                            <fieldset>
+                                                <label class="text-label">Phone</label>
+                                                <input type="number" required>
+                                            </fieldset>
+                                            <div class="checkbox-wrap">
+                                                <input id="set-def-2" type="checkbox" class="tf-check type-20 p-0">
+                                                <label for="set-def-2" class="text-body-default">Set as default
+                                                    address</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="group-btn-form">
+                                            <button class="tf-btn btn-bg-secondary text-uppercase animate-btn"
+                                                type="submit">
+                                                Update
+                                            </button>
+                                            <a href="javascript:void(0);"
+                                                class="tf-btn btn-border animate-btn animate-dark btn-hide-edit-address">
+                                                Cancel
+                                            </a>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -909,107 +1041,6 @@
         </div>
     </div>
     <!-- /Mobile Menu -->
-
-    <!-- Order Detail -->
-    <div class="modal modalCentered fade modal-order-detail" id="orderDetail">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <span class="icon-close-popup" data-bs-dismiss="modal">
-                    <i class="icon-close"></i>
-                </span>
-                <div class="modal-top">
-                    <h3 class="title fw-normal text-uppercase">Order Detail</h3>
-                </div>
-                <div class="modal-body">
-                    <ul class="list-infor">
-                        <li class="order_id">#1001</li>
-                        <li class="br-line"></li>
-                        <li class="order_date">27 MAY 2025</li>
-                        <li class="br-line"></li>
-                        <li class="order_item">6 ITEMS</li>
-                        <li class="br-line"></li>
-                        <li class="order_status delivered">DELIVERED</li>
-                    </ul>
-                    <div class="table-order-detail account">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="order_product h6 fw-normal">Product</th>
-                                    <th class="order_price h6 fw-normal">price</th>
-                                    <th class="order_quantity h6 fw-normal">quantity</th>
-                                    <th class="order_subtotal h6 fw-normal text-start">subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="order_product">
-                                        <a href="product-default.html" class="image">
-                                            <img src="images/products/product-1.jpg" alt="Product">
-                                        </a>
-                                        <div class="infor">
-                                            <a href="product-default.html" class="prd-name h6 fw-normal link">
-                                                Hudson Dining Table
-                                            </a>
-                                            <p class="prd-type text-caption-1">8-Seater / Dark Walnut</p>
-                                        </div>
-                                    </td>
-                                    <td class="order_price h6 fw-4">$130.00</td>
-                                    <td class="order_quantity h6 fw-4">2</td>
-                                    <td class="order_subtotal h6 fw-4 text-start">$260.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="order_product">
-                                        <a href="product-default.html" class="image">
-                                            <img src="images/products/product-2.jpg" alt="Product">
-                                        </a>
-                                        <div class="infor">
-                                            <a href="product-default.html" class="prd-name h6 fw-normal link">
-                                                Luna Bed Frame
-                                            </a>
-                                            <p class="prd-type">King / Matte Black</p>
-                                        </div>
-                                    </td>
-                                    <td class="order_price h6 fw-4">$130.00</td>
-                                    <td class="order_quantity h6 fw-4">2</td>
-                                    <td class="order_subtotal h6 fw-4 text-start">$260.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="order_product">
-                                        <a href="product-default.html" class="image">
-                                            <img src="images/products/product-3.jpg" alt="Product">
-                                        </a>
-                                        <div class="infor">
-                                            <a href="product-default.html" class="prd-name h6 fw-normal link">
-                                                Ball Bracelet
-                                            </a>
-                                            <p class="prd-type">King / Matte Black</p>
-                                        </div>
-                                    </td>
-                                    <td class="order_price h6 fw-4">$130.00</td>
-                                    <td class="order_quantity h6 fw-4">2</td>
-                                    <td class="order_subtotal h6 fw-4 text-start">$260.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="order-total-wrap">
-                        <h5 class="text fw-normal text-uppercase">Total:</h5>
-                        <h5 class="order-total fw-normal">$780.00</h5>
-                    </div>
-
-                    <p class="privacy text-main-4 text-center text_body-color-1">
-                        Not happy with the order? You can
-                        <a href="#" class="hover-underline-link text_secondary-color">
-                            <span class="text-body">
-                                Request a free return
-                            </span>
-                        </a> in 14 days
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Order Detail -->
 
 
     <!-- quick-view -->

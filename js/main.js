@@ -858,6 +858,139 @@
         });
     };
 
+    /* Height Table 
+    -------------------------------------------------------------------------*/
+    var heightTable = function () {
+        function updateTableHeight() {
+            const $originalModal = $("#orderDetail");
+
+            const $clone = $originalModal
+                .clone()
+                .css({
+                    display: "block",
+                    visibility: "hidden",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    zIndex: -1,
+                })
+                .appendTo("body");
+
+            const $tableWrapper = $clone.find(".table-order-detail");
+            const $table = $tableWrapper.find("table");
+            const $thead = $table.find("thead");
+            const $rows = $table.find("tbody tr");
+
+            let totalRowHeight = 0;
+            for (let i = 0; i < Math.min(2, $rows.length); i++) {
+                totalRowHeight += $rows.eq(i).outerHeight();
+            }
+
+            const theadHeight = $thead.outerHeight();
+            const maxHeight = totalRowHeight + theadHeight;
+
+            $originalModal
+                .find(".table-order-detail")
+                .css("max-height", maxHeight + 1 + "px");
+
+            $clone.remove();
+        }
+
+        updateTableHeight();
+
+        $(window).on("resize", updateTableHeight);
+    };
+
+    /* Toggle Control
+    -------------------------------------------------------------------------*/
+    var clickControl = function () {
+        const $showForm = $(".show-form-address");
+        const $editForm = $(".edit-form-address");
+
+        $(".btn-add-address").on("click", function () {
+            const isVisible = $showForm.is(":visible");
+
+            if (isVisible) {
+                $showForm.hide();
+            } else {
+                $showForm.show();
+                $editForm.hide().removeClass("show");
+                $(".account-address-item").removeClass("editing");
+            }
+        });
+
+        $(".btn-hide-address").on("click", function () {
+            $showForm.hide();
+        });
+
+        $(".btn-delete-address").on("click", function () {
+            const $item = $(this).closest(".account-address-item");
+            $item.remove();
+            if ($item.hasClass("editing")) {
+                $editForm.hide().removeClass("show");
+            }
+        });
+
+        $(".btn-edit-address").on("click", function () {
+            const $item = $(this).closest(".account-address-item");
+            const isEditing = $item.hasClass("editing");
+
+            $showForm.hide();
+
+            if (isEditing) {
+                $editForm.hide().removeClass("show");
+                $item.removeClass("editing");
+            } else {
+                $editForm.show().addClass("show");
+                $(".account-address-item").removeClass("editing");
+                $item.addClass("editing");
+            }
+        });
+
+        $(".btn-hide-edit-address").on("click", function () {
+            $editForm.hide().removeClass("show");
+            $(".account-address-item").removeClass("editing");
+        });
+    };
+
+    /* Delete Wishlist
+    ----------------------------------------------------------------------------*/
+    var deleteWishList = function () {
+        function checkEmpty() {
+            var $wishlistInner = $(".wrapper-wishlist");
+            var productCount = $(".wrapper-wishlist .card-product").length;
+            var $sRecently = $(".s-recently");
+            $wishlistInner.find(".tf-wishlist-empty").remove();
+
+            if (productCount <= 11) {
+                $(".wrapper-wishlist .wd-full").hide();
+            } else {
+                $(".wrapper-wishlist .wd-full").show();
+            }
+
+            if (productCount === 0) {
+                $wishlistInner.append(`
+                    <div class="tf-wishlist-empty text-center">
+                        <p class="text-notice h6">NO PRODUCTS WERE ADDED TO THE WISHLIST.</p>
+                        <a href="shop-style-01.html" class="tf-btn animate-btn btn-bg-secondary btn-px-40 btn-h-52 btn-back-shop">BACK TO SHOPPING</a>
+                    </div>
+                `);
+                $sRecently.removeClass("d-none");
+            } else {
+                $wishlistInner.find(".tf-wishlist-empty").remove();
+            }
+        }
+
+        $(".remove").on("click", function (e) {
+            e.preventDefault();
+            var $this = $(this);
+            $this.closest(".card-product").remove();
+            checkEmpty();
+        });
+
+        checkEmpty();
+    };
+
     // Dom Ready
     $(function () {
         variantPicker();
@@ -880,5 +1013,8 @@
         deleteFile();
         showPassword();
         checkOut();
+        heightTable();
+        clickControl();
+        deleteWishList();
     });
 })(jQuery);

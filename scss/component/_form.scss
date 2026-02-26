@@ -428,6 +428,31 @@ form {
     }
 }
 
+
+.wd-form-address {
+    padding: 30px 15px;
+    border: 1px solid var(--Line);
+
+    .text-label {
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-style: 16px;
+        line-height: 24px;
+    }
+
+    .form-content-2 {
+        margin-bottom: 25px;
+    }
+
+    @include res(xl, min) {
+        padding: 32px;
+
+        .form-content-2 {
+            margin-bottom: 40px;
+        }
+    }
+}
+
 .feedback-sidebar {
     padding: 20px 15px;
     border: 1px solid var(--Line);

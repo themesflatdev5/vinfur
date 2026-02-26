@@ -474,6 +474,10 @@ input {
   line-height: normal;
 }
 
+button {
+  background-color: transparent;
+}
+
 button,
 input,
 select,
@@ -1042,7 +1046,7 @@ a:focus, a:hover {
 /* grid-layout
 -------------------------------------------------------------- */
 .tf-grid-layout {
-  --spacing: 30px;
+  --spacing: 15px;
   display: grid;
   column-gap: var(--spacing);
   row-gap: var(--spacing);
@@ -1074,6 +1078,7 @@ a:focus, a:hover {
 }
 .tf-grid-layout .wd-full {
   grid-column: 1/-1;
+  display: flex;
 }
 .tf-grid-layout.gap30 {
   gap: 30px;
@@ -3913,6 +3918,28 @@ form .form-content-2 {
   color: var(--Secondary);
 }
 
+.wd-form-address {
+  padding: 30px 15px;
+  border: 1px solid var(--Line);
+}
+.wd-form-address .text-label {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-style: 16px;
+  line-height: 24px;
+}
+.wd-form-address .form-content-2 {
+  margin-bottom: 25px;
+}
+@media (min-width: 1200px) {
+  .wd-form-address {
+    padding: 32px;
+  }
+  .wd-form-address .form-content-2 {
+    margin-bottom: 40px;
+  }
+}
+
 .feedback-sidebar {
   padding: 20px 15px;
   border: 1px solid var(--Line);
@@ -4465,6 +4492,74 @@ form .form-content-2 {
 .modal .modal-content {
   cursor: default !important;
   border-radius: 0px;
+}
+
+.modal-order-detail .modal-dialog {
+  max-width: 1125px;
+}
+.modal-order-detail .modal-top {
+  margin-bottom: 24px;
+}
+.modal-order-detail .modal-content {
+  padding: 30px 15px;
+}
+.modal-order-detail .list-infor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.modal-order-detail .list-infor .br-line {
+  height: 16px;
+  width: 1px;
+  background-color: var(--Line);
+}
+@media (min-width: 1200px) {
+  .modal-order-detail .list-infor {
+    gap: 15px;
+  }
+}
+.modal-order-detail tr:not(:last-child) {
+  border-bottom: 1px solid var(--Line);
+}
+.modal-order-detail .order-total-wrap {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.modal-order-detail .order-total-wrap .text,
+.modal-order-detail .order-total-wrap .order-total {
+  padding-left: 24px;
+}
+.modal-order-detail .order-total-wrap .text {
+  max-width: 183px;
+  width: 100%;
+}
+.modal-order-detail .order-total-wrap .order-total {
+  max-width: 220px;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .modal-order-detail .modal-content {
+    padding: 32px;
+  }
+}
+@media (min-width: 1200px) {
+  .modal-order-detail .list-infor {
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .modal-order-detail .modal-top {
+    margin-bottom: 48px;
+  }
+  .modal-order-detail .order-total-wrap {
+    margin-top: 32px;
+    margin-bottom: 64px;
+  }
 }
 
 .modal-quick-view .icon-close-popup {
@@ -6517,6 +6612,13 @@ form .form-content-2 {
   gap: 12px 20px;
 }
 
+.order_status.delivered {
+  color: #008A00;
+}
+.order_status.onTheWay {
+  color: #005982;
+}
+
 .table-shop-cart::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -6570,7 +6672,7 @@ form .form-content-2 {
   transition: all 0.3s ease;
 }
 .table-order-detail.account {
-  border-bottom: 1px solid var(--main);
+  border-bottom: 1px solid var(--Secondary);
 }
 .table-order-detail.account::-webkit-scrollbar-thumb {
   background-color: #AEAEAE;
@@ -6578,6 +6680,15 @@ form .form-content-2 {
 .table-order-detail.account tr,
 .table-order-detail.account td {
   padding: 24px;
+}
+.table-order-detail.account thead {
+  border-bottom: unset;
+}
+.table-order-detail.account thead th {
+  background: #EBEBEB;
+}
+.table-order-detail.account thead th:not(:first-child) {
+  border-left: 1px solid var(--White);
 }
 .table-order-detail::-webkit-scrollbar {
   width: 100%;
@@ -7116,6 +7227,83 @@ form .form-content-2 {
   }
 }
 
+.account-address-item {
+  border: 1px solid var(--Line);
+  font-size: 16px;
+  line-height: 24px;
+}
+.account-address-item .title {
+  padding: 15px;
+  border-bottom: 1px solid var(--Line);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.account-address-item .info-detail {
+  padding: 20px 15px;
+  display: grid;
+  gap: 24px;
+}
+.account-address-item .box-infor {
+  display: grid;
+  gap: 12px;
+  color: var(--Body-text-1);
+}
+.account-address-item .box-btn {
+  display: flex;
+  gap: 12px;
+}
+.account-address-item.editing .title {
+  background-color: var(--Primary);
+  color: var(--White);
+  border-color: var(--Primary);
+}
+@media (min-width: 1200px) {
+  .account-address-item .info-detail {
+    padding: 23px;
+  }
+  .account-address-item .title {
+    padding: 15px 23px;
+  }
+}
+
+.show-form-address,
+.edit-form-address {
+  display: none;
+}
+
+.widget-inner-address .btn-add-address,
+.widget-inner-address .wd-form-address {
+  margin-bottom: 30px;
+}
+@media (min-width: 1200px) {
+  .widget-inner-address .btn-add-address,
+  .widget-inner-address .wd-form-address {
+    margin-bottom: 48px;
+  }
+}
+
+.edit-form-address {
+  margin-top: 30px;
+}
+@media (min-width: 1200px) {
+  .edit-form-address {
+    margin-top: 48px;
+  }
+}
+
+.tf-wishlist-empty {
+  grid-column: 1/-1;
+  width: 100%;
+}
+.tf-wishlist-empty .text-notice {
+  margin-bottom: 32px;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
 /*------------ map ---------------- */
 /* ---------------------------------------------------------
     * Name: 
@@ -7185,6 +7373,34 @@ form .form-content-2 {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  position: relative;
+}
+.card-product .remove {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 21;
+  cursor: pointer;
+  border: 1px solid var(--Line);
+  font-size: 10px;
+  background-color: var(--White);
+  padding: 9px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.card-product .remove:hover {
+  background-color: var(--Primary);
+  color: var(--White);
+  border-color: var(--Primary);
+}
+@media (min-width: 1200px) {
+  .card-product .remove {
+    top: 20px;
+    left: 20px;
+  }
 }
 .card-product .product-btn_quick {
   position: absolute;
@@ -7214,6 +7430,11 @@ form .form-content-2 {
 @media (max-width: 575px) {
   .card-product .product-btn_quick .tf-btn {
     padding: 0 15px;
+    height: 36px;
+    font-size: 14px;
+  }
+  .card-product .product-btn_quick .tf-btn i {
+    font-size: 18px;
   }
 }
 .card-product .name-product {
@@ -7577,6 +7798,13 @@ form .form-content-2 {
 .product-action_list .box-icon:hover {
   background-color: var(--Black);
   color: var(--White);
+}
+@media (max-width: 575px) {
+  .product-action_list .box-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
 }
 .product-action_list .icon {
   font-size: 20px;
@@ -10913,6 +11141,11 @@ form .form-content-2 {
   width: 100%;
   font-size: 16px;
   line-height: 24px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .my-account-nav .link-account:hover, .my-account-nav .link-account.active {
   background-color: var(--Secondary);
@@ -10984,7 +11217,6 @@ form .form-content-2 {
   text-transform: uppercase;
 }
 .account-order .sub-title {
-  color: var(--main-4);
   margin-bottom: 16px;
 }
 @media (min-width: 1200px) {

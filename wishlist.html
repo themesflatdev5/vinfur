@@ -561,10 +561,10 @@
 
         <!-- page-title -->
         <div class="tf-page-title">
-            <h2 class="text-center text-uppercase title">my account</h2>
+            <h2 class="text-center text-uppercase title">Wishlist</h2>
             <ul class="breadcrumb-list">
                 <li><a href="index.html">Home</a></li>
-                <li>my account</li>
+                <li>Wishlist</li>
             </ul>
         </div>
         <!-- /page-title -->
@@ -572,104 +572,1213 @@
         <!-- main-content -->
         <div class="main-content">
 
-            <!-- Account -->
-            <div class="tf-spacing-1">
-                <div class="tf-container w-1690">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="sidebar-account-wrap sidebar-content-wrap sticky-top d-lg-block d-none">
-                                <ul class="my-account-nav">
-                                    <li>
-                                        <a href="account-page.html" class="link-account">
-                                            <span class="text">Dashboard</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="account-orders-empty.html" class="link-account active">
-                                            <span class="text">My Orders</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="wishlist.html" class="link-account">
-                                            <span class="text">My Wishlist</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="account-addresses.html" class="link-account">
-                                            <span class="text">Addresses</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="index.html" class="link-account">
-                                            <span class="text">Log Out</span>
-                                        </a>
-                                    </li>
-                                </ul>
+            <div class="tf-container tf-spacing-1">
+                <div class="wrapper-wishlist  tf-grid-layout tf-col-2 md-col-3 xl-col-4">
+                    <!-- Product 1 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock" data-category="chair"
+                        data-room="living" data-material="wood" data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-1.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-1-1.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="col-lg-8">
-                            <div class="my-acount-content account-order">
-                                <h4 class="heading fw-normal">
-                                    Order History
-                                </h4>
-                                <div class="table-order-history">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th class="title-case order_code">ORDER ID</th>
-                                                <th class="title-case order_date">ORDER DATE</th>
-                                                <th class="title-case order_status">STATUS</th>
-                                                <th class="title-case order_total">TOTAL</th>
-                                                <th class="title-case order_action">ACTION</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>#1001</td>
-                                                <td>27 Mar 2025</td>
-                                                <td class="order_status delivered">Delivered</td>
-                                                <td>$870.00 / 4 items</td>
-                                                <td>
-                                                    <a href="#orderDetail" data-bs-toggle="modal"
-                                                        class="btn-action link">
-                                                        <i class="icon icon-view"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>#1002</td>
-                                                <td>29 Mar 2025</td>
-                                                <td class="order_status delivered">Delivered</td>
-                                                <td>$80.00 / 1 items</td>
-                                                <td>
-                                                    <a href="#orderDetail" data-bs-toggle="modal"
-                                                        class="btn-action link">
-                                                        <i class="icon icon-view"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>#1003</td>
-                                                <td>30 Mar 2025</td>
-                                                <td class="order_status delivered onTheWay">On the way</td>
-                                                <td>$690.00 / 3 items</td>
-                                                <td>
-                                                    <a href="#orderDetail" data-bs-toggle="modal"
-                                                        class="btn-action link">
-                                                        <i class="icon icon-view"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">Core
+                                Chair</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock" data-category="chair"
+                        data-room="living" data-material="wood" data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-2.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-2-1.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">111
+                                Lounge Chair</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                            <ul class="product-color_list justify-content-center">
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                    <span class="tooltip color-filter">Beige</span>
+                                    <span class="swatch-value bg-beigegray"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-2.jpg" alt="Product">
+                                </li>
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                    <span class="tooltip color-filter">Light</span>
+                                    <span class="swatch-value bg-lightgray"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-2-1.jpg" alt="Product">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock" data-category="chair"
+                        data-room="living" data-material="metal" data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-3.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-3-1.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">Crystal
+                                Lounge Chair</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                            <ul class="product-color_list justify-content-center">
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                    <span class="tooltip color-filter">Red</span>
+                                    <span class="swatch-value bg-winered"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-3.jpg" alt="Product">
+                                </li>
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                    <span class="tooltip color-filter">Beige</span>
+                                    <span class="swatch-value bg-beigegray"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-3-1.jpg" alt="Product">
+                                </li>
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                    <span class="tooltip color-filter">Green</span>
+                                    <span class="swatch-value bg-olivegreen"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-3-2.jpg" alt="Product">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock" data-category="sofas"
+                        data-room="living" data-material="wood" data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-4.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-4-1.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">SYD
+                                Curved Sofa</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                            <ul class="product-color_list justify-content-center">
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                    <span class="tooltip color-filter">Beige</span>
+                                    <span class="swatch-value bg-beigegray"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-4.jpg" alt="Product">
+                                </li>
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                    <span class="tooltip color-filter">Light</span>
+                                    <span class="swatch-value bg-lighttaupe"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-4-2.jpg" alt="Product">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock" data-category="table"
+                        data-room="living" data-material="wood" data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-5.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-5-1.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">EKO
+                                Modular Sofa </a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock" data-category="chair"
+                        data-room="living" data-material="metal" data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-6.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-6-1.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">Sag Side
+                                Table</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                            <ul class="product-color_list justify-content-center">
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                    <span class="tooltip color-filter">Light</span>
+                                    <span class="swatch-value bg-beigegray"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-6.jpg" alt="Product">
+                                </li>
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                    <span class="tooltip color-filter"> Beige</span>
+                                    <span class="swatch-value bg-lighttaupe"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-6-1.jpg" alt="Product">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Product 7 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock"
+                        data-category="outdoor-furniture" data-room="dining-room" data-material="glass"
+                        data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-7.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-7-1.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">Solace
+                                Table Lamp</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                            <ul class="product-color_list justify-content-center">
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                    <span class="tooltip color-filter">Light</span>
+                                    <span class="swatch-value bg-lightgray"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-7.jpg" alt="Product">
+                                </li>
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                    <span class="tooltip color-filter"> Dark</span>
+                                    <span class="swatch-value bg-darkgray"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-7-2.jpg" alt="Product">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Product 8 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock"
+                        data-category="outdoor-furniture" data-room="outdoor" data-material="glass" data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/prd-related-3.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/prd-related-3.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">Oak
+                                Pendant</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                            <ul class="product-color_list justify-content-center">
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                    <span class="tooltip color-filter">Black</span>
+                                    <span class="swatch-value bg-black"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/prd-related-3.jpg" alt="Product">
+                                </li>
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
+                                    <span class="tooltip color-filter">Brown</span>
+                                    <span class="swatch-value bg-caramelbrown"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/prd-related-3-1.jpg" alt="Product">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Product 9 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock"
+                        data-category="outdoor-furniture" data-room="dining-room" data-material="wood"
+                        data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-8.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-8.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">Altair
+                                Lounge Chair</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 10 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock" data-category="bed"
+                        data-room="bedroom" data-material="wood" data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-9.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-9-1.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">Tender
+                                Bed</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                            <ul class="product-color_list justify-content-center">
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                    <span class="tooltip color-filter">Light</span>
+                                    <span class="swatch-value bg-beigegray"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-9.jpg" alt="Product">
+                                </li>
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                    <span class="tooltip color-filter">Borwn</span>
+                                    <span class="swatch-value bg-rustybrown"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-9-2.jpg" alt="Product">
+                                </li>
+                                <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                    <span class="tooltip color-filter">Beige</span>
+                                    <span class="swatch-value bg-lighttaupe"></span>
+                                    <img width="338" height="338" loading="lazy" decoding="async"
+                                        src="images/products/product-9-3.jpg" alt="Product">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Product 11 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock"
+                        data-category="outdoor-furniture" data-room="office" data-material="glass" data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-10.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-10-1.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">Phase
+                                Table Lamp</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 12 -->
+                    <div class="card-product has-price-default loadItem" data-availability="In stock"
+                        data-category="outdoor-furniture" data-room="office" data-material="glass" data-style="modern">
+                        <span class="remove icon-close"></span>
+                        <div class="card-product_wrapper">
+                            <a href="product-detail.html" class="product-img">
+                                <img class="img-product" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-11.jpg" alt="Product">
+                                <img class="img-hover" width="338" height="338" loading="lazy" decoding="async"
+                                    src="images/products/product-11-1.jpg" alt="Product">
+                            </a>
+                            <ul class="product-action_list">
+                                <li>
+                                    <a href="#shoppingCart" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-shopping-cart-simple"></span>
+                                        <span class="tooltip">Add to cart</span>
+                                    </a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="#compare" data-bs-toggle="offcanvas"
+                                        class="hover-tooltip tooltip-left box-icon ">
+                                        <span class="icon icon-compare"></span>
+                                        <span class="tooltip">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#quickView" data-bs-toggle="modal"
+                                        class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-view"></span>
+                                        <span class="tooltip">Quick view</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="product-btn_quick">
+                                <a href="#quickAdd"
+                                    class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                    data-bs-toggle="modal">
+                                    Quick Add
+                                    <i class="icon icon-shopping-cart-simple"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-product_info">
+                            <a href="product-detail.html" class="name-product h6 link">Phase
+                                Pendant Lamp</a>
+                            <div class="price-wrap text-body-default fw-5">
+                                from <span class="price-new">$1,099.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="wd-full wd-load justify-content-center flex-column align-items-center">
+                        <p class="mb_40">Showing <span class="text_secondary-color fw-5">13</span>
+                            of <span class="text_secondary-color fw-5">260</span> products</p>
+                        <div type="button" class="btn-loadmore tf-btn btn-border-secondary tf-loading loadmore"
+                            id="loadMoreBtn">
+                            <span class="text">Load More</span>
+                            <div class="spinner-circle">
+                                <span class="spinner-circle1 spinner-child"></span>
+                                <span class="spinner-circle2 spinner-child"></span>
+                                <span class="spinner-circle3 spinner-child"></span>
+                                <span class="spinner-circle4 spinner-child"></span>
+                                <span class="spinner-circle5 spinner-child"></span>
+                                <span class="spinner-circle6 spinner-child"></span>
+                                <span class="spinner-circle7 spinner-child"></span>
+                                <span class="spinner-circle8 spinner-child"></span>
+                                <span class="spinner-circle9 spinner-child"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Product Main -->
+            <div
+                class="s-related-products s-recently tf-container tf-spacing-7 pt-0 sw-layout d-none tf-spacing-1 pt-0">
+                <div class="heading-seciton text-center  mb_52">
+                    <h2 class="text-uppercase">recently viewed products</h2>
+                </div>
+                <div class="position-relative">
+                    <div class="swiper" data-preview="4" data-tablet="3" data-mobile-sm="2" data-mobile="1"
+                        data-space-lg="30" data-space-md="20" data-space="15">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card-product has-discount">
+                                    <div class="card-product_wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="img-product" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/prd-related-1.jpg" alt="Product">
+                                            <img class="img-hover" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/prd-related-1-1.jpg"
+                                                alt="Product">
+                                        </a>
+                                        <ul class="product-action_list">
+                                            <li>
+                                                <a href="#shoppingCart" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-shopping-cart-simple"></span>
+                                                    <span class="tooltip">Add to cart</span>
+                                                </a>
+                                            </li>
+                                            <li class="wishlist">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-heart"></span>
+                                                    <span class="tooltip">Add to Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#compare" data-bs-toggle="offcanvas"
+                                                    class="hover-tooltip tooltip-left box-icon ">
+                                                    <span class="icon icon-compare"></span>
+                                                    <span class="tooltip">Compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#quickView" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-view"></span>
+                                                    <span class="tooltip">Quick view</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-product_info">
+                                        <a href="product-detail.html" class="name-product h6 link">Altair Lounge
+                                            Chair</a>
+                                        <div class="wrap-price">
+                                            <div class="price-wrap">
+                                                <span class="price-old text-body-default fw-5">$1,499.00</span>
+                                                <span class="price-new text-body-default fw-5">$1,099.00</span>
+                                            </div>
+                                            <div class="discount">
+                                                <span>-34%</span>
+                                            </div>
+                                        </div>
+                                        <ul class="product-color_list justify-content-center">
+                                            <li
+                                                class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                                <span class="tooltip color-filter">Gray</span>
+                                                <span class="swatch-value bg-warmgray"></span>
+                                                <img width="338" height="338" loading="lazy" decoding="async"
+                                                    src="images/products/prd-related-1.jpg" alt="Product">
+                                            </li>
+                                            <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                                <span class="tooltip color-filter">Rose</span>
+                                                <span class="swatch-value bg-palerose"></span>
+                                                <img width="338" height="338" loading="lazy" decoding="async"
+                                                    src="images/products/prd-related-1-3.jpg" alt="Product">
+                                            </li>
+
+                                            <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
+                                                <span class="tooltip color-filter">Brown</span>
+                                                <span class="swatch-value bg-rustybrown"></span>
+                                                <img width="338" height="338" loading="lazy" decoding="async"
+                                                    src="images/products/prd-related-1-4.jpg" alt="Product">
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="swiper-slide">
+                                <div class="card-product has-price-default">
+                                    <div class="card-product_wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="img-product" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/prd-related-2.jpg" alt="Product">
+                                            <img class="img-hover" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/prd-related-2-1.jpg"
+                                                alt="Product">
+                                        </a>
+                                        <ul class="product-action_list">
+                                            <li>
+                                                <a href="#shoppingCart" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-shopping-cart-simple"></span>
+                                                    <span class="tooltip">Add to cart</span>
+                                                </a>
+                                            </li>
+                                            <li class="wishlist">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-heart"></span>
+                                                    <span class="tooltip">Add to Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#compare" data-bs-toggle="offcanvas"
+                                                    class="hover-tooltip tooltip-left box-icon ">
+                                                    <span class="icon icon-compare"></span>
+                                                    <span class="tooltip">Compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#quickView" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-view"></span>
+                                                    <span class="tooltip">Quick view</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-product_info">
+                                        <a href="product-detail.html" class="name-product h6 link">PIA Curved Sofa</a>
+                                        <div class="price-wrap text-body-default fw-5">
+                                            <span class="price-new text-body-default">$1,099.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-product has-price-default">
+                                    <div class="card-product_wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="img-product" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/prd-related-3.jpg" alt="Product">
+                                            <img class="img-hover" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/prd-related-3.jpg" alt="Product">
+                                        </a>
+                                        <ul class="product-action_list">
+                                            <li>
+                                                <a href="#shoppingCart" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-shopping-cart-simple"></span>
+                                                    <span class="tooltip">Add to cart</span>
+                                                </a>
+                                            </li>
+                                            <li class="wishlist">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-heart"></span>
+                                                    <span class="tooltip">Add to Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#compare" data-bs-toggle="offcanvas"
+                                                    class="hover-tooltip tooltip-left box-icon ">
+                                                    <span class="icon icon-compare"></span>
+                                                    <span class="tooltip">Compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#quickView" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-view"></span>
+                                                    <span class="tooltip">Quick view</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-product_info">
+                                        <a href="product-detail.html" class="name-product h6 link">Oak Pendant</a>
+                                        <div class="price-wrap text-body-default">
+                                            from <span class="price-new text-body-default">$1,099.00</span>
+                                        </div>
+                                        <ul class="product-color_list justify-content-center">
+                                            <li
+                                                class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                                <span class="tooltip color-filter">Black</span>
+                                                <span class="swatch-value bg-black"></span>
+                                                <img width="338" height="338" loading="lazy" decoding="async"
+                                                    src="images/products/prd-related-3.jpg" alt="Product">
+                                            </li>
+                                            <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
+                                                <span class="tooltip color-filter">Brown</span>
+                                                <span class="swatch-value bg-caramelbrown"></span>
+                                                <img width="338" height="338" loading="lazy" decoding="async"
+                                                    src="images/products/prd-related-3-1.jpg" alt="Product">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-product has-price-default">
+                                    <div class="card-product_wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="img-product" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/prd-related-4.jpg" alt="Product">
+                                            <img class="img-hover" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/prd-related-4-1.jpg"
+                                                alt="Product">
+                                        </a>
+                                        <ul class="product-action_list">
+                                            <li>
+                                                <a href="#shoppingCart" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-shopping-cart-simple"></span>
+                                                    <span class="tooltip">Add to cart</span>
+                                                </a>
+                                            </li>
+                                            <li class="wishlist">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-heart"></span>
+                                                    <span class="tooltip">Add to Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#compare" data-bs-toggle="offcanvas"
+                                                    class="hover-tooltip tooltip-left box-icon ">
+                                                    <span class="icon icon-compare"></span>
+                                                    <span class="tooltip">Compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#quickView" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-view"></span>
+                                                    <span class="tooltip">Quick view</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-product_info">
+                                        <a href="product-detail.html" class="name-product h6 link">Nuvola Floor Lamp</a>
+                                        <div class="price-wrap">
+                                            from <span class="price-new text-body-default">$1,099.00</span>
+                                        </div>
+                                        <ul class="product-color_list justify-content-center">
+                                            <li
+                                                class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                                <span class="tooltip color-filter">Brown</span>
+                                                <span class="swatch-value bg-chestnutbrown"></span>
+                                                <img width="338" height="338" loading="lazy" decoding="async"
+                                                    src="images/products/prd-related-4.jpg" alt="Product">
+                                            </li>
+                                            <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                                <span class="tooltip color-filter">Blue</span>
+                                                <span class="swatch-value bg-midnightblue"></span>
+                                                <img width="338" height="338" loading="lazy" decoding="async"
+                                                    src="images/products/prd-related-4-2.jpg" alt="Product">
+                                            </li>
+                                            <li class="product-color-item color-swatch hover-tooltip tooltip-bot ">
+                                                <span class="tooltip color-filter">Gray</span>
+                                                <span class="swatch-value bg-mochagray"></span>
+                                                <img width="338" height="338" loading="lazy" decoding="async"
+                                                    src="images/products/prd-related-4-3.jpg" alt="Product">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-product has-price-default">
+                                    <div class="card-product_wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="img-product" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/product-1.jpg" alt="Product">
+                                            <img class="img-hover" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/product-1-1.jpg" alt="Product">
+                                        </a>
+                                        <ul class="product-action_list">
+                                            <li>
+                                                <a href="#shoppingCart" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-shopping-cart-simple"></span>
+                                                    <span class="tooltip">Add to cart</span>
+                                                </a>
+                                            </li>
+                                            <li class="wishlist">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-heart"></span>
+                                                    <span class="tooltip">Add to Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#compare" data-bs-toggle="offcanvas"
+                                                    class="hover-tooltip tooltip-left box-icon ">
+                                                    <span class="icon icon-compare"></span>
+                                                    <span class="tooltip">Compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#quickView" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-view"></span>
+                                                    <span class="tooltip">Quick view</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-product_info">
+                                        <a href="product-detail.html" class="name-product h6 link">Core Chair</a>
+                                        <div class="price-wrap text-body-default fw-5">
+                                            from <span class="price-new text-body-default">$1,099.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-product has-price-default">
+                                    <div class="card-product_wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="img-product" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/product-11.jpg" alt="Product">
+                                            <img class="img-hover" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/product-11-1.jpg" alt="Product">
+                                        </a>
+                                        <ul class="product-action_list">
+                                            <li>
+                                                <a href="#shoppingCart" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-shopping-cart-simple"></span>
+                                                    <span class="tooltip">Add to cart</span>
+                                                </a>
+                                            </li>
+                                            <li class="wishlist">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-heart"></span>
+                                                    <span class="tooltip">Add to Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#compare" data-bs-toggle="offcanvas"
+                                                    class="hover-tooltip tooltip-left box-icon ">
+                                                    <span class="icon icon-compare"></span>
+                                                    <span class="tooltip">Compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#quickView" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-view"></span>
+                                                    <span class="tooltip">Quick view</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-product_info">
+                                        <a href="product-detail.html" class="name-product h6 link">Phase Pendant
+                                            Lamp</a>
+                                        <div class="price-wrap text-body-default fw-5">
+                                            from <span class="price-new text-body-default">$1,099.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sw-dots sw-pagination-layout text-center mt_24 d-lg-none">
+                        </div>
+                    </div>
+                    <div class="wrap-sw-button ">
+                        <div class="sw-button style-default nav-prev-layout">
+                            <i class="icon-caret-left"></i>
+                        </div>
+                        <div class="sw-button style-default nav-next-layout">
+                            <i class="icon-caret-right"></i>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /Account -->
+            <!-- /Product Main -->
 
         </div>
         <!-- /main-content -->
@@ -909,107 +2018,6 @@
         </div>
     </div>
     <!-- /Mobile Menu -->
-
-    <!-- Order Detail -->
-    <div class="modal modalCentered fade modal-order-detail" id="orderDetail">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <span class="icon-close-popup" data-bs-dismiss="modal">
-                    <i class="icon-close"></i>
-                </span>
-                <div class="modal-top">
-                    <h3 class="title fw-normal text-uppercase">Order Detail</h3>
-                </div>
-                <div class="modal-body">
-                    <ul class="list-infor">
-                        <li class="order_id">#1001</li>
-                        <li class="br-line"></li>
-                        <li class="order_date">27 MAY 2025</li>
-                        <li class="br-line"></li>
-                        <li class="order_item">6 ITEMS</li>
-                        <li class="br-line"></li>
-                        <li class="order_status delivered">DELIVERED</li>
-                    </ul>
-                    <div class="table-order-detail account">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="order_product h6 fw-normal">Product</th>
-                                    <th class="order_price h6 fw-normal">price</th>
-                                    <th class="order_quantity h6 fw-normal">quantity</th>
-                                    <th class="order_subtotal h6 fw-normal text-start">subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="order_product">
-                                        <a href="product-default.html" class="image">
-                                            <img src="images/products/product-1.jpg" alt="Product">
-                                        </a>
-                                        <div class="infor">
-                                            <a href="product-default.html" class="prd-name h6 fw-normal link">
-                                                Hudson Dining Table
-                                            </a>
-                                            <p class="prd-type text-caption-1">8-Seater / Dark Walnut</p>
-                                        </div>
-                                    </td>
-                                    <td class="order_price h6 fw-4">$130.00</td>
-                                    <td class="order_quantity h6 fw-4">2</td>
-                                    <td class="order_subtotal h6 fw-4 text-start">$260.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="order_product">
-                                        <a href="product-default.html" class="image">
-                                            <img src="images/products/product-2.jpg" alt="Product">
-                                        </a>
-                                        <div class="infor">
-                                            <a href="product-default.html" class="prd-name h6 fw-normal link">
-                                                Luna Bed Frame
-                                            </a>
-                                            <p class="prd-type">King / Matte Black</p>
-                                        </div>
-                                    </td>
-                                    <td class="order_price h6 fw-4">$130.00</td>
-                                    <td class="order_quantity h6 fw-4">2</td>
-                                    <td class="order_subtotal h6 fw-4 text-start">$260.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="order_product">
-                                        <a href="product-default.html" class="image">
-                                            <img src="images/products/product-3.jpg" alt="Product">
-                                        </a>
-                                        <div class="infor">
-                                            <a href="product-default.html" class="prd-name h6 fw-normal link">
-                                                Ball Bracelet
-                                            </a>
-                                            <p class="prd-type">King / Matte Black</p>
-                                        </div>
-                                    </td>
-                                    <td class="order_price h6 fw-4">$130.00</td>
-                                    <td class="order_quantity h6 fw-4">2</td>
-                                    <td class="order_subtotal h6 fw-4 text-start">$260.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="order-total-wrap">
-                        <h5 class="text fw-normal text-uppercase">Total:</h5>
-                        <h5 class="order-total fw-normal">$780.00</h5>
-                    </div>
-
-                    <p class="privacy text-main-4 text-center text_body-color-1">
-                        Not happy with the order? You can
-                        <a href="#" class="hover-underline-link text_secondary-color">
-                            <span class="text-body">
-                                Request a free return
-                            </span>
-                        </a> in 14 days
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Order Detail -->
 
 
     <!-- quick-view -->

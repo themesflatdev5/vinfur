@@ -585,7 +585,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="account-orders-empty.html" class="link-account active">
+                                        <a href="account-orders.html" class="link-account active">
                                             <span class="text">My Orders</span>
                                         </a>
                                     </li>
@@ -608,62 +608,17 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-8">
-                            <div class="my-acount-content account-order">
-                                <h4 class="heading fw-normal">
-                                    Order History
-                                </h4>
-                                <div class="table-order-history">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th class="title-case order_code">ORDER ID</th>
-                                                <th class="title-case order_date">ORDER DATE</th>
-                                                <th class="title-case order_status">STATUS</th>
-                                                <th class="title-case order_total">TOTAL</th>
-                                                <th class="title-case order_action">ACTION</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>#1001</td>
-                                                <td>27 Mar 2025</td>
-                                                <td class="order_status delivered">Delivered</td>
-                                                <td>$870.00 / 4 items</td>
-                                                <td>
-                                                    <a href="#orderDetail" data-bs-toggle="modal"
-                                                        class="btn-action link">
-                                                        <i class="icon icon-view"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>#1002</td>
-                                                <td>29 Mar 2025</td>
-                                                <td class="order_status delivered">Delivered</td>
-                                                <td>$80.00 / 1 items</td>
-                                                <td>
-                                                    <a href="#orderDetail" data-bs-toggle="modal"
-                                                        class="btn-action link">
-                                                        <i class="icon icon-view"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>#1003</td>
-                                                <td>30 Mar 2025</td>
-                                                <td class="order_status delivered onTheWay">On the way</td>
-                                                <td>$690.00 / 3 items</td>
-                                                <td>
-                                                    <a href="#orderDetail" data-bs-toggle="modal"
-                                                        class="btn-action link">
-                                                        <i class="icon icon-view"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                        <div class="col-lg-8 d-flex justify-content-center">
+                            <div class="my-acount-content account-order empty">
+                                <div class="ic-img">
+                                    <img src="images/sections/empty-cart.svg" alt="Emty Cart">
                                 </div>
+                                <div class="title text-title-3">You haven’t placed any order yet</div>
+                                <p class="sub-title text_body-color-1">It’s time to make your first order</p>
+                                <a href="account-orders.html"
+                                    class="tf-btn fw-medium btn-border-secondary btn-h-52 btn-px-40">
+                                    SHOPPING
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -909,107 +864,6 @@
         </div>
     </div>
     <!-- /Mobile Menu -->
-
-    <!-- Order Detail -->
-    <div class="modal modalCentered fade modal-order-detail" id="orderDetail">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <span class="icon-close-popup" data-bs-dismiss="modal">
-                    <i class="icon-close"></i>
-                </span>
-                <div class="modal-top">
-                    <h3 class="title fw-normal text-uppercase">Order Detail</h3>
-                </div>
-                <div class="modal-body">
-                    <ul class="list-infor">
-                        <li class="order_id">#1001</li>
-                        <li class="br-line"></li>
-                        <li class="order_date">27 MAY 2025</li>
-                        <li class="br-line"></li>
-                        <li class="order_item">6 ITEMS</li>
-                        <li class="br-line"></li>
-                        <li class="order_status delivered">DELIVERED</li>
-                    </ul>
-                    <div class="table-order-detail account">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="order_product h6 fw-normal">Product</th>
-                                    <th class="order_price h6 fw-normal">price</th>
-                                    <th class="order_quantity h6 fw-normal">quantity</th>
-                                    <th class="order_subtotal h6 fw-normal text-start">subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="order_product">
-                                        <a href="product-default.html" class="image">
-                                            <img src="images/products/product-1.jpg" alt="Product">
-                                        </a>
-                                        <div class="infor">
-                                            <a href="product-default.html" class="prd-name h6 fw-normal link">
-                                                Hudson Dining Table
-                                            </a>
-                                            <p class="prd-type text-caption-1">8-Seater / Dark Walnut</p>
-                                        </div>
-                                    </td>
-                                    <td class="order_price h6 fw-4">$130.00</td>
-                                    <td class="order_quantity h6 fw-4">2</td>
-                                    <td class="order_subtotal h6 fw-4 text-start">$260.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="order_product">
-                                        <a href="product-default.html" class="image">
-                                            <img src="images/products/product-2.jpg" alt="Product">
-                                        </a>
-                                        <div class="infor">
-                                            <a href="product-default.html" class="prd-name h6 fw-normal link">
-                                                Luna Bed Frame
-                                            </a>
-                                            <p class="prd-type">King / Matte Black</p>
-                                        </div>
-                                    </td>
-                                    <td class="order_price h6 fw-4">$130.00</td>
-                                    <td class="order_quantity h6 fw-4">2</td>
-                                    <td class="order_subtotal h6 fw-4 text-start">$260.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="order_product">
-                                        <a href="product-default.html" class="image">
-                                            <img src="images/products/product-3.jpg" alt="Product">
-                                        </a>
-                                        <div class="infor">
-                                            <a href="product-default.html" class="prd-name h6 fw-normal link">
-                                                Ball Bracelet
-                                            </a>
-                                            <p class="prd-type">King / Matte Black</p>
-                                        </div>
-                                    </td>
-                                    <td class="order_price h6 fw-4">$130.00</td>
-                                    <td class="order_quantity h6 fw-4">2</td>
-                                    <td class="order_subtotal h6 fw-4 text-start">$260.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="order-total-wrap">
-                        <h5 class="text fw-normal text-uppercase">Total:</h5>
-                        <h5 class="order-total fw-normal">$780.00</h5>
-                    </div>
-
-                    <p class="privacy text-main-4 text-center text_body-color-1">
-                        Not happy with the order? You can
-                        <a href="#" class="hover-underline-link text_secondary-color">
-                            <span class="text-body">
-                                Request a free return
-                            </span>
-                        </a> in 14 days
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Order Detail -->
 
 
     <!-- quick-view -->

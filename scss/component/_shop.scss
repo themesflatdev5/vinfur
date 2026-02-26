@@ -493,6 +493,16 @@
     }
 }
 
+.order_status {
+    &.delivered {
+        color: #008A00;
+    }
+
+    &.onTheWay {
+        color: #005982;
+    }
+}
+
 .table-shop-cart {
     &::-webkit-scrollbar {
         width: 4px;
@@ -562,7 +572,7 @@
     @include transition3;
 
     &.account {
-        border-bottom: 1px solid var(--main);
+        border-bottom: 1px solid var(--Secondary);
 
         &::-webkit-scrollbar-thumb {
             background-color: #AEAEAE;
@@ -572,6 +582,20 @@
         td {
             padding: 24px;
         }
+
+
+        thead {
+            border-bottom: unset;
+
+            th {
+                background: #EBEBEB;
+
+                &:not(:first-child) {
+                    border-left: 1px solid var(--White);
+                }
+            }
+        }
+
     }
 
     &::-webkit-scrollbar {
@@ -1228,4 +1252,92 @@
     @include res(sm, min) {
         max-width: 499px;
     }
+}
+
+.account-address-item {
+    border: 1px solid var(--Line);
+    font-size: 16px;
+    line-height: 24px;
+
+    .title {
+        padding: 15px;
+        border-bottom: 1px solid var(--Line);
+        @include transition3;
+    }
+
+    .info-detail {
+        padding: 20px 15px;
+        display: grid;
+        gap: 24px;
+    }
+
+    .box-infor {
+        display: grid;
+        gap: 12px;
+        color: var(--Body-text-1);
+    }
+
+    .box-btn {
+        display: flex;
+        gap: 12px;
+    }
+
+    &.editing {
+        .title {
+            background-color: var(--Primary);
+            color: var(--White);
+            border-color: var(--Primary);
+        }
+    }
+
+    @include res(xl, min) {
+        .info-detail {
+            padding: 23px;
+        }
+
+        .title {
+            padding: 15px 23px;
+        }
+    }
+}
+
+.show-form-address,
+.edit-form-address {
+    display: none;
+}
+
+.widget-inner-address {
+
+    .btn-add-address,
+    .wd-form-address {
+        margin-bottom: 30px;
+    }
+
+    @include res(xl, min) {
+
+        .btn-add-address,
+        .wd-form-address {
+            margin-bottom: 48px;
+        }
+    }
+}
+
+.edit-form-address {
+    margin-top: 30px;
+
+    @include res(xl, min) {
+        margin-top: 48px;
+    }
+}
+
+.tf-wishlist-empty {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    .text-notice {
+        margin-bottom: 32px;
+        font-weight: normal;
+        letter-spacing: 0;
+    }
+
 }
