@@ -386,16 +386,25 @@
 }
 
 .navigation {
+
+    .menu-heading {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
     li {
-        >a {
-            text-transform: uppercase;
+
+        &.menu-item {
+            >a {
+                text-transform: uppercase;
+            }
+
         }
 
         a {
             display: inline-block;
             font-size: 16px;
             line-height: 24px;
-            font-weight: 500;
         }
 
         &.has-child {

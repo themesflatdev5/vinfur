@@ -163,6 +163,136 @@
     }
 }
 
+.modal-dialog {
+    margin: unset;
+}
+
+
+.modal.show .modal-dialog {
+    transform: none;
+}
+
+.modal.modal-static .modal-dialog {
+    transform: scale(1.02);
+}
+
+.modal-dialog-scrollable {
+    height: calc(100% - var(--bs-modal-margin) * 2);
+}
+
+.modal-dialog-scrollable .modal-content {
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.modal-dialog-scrollable .modal-body {
+    overflow-y: auto;
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - var(--bs-modal-margin) * 2);
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+}
+
+
+.modal-compare {
+    .modal-dialog {
+        max-width: 1104px;
+    }
+
+    .modal-content {
+        padding: 30px 15px;
+    }
+
+    .title {
+        margin-bottom: 24px;
+    }
+
+    .group-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+
+    @include res(lg, min) {
+        .modal-content {
+            padding: 32px;
+        }
+
+        .title {
+            margin-bottom: 48px;
+        }
+    }
+}
+
+.tf-compare-inner {
+    overflow-x: auto;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--Primary);
+        cursor: grab;
+    }
+
+    .tf-compare-list {
+        display: flex;
+        gap: 15px;
+        width: max-content;
+    }
+
+    .tf-compare-item {
+        max-width: 200px;
+
+        .remove {
+            left: unset;
+            right: 10px;
+            border-radius: 50%;
+        }
+
+        .price-wrap .price-new {
+            color: var(--Secondary);
+        }
+    }
+
+    @include res(md, min) {
+        .tf-compare-item {
+            max-width: 250px;
+        }
+    }
+
+    @include res(xl, min) {
+        padding-bottom: 66px;
+        margin-bottom: 64px;
+
+        .tf-compare-list {
+            gap: 24px;
+        }
+    }
+}
+
 .modal-order-detail {
     .modal-dialog {
         max-width: 1125px;
@@ -280,6 +410,10 @@
         position: relative;
         margin: 0;
         padding: 48px 39px 0 41px;
+
+        @include res(xl) {
+            padding: 40px 15px;
+        }
     }
 
     .tf-product-info-inner {
@@ -312,6 +446,22 @@
     }
 
     .tf-product-variant {
+
+        .variant-picker-label {
+            margin-bottom: 0 !important;
+        }
+
+        .variant-color {
+            align-items: center;
+            padding-block: 15px;
+
+
+            @include res(lg) {
+                // padding-block: 4px;
+
+            }
+        }
+
         >div {
             border-bottom: 1px solid var(--Line);
         }
@@ -396,6 +546,22 @@
 .modal-quick-add {
     .tf-product-info-wrap .product-info-name {
         margin-bottom: 8px;
+    }
+
+    .icon-close-popup {
+        font-size: 20px;
+    }
+
+    .tf-product-info-wrap {
+        padding-left: 0;
+    }
+
+    .price-wrap .price-new {
+        color: var(--Secondary);
+    }
+
+    .modal-content {
+        padding: 40px;
     }
 
     .tf-product-info-heading {
@@ -755,7 +921,7 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 32px;
+        font-size: 24px;
     }
 
     .form-search {
@@ -774,7 +940,7 @@
             top: 50%;
             transform: translateY(-50%);
             left: 0;
-            font-size: 32px;
+            font-size: 24px;
             color: var(--Body-text-2);
         }
     }
@@ -974,7 +1140,6 @@
         .tf-compare-item {
             flex: 0 0 25%;
             max-width: 225px;
-
             padding: 0 12px;
             display: flex;
 
@@ -1031,11 +1196,11 @@
         >div {
             flex: 0 0 100% !important;
         }
-        
+
         .tf-compare-offcanvas .tf-compare-item {
             flex: 0 0 33.333%;
         }
-  
+
 
         .tf-compare-buttons {
             width: 100%;
@@ -1110,7 +1275,7 @@
     height: max-content !important;
     z-index: 5000;
 
-    .canvas-body{
+    .canvas-body {
         padding: 30px 0;
     }
 

@@ -669,44 +669,27 @@
             var total = 0;
 
             $(".list-file-delete .tf-mini-cart-item").each(function () {
-                var priceText = $(this)
-                    .find(".tf-mini-card-price")
-                    .text()
-                    .replace("$", "")
-                    .replace(",", "")
-                    .trim();
+                var priceText = $(this).find(".tf-mini-card-price").text().replace("$", "").replace(",", "").trim();
                 var price = parseFloat(priceText);
-                if (!isNaN(price)) {
-                    total += price;
+                var quantity = parseInt($(this).find(".quantity-product").val(), 10);
+
+                if (!isNaN(price) && !isNaN(quantity)) {
+                    total += price * quantity;
                 }
             });
 
-            var formatted = total.toLocaleString("en-US", {
-                style: "currency",
-                currency: "USD",
-            });
+            var formatted = total.toLocaleString("en-US", { style: "currency", currency: "USD" });
             $(".tf-totals-total-value").text(formatted);
         }
 
         function updatePriceEach() {
             $(".each-prd").each(function () {
-                var priceText = $(this)
-                    .find(".each-price")
-                    .text()
-                    .replace("$", "")
-                    .replace(",", "")
-                    .trim();
+                var priceText = $(this).find(".each-price").text().replace("$", "").replace(",", "").trim();
                 var price = parseFloat(priceText);
-                var quantity = parseInt(
-                    $(this).find(".quantity-product").val(),
-                    10,
-                );
+                var quantity = parseInt($(this).find(".quantity-product").val(), 10);
                 if (!isNaN(price) && !isNaN(quantity)) {
                     var subtotal = price * quantity;
-                    var formatted = subtotal.toLocaleString("en-US", {
-                        style: "currency",
-                        currency: "USD",
-                    });
+                    var formatted = subtotal.toLocaleString("en-US", { style: "currency", currency: "USD" });
                     $(this).find(".each-subtotal-price").text(formatted);
                 }
             });
@@ -716,46 +699,34 @@
             var total = 0;
 
             $(".each-list-prd .each-prd").each(function () {
-                var priceText = $(this)
-                    .find(".each-subtotal-price")
-                    .text()
-                    .replace("$", "")
-                    .replace(",", "")
-                    .trim();
+                var priceText = $(this).find(".each-subtotal-price").text().replace("$", "").replace(",", "").trim();
                 var price = parseFloat(priceText);
-                var quantity = parseInt(
-                    $(this).find(".quantity-product").val(),
-                    10,
-                );
+                var quantity = parseInt($(this).find(".quantity-product").val(), 10);
 
                 if (!isNaN(price) && !isNaN(quantity)) {
-                    total += price * quantity;
+                    total += price;
                 }
             });
 
-            var formatted = total.toLocaleString("en-US", {
-                style: "currency",
-                currency: "USD",
-            });
+            var formatted = total.toLocaleString("en-US", { style: "currency", currency: "USD" });
             $(".each-total-price").text(formatted);
         }
 
         function checkListEmpty() {
-            $(".wrap-empty_text").each(function () {
-                var $listEmpty = $(this);
-                var $textEmpty = $listEmpty.find(".box-text_empty");
-                var $otherChildren = $listEmpty
-                    .find(".list-empty")
-                    .children()
-                    .not(".box-text_empty");
-                var $boxEmpty = $listEmpty.find(".box-empty_clear");
+            if ($(".list-empty").length) {
+                var $listEmpty = $(".list-empty");
+                var $textEmpty = $listEmpty.find(".text-empty");
+                var $otherChildren = $listEmpty.children().not(".text-empty");
+                var count = $otherChildren.length;
+
+                $(".count-item-compare").text("(" + count + ")");
+
                 if ($otherChildren.length > 0) {
                     $textEmpty.hide();
                 } else {
                     $textEmpty.show();
-                    $boxEmpty.hide();
                 }
-            });
+            }
         }
 
         if ($(".main-list-clear").length) {
@@ -763,43 +734,30 @@
                 var $mainList = $(this);
 
                 $mainList.find(".clear-list-empty").on("click", function () {
-                    $mainList
-                        .find(".list-empty")
-                        .children()
-                        .not(".box-text_empty")
-                        .remove();
+                    $mainList.find(".list-empty").children().not(".text-empty").remove();
                     checkListEmpty();
                 });
             });
         }
-        function ortherDel() {
-            $(".container .orther-del").remove();
-        }
+
         $(".list-file-delete").on("input", ".quantity-product", function () {
             updateTotalPrice();
         });
 
-        $(".list-file-delete,.each-prd").on(
-            "click",
-            ".minus-quantity, .plus-quantity",
-            function () {
-                var $quantityInput = $(this).siblings(".quantity-product");
-                var currentQuantity = parseInt($quantityInput.val(), 10);
+        $(".list-file-delete,.each-prd").on("click", ".minus-quantity, .plus-quantity", function () {
+            var $quantityInput = $(this).siblings(".quantity-product");
+            var currentQuantity = parseInt($quantityInput.val(), 10);
 
-                if ($(this).hasClass("plus-quantity")) {
-                    $quantityInput.val(currentQuantity + 1);
-                } else if (
-                    $(this).hasClass("minus-quantity") &&
-                    currentQuantity > 1
-                ) {
-                    $quantityInput.val(currentQuantity - 1);
-                }
+            if ($(this).hasClass("plus-quantity")) {
+                $quantityInput.val(currentQuantity + 1);
+            } else if ($(this).hasClass("minus-quantity") && currentQuantity > 1) {
+                $quantityInput.val(currentQuantity - 1);
+            }
 
-                updateTotalPrice();
-                updatePriceEach();
-                updateTotalPriceEach();
-            },
-        );
+            updateTotalPrice();
+            updatePriceEach();
+            updateTotalPriceEach();
+        });
 
         $(".remove").on("click", function (e) {
             e.preventDefault();
@@ -809,7 +767,6 @@
             updateTotalPrice();
             checkListEmpty();
             updateTotalPriceEach();
-            ortherDel();
         });
 
         $(".clear-file-delete").on("click", function (e) {

@@ -440,39 +440,6 @@
         position: relative;
     }
 
-    .remove {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        z-index: 2;
-
-        .icon {
-            font-size: 20px;
-        }
-
-        &.box-icon {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background-color: var(--white);
-
-            &:hover {
-                background-color: var(--black);
-                color: var(--white);
-            }
-        }
-
-        @include res(xl, min) {
-            top: 16px;
-            right: 16px;
-
-            &.box-icon {
-                width: 48px;
-                height: 48px;
-            }
-        }
-    }
-
     img {
         display: block;
         height: 100%;
