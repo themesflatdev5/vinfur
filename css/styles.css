@@ -2405,10 +2405,12 @@ a:focus, a:hover {
   align-items: center;
   gap: 10px;
 }
+.mega-menu.mega-product .wrap-nav-link {
+  padding-left: 0;
+}
 .mega-menu.mega-product .tag {
   padding: 1px 6px;
   color: var(--White);
-  border-radius: 10px;
 }
 .mega-menu.mega-product .tag.hot {
   background-color: #f22525;

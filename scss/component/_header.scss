@@ -526,10 +526,13 @@
             gap: 10px;
         }
 
+        .wrap-nav-link {
+            padding-left: 0;
+        }
+
         .tag {
             padding: 1px 6px;
             color: var(--White);
-            border-radius: 10px;
 
             &.hot {
                 background-color: #f22525;
