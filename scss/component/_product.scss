@@ -41,7 +41,6 @@
         @include transition3();
 
         @include res(md, min) {
-
             transform: translateY(10%);
             opacity: 0;
             left: 48px;

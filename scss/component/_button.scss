@@ -166,3 +166,12 @@ button.animate-btn::after,
 .animate-btn.animate-primary::after {
     background-image: linear-gradient(90deg, transparent, rgb(220, 70, 70), transparent);
 }
+
+.animate-fill {
+    &.btn-border-primary{
+        &:hover{
+            background: var(--Primary);
+            color: var(--White);
+        }
+    }
+}

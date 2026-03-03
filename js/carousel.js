@@ -258,7 +258,6 @@ $(".flat-thumbs-tes").each(function (index, container) {
             },
         });
 
-        // Kết nối 2 swiper
         swThumb.controller.control = swTesMain;
         swTesMain.controller.control = swThumb;
     }
