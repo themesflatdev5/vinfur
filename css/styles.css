@@ -6709,20 +6709,23 @@ form .form-content-2 {
     margin-left: -6px;
   }
 }
-.tf-shop-control.style-2 .tf-btn-filter {
+.tf-shop-control.style-2 .tf-btn-filter, .tf-shop-control.style-3 .tf-btn-filter {
   padding: 0;
   border: 0;
   background: unset;
   height: unset;
 }
-.tf-shop-control.style-2 .tf-btn-filter:hover {
+.tf-shop-control.style-2 .tf-btn-filter:hover, .tf-shop-control.style-3 .tf-btn-filter:hover {
   color: var(--Primary);
 }
 @media (min-width: 992px) {
-  .tf-shop-control.style-2 .tf-btn-filter {
+  .tf-shop-control.style-2 .tf-btn-filter, .tf-shop-control.style-3 .tf-btn-filter {
     font-size: 24px;
     line-height: 32px;
   }
+}
+.tf-shop-control.style-3 .topbar-filter {
+  padding-block: 32px;
 }
 .tf-shop-control .btn-loadmore {
   max-width: 253px;
