@@ -391,6 +391,24 @@
         justify-content: space-between;
     }
 
+    .price-wrap .price-new {
+        color: var(--Secondary);
+    }
+
+    .tf-product-info-wrap {
+        @include res(lg, min) {
+            .tf-product-variant {
+                margin-bottom: 42px;
+            }
+
+            .tf-product-total-quantity {
+                margin-bottom: 39px;
+            }
+        }
+
+
+    }
+
     .tf-single-slide {
         height: 100%;
 

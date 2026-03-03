@@ -2034,6 +2034,10 @@ a:focus, a:hover {
     padding: 10px 0;
   }
 }
+.header .list-ver {
+  display: flex;
+  gap: 24px;
+}
 @media (max-width: 1550px) {
   .header .btn-buy-theme {
     display: none;
@@ -2383,6 +2387,10 @@ a:focus, a:hover {
   right: 0;
   display: flex;
   justify-content: space-between;
+  padding-block: 0;
+}
+.mega-menu.mega-shop .wrap-nav-link {
+  padding-top: 42px;
 }
 .mega-menu.mega-product {
   left: 0;
@@ -4684,6 +4692,17 @@ form .form-content-2 {
 .modal-quick-view .modal-content {
   display: flex;
   justify-content: space-between;
+}
+.modal-quick-view .price-wrap .price-new {
+  color: var(--Secondary);
+}
+@media (min-width: 992px) {
+  .modal-quick-view .tf-product-info-wrap .tf-product-variant {
+    margin-bottom: 42px;
+  }
+  .modal-quick-view .tf-product-info-wrap .tf-product-total-quantity {
+    margin-bottom: 39px;
+  }
 }
 .modal-quick-view .tf-single-slide {
   height: 100%;

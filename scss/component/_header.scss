@@ -69,6 +69,11 @@
             }
         }
     }
+    
+    .list-ver{
+        display: flex;
+        gap: 24px;
+    }
 
     @media (max-width:1550px) {
         .btn-buy-theme {
@@ -500,6 +505,11 @@
         right: 0;
         display: flex;
         justify-content: space-between;
+        padding-block: 0;
+
+        .wrap-nav-link {
+            padding-top: 42px;
+        }
     }
 
     &.mega-product {
