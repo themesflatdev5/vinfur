@@ -2429,3 +2429,49 @@
         background-color: var(--Secondary);
     }
 }
+
+.tf-product-mini-view {
+    display: flex;
+    gap: 10px;
+
+    .prd-name {
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+
+    .prd-image {
+        max-width: 107px;
+        width: 100%;
+
+        img {
+            aspect-ratio: 1;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .prd-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .price-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .price-new {
+            color: var(--Secondary);
+        }
+    }
+
+    @include res(sm, min) {
+        gap: 15px;
+
+        .prd-content {
+            gap: 8px;
+        }
+    }
+}
