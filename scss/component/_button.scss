@@ -174,4 +174,10 @@ button.animate-btn::after,
             color: var(--White);
         }
     }
+    &.btn-border-secondary{
+        &:hover{
+            background: var(--Secondary);
+            color: var(--White);
+        }
+    }
 }

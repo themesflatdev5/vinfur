@@ -3129,132 +3129,260 @@
     </div>
     <!-- /Mobile Menu -->
 
-
-    <!-- Auto Newsletter -->
-    <div class="modal modalCentered fade auto-popup modal-auto-newletter" id="autoNewletter">
+    <!-- Flash Sale -->
+    <div class="modal modalCentered fade auto-popup modal-auto-product" id="autoProduct">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <span class="icon-close-popup" data-bs-dismiss="modal">
                     <i class="icon-close"></i>
                 </span>
-                <div class="modal-body">
-                    <div class="image">
-                        <img src="images/sections/banner-newletter.jpg" alt="">
+                <div class="modal-body sw-layout">
+                    <h4 class="title text-uppercase text-center">flash sale will ends in:</h4>
+                    <div class="countdown_v01  border-0  justify-content-center d-flex">
+                        <div class="js-countdown cd-custom-element cd-has-zero h3" data-timer="25472"
+                            data-labels="Days,Hours,Mins,Secs"></div>
                     </div>
-                    <div class="content text-center">
-                        <div class="heading">
-                            <h3 class="title text-uppercase">Get 15% OFF</h3>
-                            <p class="sub-title">Subcribe to our newsletter & receive a coupon</p>
-                        </div>
-                        <div class="sib-form">
-                            <div id="sib-form-container" class="sib-form-container">
-                                <div id="error-message" class="sib-form-message-panel">
-                                    <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                                        <span class="sib-form-message-panel__inner-text">Your subscription could not be
-                                            saved. Please try again.
-                                        </span>
-                                    </div>
-                                </div>
-                                <div id="success-message" class="sib-form-message-panel">
-                                    <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                                        <span class="sib-form-message-panel__inner-text">Your subscription has been
-                                            successful.
-                                        </span>
-                                    </div>
-                                </div>
-                                <div id="sib-container" class="sib-container--large sib-container--vertical">
-                                    <form id="sib-form" method="POST" class="form-newsletter"
-                                        action="https://3c02c1a1.sibforms.com/serve/MUIFAOAhSCDRnPhdPWLTpLBkaFR0CvSbJ_okYrjCbXQRLkZZU67Hn2jdn18hTWJuGupI4VUfB4deuJIyP5yRoHWVb9pIrENAMcal9Jtz8q_qN4dpHNMIG454DwSVNVmnLXuePoOCvDqN_Vvs0ga_kzg7ouD63HjCaukRz3LGCQsfnQJBN4-KS2D3DVitqvFsDHSqevjjqLk2xFO4"
-                                        data-type="subscription">
-                                        <div>
-                                            <div class="sib-form-block">
-                                                <p></p>
-                                            </div>
+                    <div class="swiper " data-preview="4" data-tablet="3" data-mobile="2" data-space-lg="20"
+                        data-space-md="15" data-space="10" data-pagination="2" data-pagination-md="3"
+                        data-pagination-lg="4">
+                        <div class="swiper-wrapper">
+                            <!-- item 1 -->
+                            <div class="swiper-slide">
+                                <div class="card-product style-2 has-price-default">
+                                    <div class="card-product_wrapper">
+                                        <a href="product-style-01.html" class="product-img">
+                                            <img class="img-product" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/prd-related-3.jpg" alt="Product">
+                                            <img class="img-hover" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/prd-related-3.jpg" alt="Product">
+                                        </a>
+                                        <div class="badge-box flex-column">
+                                            <span class="badge-item new">NEW IN</span>
+                                            <span class="badge-item sale">30% OFF</span>
                                         </div>
-                                        <div>
-                                            <div class="sib-form-block">
-                                                <div class="sib-text-form-block">
-                                                    <p></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="sib-input sib-form-block">
-                                                <div class="form__entry entry_block">
-                                                    <div class="form__label-row ">
-                                                        <label class="entry__label" for="EMAIL"></label>
-                                                        <div class="entry__field">
-                                                            <input class="input" type="text" id="EMAIL" name="EMAIL"
-                                                                autocomplete="off"
-                                                                placeholder="Enter your email where we send you 15% off"
-                                                                data-required="true" required />
-                                                        </div>
-                                                    </div>
-                                                    <label
-                                                        class="entry__error entry__error--primary text-center"></label>
-                                                    <label class="entry__specification"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="sib-optin sib-form-block">
-                                                <div class="form__entry entry_mcq">
-                                                    <div class="form__label-row ">
+                                        <ul class="product-action_list">
 
-                                                    </div>
-                                                    <label class="entry__error entry__error--primary"></label>
-                                                    <label class="entry__specification"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="btn-group">
-                                            <div class="sib-form-block">
-                                                <button
-                                                    class="sib-form-block__button sib-form-block__button-with-loader subscribe-button tf-btn btn-bg-secondary animate-btn btn-h-52 w-full font-main"
-                                                    form="sib-form" type="submit">
-                                                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z">
-                                                        </path>
-                                                    </svg>
-                                                    <span class="fw-medium">GET IT NOW!</span>
-                                                </button>
-                                                <!-- <button
-                                                    class="sib-form-block__button sib-form-block__button-with-loader btn-style-2 radius-12 w-100 justify-content-center"
-                                                    form="sib-form" type="submit">
-                                                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z">
-                                                        </path>
-                                                    </svg>
-                                                    <span class="text text-btn-uppercase">SUBSCRIBE</span>
-                                                </button> -->
-                                            </div>
-                                            <a href="#" data-bs-dismiss="modal"
-                                                class="tf-btn btn-border-secondary animate-fill btn-h-52 w-full close-modal">
-                                                <span class="fw-medium">NO THANKS!</span>
+                                            <li class="wishlist">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-heart"></span>
+                                                    <span class="tooltip">Add to Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
+                                                    class="hover-tooltip tooltip-left box-icon ">
+                                                    <span class="icon icon-compare"></span>
+                                                    <span class="tooltip">Compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#quickView" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-view"></span>
+                                                    <span class="tooltip">Quick view</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="product-btn_quick">
+                                            <a href="#quickAdd"
+                                                class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                                data-bs-toggle="modal">
+                                                Quick Add
+                                                <i class="icon icon-shopping-cart-simple"></i>
                                             </a>
                                         </div>
-                                        <input type="text" name="email_address_check" value="" class="input--hidden">
-                                        <input type="hidden" name="locale" value="en">
-                                    </form>
+                                    </div>
+                                    <div class="card-product_info">
+                                        <a href="product-style-01.html" class="name-product h6 link">Oak
+                                            Pendant</a>
+                                        <div class="price-wrap text-body-default">
+                                            <div class="price-wrap d-flex align-items-center gap_10">
+                                                <span class="price-new text-body-default fw-5">$2,499.00</span>
+                                                <span class="price-old text-caption-1">$1,499.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- item 2 -->
+                            <div class="swiper-slide">
+                                <div class="card-product style-2 has-price-default">
+                                    <div class="card-product_wrapper">
+                                        <a href="product-style-01.html" class="product-img">
+                                            <img class="img-product" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/product-13.jpg" alt="Product">
+                                            <img class="img-hover" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/product-13.jpg" alt="Product">
+                                        </a>
+                                        <div class="badge-box flex-column">
+                                            <span class="badge-item sale">30% OFF</span>
+                                        </div>
+                                        <ul class="product-action_list">
+
+                                            <li class="wishlist">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-heart"></span>
+                                                    <span class="tooltip">Add to Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
+                                                    class="hover-tooltip tooltip-left box-icon ">
+                                                    <span class="icon icon-compare"></span>
+                                                    <span class="tooltip">Compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#quickView" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-view"></span>
+                                                    <span class="tooltip">Quick view</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="product-btn_quick">
+                                            <a href="#quickAdd"
+                                                class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                                data-bs-toggle="modal">
+                                                Quick Add
+                                                <i class="icon icon-shopping-cart-simple"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-product_info">
+                                        <a href="product-style-01.html" class="name-product h6 link">Ora Pendant</a>
+                                        <div class="price-wrap text-body-default">
+                                            <div class="price-wrap d-flex align-items-center gap_10">
+                                                <span class="price-new text-body-default fw-5">$2,499.00</span>
+                                                <span class="price-old text-caption-1">$1,499.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- item 3 -->
+                            <div class="swiper-slide">
+                                <div class="card-product style-2 has-price-default">
+                                    <div class="card-product_wrapper">
+                                        <a href="product-style-01.html" class="product-img">
+                                            <img class="img-product" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/product-14.jpg" alt="Product">
+                                            <img class="img-hover" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/product-14.jpg" alt="Product">
+                                        </a>
+                                        <ul class="product-action_list">
+
+                                            <li class="wishlist">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-heart"></span>
+                                                    <span class="tooltip">Add to Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
+                                                    class="hover-tooltip tooltip-left box-icon ">
+                                                    <span class="icon icon-compare"></span>
+                                                    <span class="tooltip">Compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#quickView" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-view"></span>
+                                                    <span class="tooltip">Quick view</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="product-btn_quick">
+                                            <a href="#quickAdd"
+                                                class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                                data-bs-toggle="modal">
+                                                Quick Add
+                                                <i class="icon icon-shopping-cart-simple"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-product_info">
+                                        <a href="product-style-01.html" class="name-product h6 link">Ceramic Bottle CM
+                                            16</a>
+                                        <div class="price-wrap text-body-default">
+                                            <div class="price-wrap d-flex align-items-center gap_10">
+                                                <span class="price-new text-body-default fw-5">$2,499.00</span>
+                                                <span class="price-old text-caption-1">$1,499.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- item 4 -->
+                            <div class="swiper-slide">
+                                <div class="card-product style-2 has-price-default">
+                                    <div class="card-product_wrapper">
+                                        <a href="product-style-01.html" class="product-img">
+                                            <img class="img-product" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/product-15.jpg" alt="Product">
+                                            <img class="img-hover" width="338" height="338" loading="lazy"
+                                                decoding="async" src="images/products/product-15.jpg" alt="Product">
+                                        </a>
+                                        <div class="badge-box flex-column">
+                                            <span class="badge-item sale">30% OFF</span>
+                                        </div>
+                                        <ul class="product-action_list">
+
+                                            <li class="wishlist">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-heart"></span>
+                                                    <span class="tooltip">Add to Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
+                                                    class="hover-tooltip tooltip-left box-icon ">
+                                                    <span class="icon icon-compare"></span>
+                                                    <span class="tooltip">Compare</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#quickView" data-bs-toggle="modal"
+                                                    class="hover-tooltip tooltip-left box-icon">
+                                                    <span class="icon icon-view"></span>
+                                                    <span class="tooltip">Quick view</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="product-btn_quick">
+                                            <a href="#quickAdd"
+                                                class="tf-btn btn-quickadd btn-bg-white rounded-0 animate-btn animate-dark "
+                                                data-bs-toggle="modal">
+                                                Quick Add
+                                                <i class="icon icon-shopping-cart-simple"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-product_info">
+                                        <a href="product-style-01.html" class="name-product h6 link">Rest Lounge
+                                            Chair</a>
+                                        <div class="price-wrap text-body-default">
+                                            <div class="price-wrap d-flex align-items-center gap_10">
+                                                <span class="price-new text-body-default fw-5">$2,499.00</span>
+                                                <span class="price-old text-caption-1">$1,499.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <p class="privacy text-main-6">
-                            Will be used in accordance with our
-                            <a href="privacy-policy.html" class="hover-underline-link text-main link">
-                                <span class="text-body">Privacy Policy</span>
-                            </a>.
-                        </p>
+                        <div class="sw-dots sw-pagination-layout justify-content-center d-flex mt_24"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- /Auto Newsletter -->
+    <!-- /Flash Sale -->
 
     <!-- Compare -->
     <div class="modal modalCentered fade modal-compare" id="compare">

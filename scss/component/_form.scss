@@ -760,3 +760,169 @@ form {
         }
     }
 }
+
+
+/* sib-form */
+.sib-form {
+    padding: 0;
+    font-family: $font-main !important;
+}
+
+#sib-container {
+    background-color: unset;
+    padding: 0;
+    display: block;
+}
+
+.sib-form .entry__field {
+    background-color: unset;
+    border: 0;
+    box-shadow: none !important;
+    margin: 0;
+}
+
+.sib-form .sib-form-container .input {
+    outline: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--Line);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    @include transition3;
+    border-radius: 0px;
+    height: 26px;
+    text-align: center;
+
+    &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #BABABA;
+
+    }
+
+    &:focus {
+        border-color: var(--Primary);
+    }
+}
+
+.sib-form .entry__specification,
+.sib-form .entry__error,
+.entry__specification,
+.entry__label {
+    margin: 0 !important;
+    font-family: $font-main;
+}
+
+.sib-form-block {
+    padding: 0;
+}
+
+.sib-optin {
+    display: none;
+}
+
+
+
+#sib-form {
+    position: relative;
+    display: block;
+}
+
+#error-message {
+    color: #f03e3e;
+}
+
+#success-message {
+    color: #3dab25;
+}
+
+.sib-form-message-panel {
+    border: 0;
+    padding: 0;
+
+    .sib-form-message-panel__text {
+        justify-content: center;
+        padding: 0;
+    }
+}
+
+.sib-form-block__button .clickable__icon {
+    display: none;
+}
+
+.sib-input {
+    margin-bottom: 24px;
+}
+
+.form__label-row {
+    margin-bottom: 12px;
+}
+
+.form-newsletter {
+    .btn-group {
+        display: grid;
+        gap: 12px;
+
+        .close-modal {
+            text-decoration: unset;
+        }
+
+        @include res(xxl, min) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.sib-form.form-email .sib-form-container .input {
+    outline: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 13px 0px 12px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.32px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    color: #BABABA;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 0px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    padding-right: 30px;
+    border-color: var(--Line);
+    text-align: start;
+}
+
+.sib-form.form-email .sib-form-block__button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: none;
+    padding: 0px 0px;
+}
+
+.sib-form .btn-group {
+    position: unset; 
+}
+
+.sib-form.form-notify .sib-form-block__button {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.sib-form.form-notify .sib-form-container input {
+    padding: 15px 170px 15px 20px;
+}

@@ -948,6 +948,22 @@
         checkEmpty();
     };
 
+    /* Auto Popup
+    -------------------------------------------------------------------------*/
+    var autoPopup = function () {
+        if ($(".auto-popup").length > 0) {
+            let showPopup = sessionStorage.getItem("showPopup");
+            if (!JSON.parse(showPopup)) {
+                setTimeout(function () {
+                    $(".auto-popup").modal("show");
+                }, 2000);
+            }
+        }
+        $(".btn-hide-popup").on("click", function () {
+            sessionStorage.setItem("showPopup", true);
+        });
+    };
+
     // Dom Ready
     $(function () {
         variantPicker();
@@ -973,5 +989,6 @@
         heightTable();
         clickControl();
         deleteWishList();
+        autoPopup();
     });
 })(jQuery);

@@ -530,6 +530,105 @@
     }
 }
 
+.modal-auto-newletter {
+    .modal-dialog {
+        max-width: 985px;
+    }
+
+    .modal-body {
+        display: flex;
+        // align-items: center;
+    }
+
+    .content {
+        padding: 40px 20px 20px 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .heading {
+        display: grid;
+        gap: 24px;
+    }
+
+    @include res(md, min) {
+        .image {
+            // max-width: 438px;
+            // width: 100%;
+            flex: 1;
+
+            img {
+                height: 100%;
+                aspect-ratio: calc(438/560);
+            }
+        }
+
+        .content {
+            max-width: 547px;
+            width: 100%;
+            padding: 40px;
+            flex: 1;
+        }
+    }
+
+    @include res(xl, min) {
+        .content {
+            padding: 82px 54px;
+        }
+
+        .heading {
+            margin-bottom: 12px;
+        }
+
+        .form-newleter {
+            margin-bottom: 20px;
+        }
+    }
+
+    @include res(md) {
+        .modal-body {
+            flex-direction: column;
+        }
+    }
+}
+
+.modal-auto-product {
+    .modal-dialog {
+        max-width: 1413px;
+    }
+
+    .modal-content {
+        padding: 40px 15px 20px;
+    }
+
+    .title,
+    .countdown_v01 {
+        margin-bottom: 24px;
+    }
+
+    .countdown_v01 {
+        padding-block: 0;
+    }
+
+    @include res(md, min) {
+        .modal-content {
+            padding: 40px;
+        }
+    }
+
+    @include res(xl, min) {
+        .modal-content {
+            padding: 83px 80px;
+        }
+
+        .countdown_v01 {
+            margin-bottom: 48px;
+        }
+    }
+}
+
 .offcanvas {
     &.canvas-filter {
         .collapse-body {
