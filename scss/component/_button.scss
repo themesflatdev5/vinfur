@@ -108,7 +108,7 @@
     }
 
     &.btn-gg {
-    
+
         border: 1px solid #11111126
     }
 }
@@ -168,14 +168,25 @@ button.animate-btn::after,
 }
 
 .animate-fill {
-    &.btn-border-primary{
-        &:hover{
+
+    &.btn-border-primary,
+    &.btn-border {
+        >* {
+            @include transition3();
+        }
+
+        &:hover {
             background: var(--Primary);
             color: var(--White);
+
+            >* {
+                color: var(--White);
+            }
         }
     }
-    &.btn-border-secondary{
-        &:hover{
+
+    &.btn-border-secondary {
+        &:hover {
             background: var(--Secondary);
             color: var(--White);
         }
