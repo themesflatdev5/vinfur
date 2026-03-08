@@ -84,6 +84,32 @@
         }, 250);
     };
 
+     /* Go Top
+    -------------------------------------------------------------------------*/
+    var goTop = function () {
+        var $goTop = $("#goTop");
+        var $borderProgress = $(".border-progress");
+
+        $(window).on("scroll", function () {
+            var scrollTop = $(window).scrollTop();
+            var docHeight = $(document).height() - $(window).height();
+            var scrollPercent = (scrollTop / docHeight) * 100;
+            var progressAngle = (scrollPercent / 100) * 360;
+
+            $borderProgress.css("--progress-angle", progressAngle + "deg");
+
+            if (scrollTop > 100) {
+                $goTop.addClass("show");
+            } else {
+                $goTop.removeClass("show");
+            }
+        });
+
+        $goTop.on("click", function () {
+            $("html, body").animate({ scrollTop: 0 }, 0);
+        });
+    };
+
     /* Variant Picker
     -------------------------------------------------------------------------*/
     var variantPicker = function () {
@@ -1078,9 +1104,21 @@
         }
     };
 
+        /* Preloader
+    -------------------------------------------------------------------------*/
+    var preloader = function () {
+        $("#preload").fadeOut("slow", function () {
+            var $this = $(this);
+            setTimeout(function () {
+                $this.remove();
+            }, 300);
+        });
+    };
+
     // Dom Ready
     $(function () {
         headerSticky();
+        goTop();
         variantPicker();
         dropdownSelect();
         handleMobileMenu();
@@ -1095,7 +1133,6 @@
         btnQuantity();
         staggerWrap();
         checkClick();
-        headerFixed();
         infiniteslide();
         handleSidebarFilter();
         deleteFile();
@@ -1106,5 +1143,6 @@
         deleteWishList();
         autoPopup();
         wow();
+        preloader();
     });
 })(jQuery);

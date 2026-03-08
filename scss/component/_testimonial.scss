@@ -102,35 +102,29 @@
         margin-bottom: 28px;
     }
 
-    .wrap-group-img {
-        display: flex;
-        gap: 30px;
+    .wrap-gallery {
+        height: 999px;
+        -webkit-mask-image: linear-gradient(
+            360deg,
+            transparent 0%,
+            black 18%,
+            black 82%,
+            transparent 100%
+        );
+        -webkit-mask-mode: alpha;
+        -webkit-mask-repeat: no-repeat;
+        mask-image: linear-gradient(
+            360deg,
+            transparent 0%,
+            black 18%,
+            black 82%,
+            transparent 100%
+        );
+        mask-mode: alpha;
+        mask-repeat: no-repeat;
 
-        .col-image {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-
-            @include res(md) {
-                width: 50%;
-                gap: 15px;
-            }
-        }
-
-        .left {
-            @include res(lg, min) {
-                margin-top: 123px;
-
-            }
-        }
-
-        @include res(xxl, min) {
-            margin-left: -13px;
-        }
-
-        @include res(md) {
-
-            gap: 15px;
+        .gallery {
+            margin-bottom: 25px;
         }
     }
 

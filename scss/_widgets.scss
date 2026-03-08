@@ -1,7 +1,7 @@
 @use "./abstracts/index"as *;
 
 .tf-countdown {
-    &.style-defaut {
+    &.style-default {
         text-transform: uppercase;
 
         .countdown__timer {

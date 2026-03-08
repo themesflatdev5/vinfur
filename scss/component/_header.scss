@@ -20,8 +20,7 @@
 
     }
 
-    &.style-defaut {
-
+    &.style-default {
         background-color: var(--Secondary);
         color: var(--White);
         gap: 4px;
@@ -40,7 +39,7 @@
 /* header
 ============================================================================*/
 .header {
-    z-index: 9999;
+    z-index: 99;
     border-bottom: 1px solid var(--Line);
 
     .header-inner {
@@ -65,8 +64,8 @@
             }
         }
     }
-    
-    .list-ver{
+
+    .list-ver {
         display: flex;
         gap: 24px;
     }
@@ -702,6 +701,15 @@ header {
         padding: 10px;
     }
 
+    .tf-btn {
+        height: 38px;
+        padding: 0 16px;
+
+        i {
+            font-size: 18px;
+        }
+    }
+
     .canvas-header {
         padding-bottom: 32px;
         position: relative;
@@ -719,6 +727,10 @@ header {
         .icon {
             font-weight: 600;
         }
+    }
+
+    .canvas-header {
+        padding: 32px 15px;
     }
 
     .canvas-body {
