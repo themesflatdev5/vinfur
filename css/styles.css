@@ -5352,6 +5352,9 @@ form .form-content-2 {
   font-size: 23px;
 }
 
+.offcanvas {
+  z-index: 3000;
+}
 .offcanvas.canvas-filter .collapse-body {
   padding-top: 16px;
   padding-bottom: 32px;
@@ -5499,8 +5502,6 @@ form .form-content-2 {
 .modal-shopping-cart .tf-mini-cart-item {
   display: flex;
   gap: 24px;
-  margin-left: 32px;
-  margin-right: 32px;
 }
 .modal-shopping-cart .tf-mini-cart-item:not(:last-child) {
   border-bottom: 1px solid var(--line);

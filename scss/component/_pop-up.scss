@@ -806,6 +806,9 @@
 }
 
 .offcanvas {
+
+    z-index: 3000;
+
     &.canvas-filter {
         .collapse-body {
             padding-top: 16px;
@@ -985,8 +988,6 @@
     .tf-mini-cart-item {
         display: flex;
         gap: 24px;
-        margin-left: 32px;
-        margin-right: 32px;
 
         &:not(:last-child) {
             border-bottom: 1px solid var(--line);
