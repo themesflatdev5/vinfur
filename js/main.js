@@ -7,25 +7,81 @@
 (function ($) {
     ("use strict");
 
-    /* headerFixed
-  -------------------------------------------------------------------------*/
-    const headerFixed = () => {
-        const $header = $(".header-fixed");
-        if ($header.length === 0) return;
+    /* Header Sticky
+    -------------------------------------------------------------------------*/
+    var headerSticky = function () {
+        const customHeaderCategory = () => {
+            const header = document.querySelector(".tf-header");
 
-        let isFixed = false;
-        const scrollThreshold = 200;
-
-        const handleScroll = () => {
-            const shouldBeFixed = $(window).scrollTop() >= scrollThreshold;
-            if (shouldBeFixed !== isFixed) {
-                $header.toggleClass("is-fixed", shouldBeFixed);
-                isFixed = shouldBeFixed;
+            if (!header || !header.classList.contains("has-by-category")) {
+                return null;
             }
+
+            const headerBottom = header.querySelector(".header-bottom_wrap");
+            const btnOpen = header.querySelector(".btn-open-header-bottom");
+
+            if (!headerBottom || !btnOpen) return null;
+
+            btnOpen.addEventListener("click", () => {
+                headerBottom.classList.toggle("hide");
+            });
+
+            return {
+                hideHeaderBottom: () => headerBottom.classList.add("hide"),
+                showHeaderBottom: () => headerBottom.classList.remove("hide"),
+            };
         };
 
-        $(window).on("scroll", handleScroll);
-        handleScroll();
+        const S3 = customHeaderCategory();
+
+        let lastScrollTop = 0;
+        let delta = 5;
+        let navbarHeight = $("header").outerHeight();
+        let didScroll = false;
+
+        $(window).on("scroll", function () {
+            didScroll = true;
+        });
+
+        setInterval(function () {
+            if (didScroll) {
+                let st = $(window).scrollTop();
+                navbarHeight = $("header").outerHeight();
+
+                if (st > navbarHeight) {
+                    if (st > lastScrollTop + delta) {
+                        $("header").css("top", `-${navbarHeight}px`);
+                        $(".sticky-top").css("top", "15px");
+                        $(".sticky-top.no-offset").css("top", "0");
+
+                        if (S3) S3.hideHeaderBottom();
+                    } else if (st < lastScrollTop - delta) {
+                        if ($("header").hasClass("header-abs")) {
+                            $("header").css("top", "15px");
+                        } else {
+                            $("header").css("top", "0");
+                        }
+
+                        $("header").addClass("header-sticky");
+                        $(".sticky-top").css("top", `${30 + navbarHeight}px`);
+                        $(".sticky-top.no-offset").css(
+                            "top",
+                            `${0 + navbarHeight}px`,
+                        );
+                    }
+                } else {
+                    $("header").css("top", "unset");
+                    $("header").removeClass("header-sticky");
+                    $(".sticky-top").css("top", "15px");
+                    $(".sticky-top.no-offset").css("top", "0");
+
+                    if (S3) S3.showHeaderBottom();
+                }
+
+                lastScrollTop = st;
+                didScroll = false;
+            }
+        }, 250);
     };
 
     /* Variant Picker
@@ -1024,6 +1080,7 @@
 
     // Dom Ready
     $(function () {
+        headerSticky();
         variantPicker();
         dropdownSelect();
         handleMobileMenu();
