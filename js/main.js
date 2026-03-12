@@ -84,7 +84,7 @@
         }, 250);
     };
 
-     /* Go Top
+    /* Go Top
     -------------------------------------------------------------------------*/
     var goTop = function () {
         var $goTop = $("#goTop");
@@ -636,17 +636,14 @@
     /* Bottom Sticky
     --------------------------------------------------------------------------------------*/
     var scrollBottomSticky = function () {
-        if ($("footer").length > 0) {
+        if ($(".footer").length > 0) {
             $(window).on("scroll", function () {
                 var scrollPosition = $(this).scrollTop();
                 var myElement = $(".tf-sticky-btn-atc");
-                var footerOffset = $("footer").offset().top;
+                var footerOffset = $(".footer").offset().top;
                 var windowHeight = $(window).height();
 
-                if (
-                    scrollPosition >= 500 &&
-                    scrollPosition + windowHeight < footerOffset
-                ) {
+                if (scrollPosition >= 500 && scrollPosition + windowHeight < footerOffset) {
                     myElement.addClass("show");
                 } else {
                     myElement.removeClass("show");
@@ -762,7 +759,6 @@
                     $(this).find(".quantity-product").val(),
                     10,
                 );
-
                 if (!isNaN(price) && !isNaN(quantity)) {
                     total += price * quantity;
                 }
@@ -773,6 +769,8 @@
                 currency: "USD",
             });
             $(".tf-totals-total-value").text(formatted);
+
+            console.log(formatted);
         }
 
         function updatePriceEach() {
@@ -816,7 +814,7 @@
                 );
 
                 if (!isNaN(price) && !isNaN(quantity)) {
-                    total += price;
+                    total += price * quantity;
                 }
             });
 
@@ -852,18 +850,20 @@
                     $mainList
                         .find(".list-empty")
                         .children()
-                        .not(".text-empty")
+                        .not(".box-text_empty")
                         .remove();
                     checkListEmpty();
                 });
             });
         }
-
+        function ortherDel() {
+            $(".container .orther-del").remove();
+        }
         $(".list-file-delete").on("input", ".quantity-product", function () {
             updateTotalPrice();
         });
 
-        $(".list-file-delete,.each-prd").on(
+        $(".list-file-delete ,.each-prd").on(
             "click",
             ".minus-quantity, .plus-quantity",
             function () {
@@ -893,6 +893,7 @@
             updateTotalPrice();
             checkListEmpty();
             updateTotalPriceEach();
+            ortherDel();
         });
 
         $(".clear-file-delete").on("click", function (e) {
@@ -1104,7 +1105,53 @@
         }
     };
 
-        /* Preloader
+    /* Handle Progress
+    -------------------------------------------------------------------------*/
+    var handleProgress = function () {
+        if ($(".progress-cart").length > 0) {
+            var progressValue = $(".progress-cart .value").data("progress");
+            setTimeout(function () {
+                $(".progress-cart .value").css("width", progressValue + "%");
+            }, 800);
+        }
+
+        function handleProgressBar(showEvent, hideEvent, target) {
+            $(target).on(hideEvent, function () {
+                $(".tf-progress-bar .value").css("width", "0%");
+            });
+
+            $(target).on(showEvent, function () {
+                setTimeout(function () {
+                    var progressValue = $(".tf-progress-bar .value").data(
+                        "progress",
+                    );
+                    $(".tf-progress-bar .value").css(
+                        "width",
+                        progressValue + "%",
+                    );
+                }, 600);
+            });
+        }
+
+        if ($(".modal-shopping-cart").length > 0) {
+            handleProgressBar(
+                "show.bs.offcanvas",
+                "hide.bs.offcanvas",
+                ".modal-shopping-cart",
+            );
+        }
+
+        if ($(".modal-shopping-cart").length > 0) {
+            handleProgressBar(
+                "show.bs.modal",
+                "hide.bs.modal",
+                ".modal-shopping-cart",
+            );
+        }
+    };
+
+
+    /* Preloader
     -------------------------------------------------------------------------*/
     var preloader = function () {
         $("#preload").fadeOut("slow", function () {
@@ -1143,6 +1190,7 @@
         deleteWishList();
         autoPopup();
         wow();
+        handleProgress();
         preloader();
     });
 })(jQuery);

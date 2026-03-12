@@ -244,15 +244,6 @@ header {
         gap: 20px;
     }
 
-    @include res(xl) {
-        .count {
-            width: 20px;
-            height: 20px;
-            font-size: 12px;
-            line-height: 16px;
-            font-weight: normal;
-        }
-    }
 }
 
 /* main-nav
@@ -710,6 +701,15 @@ header {
         }
     }
 
+    .payment-method-list {
+
+        li {
+            max-width: 50px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+    }
+
     .canvas-header {
         padding-bottom: 32px;
         position: relative;
@@ -753,6 +753,7 @@ header {
     .canvas-footer {
         display: flex;
         gap: 16px;
+        padding-inline: 5px;
 
         .br-line {
             width: 1px;
@@ -876,6 +877,7 @@ header {
 
     li {
         max-width: 50px;
+        border: 1px solid rgba(0, 0, 0, 0.03);
     }
 
     &.style-2 {

@@ -384,6 +384,10 @@
 
     .modal-dialog {
         max-width: 1153px;
+
+        @include res(md) {
+            max-width: 550px;
+        }
     }
 
     .modal-content {
@@ -414,6 +418,10 @@
 
         .item {
             height: 100%;
+
+            @include res(md) {
+                max-height: 450px;
+            }
 
             img {
                 width: 100%;
@@ -829,6 +837,7 @@
     padding: 3px 7px;
     font-size: 14px;
     line-height: 20px;
+    width: max-content;
 
     i {
         font-size: 16px;
@@ -858,10 +867,51 @@
 
     .modal-content {
         padding: 40px;
+
+        @include res(md) {
+            padding: 24px 15px;
+        }
     }
 
     .tf-product-info-heading {
         margin-bottom: 24px;
+    }
+
+    .tf-product-info-inner {
+        margin-bottom: 42px;
+
+        @include res(sm) {
+            margin-bottom: 32px;
+        }
+    }
+
+    .wg-quantity {
+        background-color: #E0E0E0;
+        padding-block: 1px;
+    }
+
+    .tf-product-info-wrap {
+
+        .tf-product-variant {
+            margin-bottom: 0;
+            padding-block: 15px;
+        }
+
+
+        .variant-quantity {
+            padding-block: 10px;
+            border-width: 1px 0 1px 0;
+            border-style: solid;
+            border-color: var(--Line);
+        }
+
+        .variant-color {
+            align-items: center;
+        }
+
+        .variant-picker-label {
+            margin-bottom: 0 !important;
+        }
     }
 }
 
@@ -974,8 +1024,6 @@
                 padding-bottom: 20px;
                 margin-bottom: 20px;
                 border-bottom: 1px solid var(--Line);
-                margin-left: 32px;
-                margin-right: 32px;
             }
         }
 
@@ -1359,7 +1407,7 @@
 
 .tf-toolbar-bottom {
     display: none;
-    padding: 21px 0px 12px;
+    padding: 12px 15px 12px;
     position: fixed;
     z-index: 200;
     bottom: 0;
@@ -1368,6 +1416,10 @@
     border-top: 1px solid var(--Line);
     background-color: var(--White);
     box-shadow: 0px 4px 16px 0px #00000014;
+
+    @include res(md,min){
+        padding: 18px 15px 18px;
+    }
 
     .toolbar-item {
         flex: 1 0 20%;
@@ -1390,16 +1442,23 @@
 
     .toolbar-count {
         position: absolute;
-        top: -11px;
+        top: -6px;
         right: -10px;
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         @include flex(center, center);
         background-color: var(--Primary);
         border-radius: 50%;
         font-size: 12px;
         line-height: 16px;
         color: var(--White);
+
+    @include res(sm,min){
+        top: -11px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+    }
     }
 
     .toolbar-label {
@@ -1487,10 +1546,7 @@
     }
 
     @include res(llg) {
-        flex-direction: column;
-        max-height: 100%;
-        overflow-y: auto;
-        gap: 20px;
+
 
         >div {
             flex: 0 0 100% !important;

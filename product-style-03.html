@@ -1821,7 +1821,7 @@
             <div class="footer-bottom">
                 <div class="tf-container">
                     <div class="wrap-footer-bottom">
-                        <p class="text_white">All Rights Reserved 2025 Vinfur.</p>
+                        <p class="text_white">All Rights Reserved 2026 Vinfur.</p>
                         <ul class="payment-method-list d-flex gap_8 justify-content-center flex-wrap">
                             <li>
                                 <a href="#"><img width="40" height="25" src="images/payment/amex.png" alt=""></a>
@@ -1904,10 +1904,10 @@
             </a>
         </div>
         <div class="toolbar-item">
-            <a href="view-cart.html">
+            <a href="shop-cart.html">
                 <span class="toolbar-icon">
-                    <i class="icon icon-shopping-cart-simple"></i>
-                    <span class="toolbar-count">24</span>
+                    <i class="icon icon-bag"></i>
+                    <span class="toolbar-count">0</span>
                 </span>
                 <span class="toolbar-label">Cart</span>
             </a>
@@ -1924,7 +1924,7 @@
             <a href="index.html" class="site-logo">
                 <img class="logo_header" alt="logo" width="165" height="32" src="images/logo/logo.svg">
             </a>
-            <a href="login.html" class="tf-btn btn-bg-secondary">
+            <a href="#login" data-bs-toggle="offcanvas" class="tf-btn btn-bg-secondary">
                 Login
                 <i class="icon icon-user"></i>
             </a>
@@ -1949,17 +1949,17 @@
             <div class="flow-us-wrap">
                 <h5 class="title">Follow us on</h5>
                 <ul class="tf-social-icon d-flex gap_8">
-                    <li><a href="#" class="social-facebook">
+                    <li><a href="https://www.facebook.com/" target="_blank" class="social-facebook">
                             <span class="icon-facebook"></span>
                         </a></li>
-                    <li><a href="#" class="social-pinterest">
+                    <li><a href="https://www.pinterest.com/" target="_blank" class="social-pinterest">
                             <span class="icon-pinterest"></span>
                         </a></li>
-                    <li><a href="#" class=" social-x">
+                    <li><a href="https://x.com/" target="_blank" class=" social-x">
                             <span class="icon-xlogo"></span>
                         </a></li>
-                    <li><a href="#" class="social-linkin ">
-                            <span class="icon-linked"></span>
+                    <li><a href="https://www.tiktok.com/" target="_blank" class="social-linkin ">
+                            <span class="icon-tiktok"></span>
                         </a></li>
                 </ul>
             </div>
@@ -2279,7 +2279,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tf-product-variant w-full mb_42">
+                        <div class="tf-product-variant w-full">
                             <div class="variant-picker-item variant-color">
                                 <div class="variant-picker-label">
                                     <div class="h6 fw-semibold fw-4 text_heading-color">
@@ -2355,12 +2355,12 @@
                         <div class="title">Shopping Cart</div>
                         <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
                     </div>
-                    <div class="wrap">
+                    <div class="wrap list-file-delete">
                         <div class="tf-mini-cart-threshold">
                             <p class="h6 mb_21  fw-4">Spend <span class="fw-5">$100</span> more to get <span
                                     class="fw-5">Free
                                     Shipping</span></p>
-                            <div class="tf-progress-bar">
+                            <div class="tf-progress-bar tf-progress-ship">
                                 <div class="value" style="width: 0%;" data-progress="75">
                                     <i class="icon icon-ship-car"></i>
                                 </div>
@@ -2371,7 +2371,8 @@
                             <div class="tf-mini-cart-main">
                                 <div class="tf-mini-cart-sroll">
                                     <div class="d-flex justify-content-between heading">
-                                        <div class="text-body-default text-uppercase">4 products</div>
+                                        <div class="text-body-default text-uppercase"><span class="prd-count">4</span>
+                                            products</div>
                                         <a href="#" class="hover-underline-link text-body-default">Empty cart </a>
                                     </div>
                                     <div class="tf-mini-cart-items d-grid gap_20">
@@ -2396,10 +2397,10 @@
                                                                 class="d-flex gap_16 align-items-center text_heading-color">
                                                                 <span class="text-caption-1">Qty</span>
                                                                 <div class="wg-quantity ">
-                                                                    <span class="btn-quantity btn-decrease">-</span>
+                                                                    <span class="btn-quantity minus-quantity">-</span>
                                                                     <input type="text" class="quantity-product"
                                                                         name="number" value="1">
-                                                                    <span class="btn-quantity btn-increase">+</span>
+                                                                    <span class="btn-quantity plus-quantity">+</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2407,7 +2408,7 @@
                                                     </div>
                                                     <div class="right">
 
-                                                        <div class="h6 ">$130.00</div>
+                                                        <div class="h6 tf-mini-card-price">$130.00</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2433,10 +2434,10 @@
                                                                 class="d-flex gap_16 align-items-center text_heading-color">
                                                                 <span class="text-caption-1">Qty</span>
                                                                 <div class="wg-quantity ">
-                                                                    <span class="btn-quantity btn-decrease">-</span>
+                                                                    <span class="btn-quantity minus-quantity">-</span>
                                                                     <input type="text" class="quantity-product"
                                                                         name="number" value="1">
-                                                                    <span class="btn-quantity btn-increase">+</span>
+                                                                    <span class="btn-quantity plus-quantity">+</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2444,7 +2445,7 @@
                                                     </div>
                                                     <div class="right">
 
-                                                        <div class="h6 ">$130.00</div>
+                                                        <div class="h6 tf-mini-card-price">$130.00</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2470,10 +2471,10 @@
                                                                 class="d-flex gap_16 align-items-center text_heading-color">
                                                                 <span class="text-caption-1">Qty</span>
                                                                 <div class="wg-quantity ">
-                                                                    <span class="btn-quantity btn-decrease">-</span>
+                                                                    <span class="btn-quantity minus-quantity">-</span>
                                                                     <input type="text" class="quantity-product"
                                                                         name="number" value="1">
-                                                                    <span class="btn-quantity btn-increase">+</span>
+                                                                    <span class="btn-quantity plus-quantity">+</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2481,7 +2482,7 @@
                                                     </div>
                                                     <div class="right">
 
-                                                        <div class="h6 ">$130.00</div>
+                                                        <div class="h6 tf-mini-card-price">$130.00</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2507,10 +2508,10 @@
                                                                 class="d-flex gap_16 align-items-center text_heading-color">
                                                                 <span class="text-caption-1">Qty</span>
                                                                 <div class="wg-quantity ">
-                                                                    <span class="btn-quantity btn-decrease">-</span>
+                                                                    <span class="btn-quantity minus-quantity">-</span>
                                                                     <input type="text" class="quantity-product"
                                                                         name="number" value="1">
-                                                                    <span class="btn-quantity btn-increase">+</span>
+                                                                    <span class="btn-quantity plus-quantity">+</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2518,7 +2519,7 @@
                                                     </div>
                                                     <div class="right">
 
-                                                        <div class="h6 ">$130.00</div>
+                                                        <div class="h6 tf-mini-card-price">$130.00</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2911,16 +2912,20 @@
                     </div>
                     <div class="bot">
                         <div class="quick-link">
-                            <div class=" text-body-default mb_26">Quick Link</div>
+                            <div class="text-body-default fw-5 mb_26">Quick Link</div>
                             <ul class="d-grid gap_10">
-                                <li><a href="#" class="link text-body-default text_body-color-2">Best Sellers</a></li>
-                                <li><a href="#" class="link text-body-default text_body-color-2">Chairs</a></li>
-                                <li><a href="#" class="link text-body-default text_body-color-2">Tables</a></li>
-                                <li><a href="#" class="link text-body-default text_body-color-2">Lighting</a></li>
+                                <li><a href="shop-style-01.html" class="link text-body-default text_body-color-2">Best
+                                        Sellers</a></li>
+                                <li><a href="shop-style-01.html"
+                                        class="link text-body-default text_body-color-2">Chairs</a></li>
+                                <li><a href="shop-style-01.html"
+                                        class="link text-body-default text_body-color-2">Tables</a></li>
+                                <li><a href="shop-style-01.html"
+                                        class="link text-body-default text_body-color-2">Lighting</a></li>
                             </ul>
                         </div>
                         <div class="suggestion">
-                            <div class="text-body-default mb_26">Suggestion for you</div>
+                            <div class="text-body-default fw-5 mb_26">Suggestion for you</div>
                             <div class="prd-wrap">
                                 <div class="suggestion-product-item mb_16">
                                     <div class="img-style">
@@ -2928,7 +2933,8 @@
                                             alt="product">
                                     </div>
                                     <div class="content">
-                                        <a href="#" class="text-body-default lh-24 link line-clamp-2 fw-5  mb_8">Azores
+                                        <a href="shop-style-01.html"
+                                            class="text-body-default lh-24 link line-clamp-2 fw-5  mb_8">Azores
                                             Lounge Chair</a>
                                         <div class="price d-flex align-items-center gap_10 ">
                                             <span class="">$2,499.00</span><span
@@ -2942,7 +2948,8 @@
                                             alt="product">
                                     </div>
                                     <div class="content">
-                                        <a href="#" class="text-body-default lh-24 link line-clamp-2 fw-5  mb_8">DAM
+                                        <a href="shop-style-01.html"
+                                            class="text-body-default lh-24 link line-clamp-2 fw-5  mb_8">DAM
                                             Stool - Ceramic / Leather</a>
                                         <div class="price d-flex align-items-center gap_10 ">
                                             <span class="">$2,499.00</span><span
