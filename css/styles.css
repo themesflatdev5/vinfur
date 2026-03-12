@@ -6089,7 +6089,7 @@ form .form-content-2 {
 .hover-underline-link {
   width: max-content;
   --underline-position-y: calc(100% - 1px);
-  --underline-height: 2px;
+  --underline-height: 1px;
   background-repeat: no-repeat;
   background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
   background-position: 100% var(--underline-position-y);
