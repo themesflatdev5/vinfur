@@ -599,6 +599,17 @@
         .modal-body {
             flex-direction: column;
         }
+
+        .image {
+            max-height: 450px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                max-height: 370px;
+            }
+        }
     }
 }
 
@@ -1417,7 +1428,7 @@
     background-color: var(--White);
     box-shadow: 0px 4px 16px 0px #00000014;
 
-    @include res(md,min){
+    @include res(md, min) {
         padding: 18px 15px 18px;
     }
 
@@ -1453,12 +1464,12 @@
         line-height: 16px;
         color: var(--White);
 
-    @include res(sm,min){
-        top: -11px;
-        right: -10px;
-        width: 20px;
-        height: 20px;
-    }
+        @include res(sm, min) {
+            top: -11px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+        }
     }
 
     .toolbar-label {

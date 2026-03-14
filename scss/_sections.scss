@@ -206,7 +206,7 @@
     }
 
     .content {
-        padding: 190px 0 189px;
+        padding: 221px 0 221px;
         position: relative;
         z-index: 1;
         display: flex;
@@ -270,6 +270,14 @@
 
             i {
                 font-size: 16px;
+            }
+        }
+    }
+
+    &.style-3 {
+        @include res(lg, min) {
+            .content {
+                padding: 231px 0;
             }
         }
     }
@@ -611,13 +619,13 @@
         }
     }
 
-    .countdown_v01  {
+    .countdown_v01 {
         width: max-content;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .countdown_v01 ,
+    .countdown_v01,
     .sub-title {
         margin-bottom: 48px;
 
@@ -646,7 +654,10 @@
         }
     }
 
-
+    .tf-container {
+        position: relative;
+        z-index: 3;
+    }
 
     .tf-btn {
         border-color: #ababab;
@@ -656,9 +667,9 @@
         }
     }
 
-    img {
-        z-index: -1;
+    img {}
 
+    .hover-image {
         @include res(xl) {
             width: 21%;
         }
@@ -941,7 +952,7 @@
 
     .bn_content {
         text-align: center;
-       
+
     }
 
     .text-top {

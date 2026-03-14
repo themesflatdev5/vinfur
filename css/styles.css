@@ -2161,6 +2161,8 @@ a:focus, a:hover {
 }
 .header .header-top .site-logo {
   padding: 34px 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (max-width: 991px) {
   .header .header-top .site-logo {
@@ -2214,6 +2216,9 @@ a:focus, a:hover {
   padding: 9px 8px;
 }
 
+.hds-2 {
+  border-bottom: 0;
+}
 .hds-2 .main-menu .navigation > li > a {
   padding: 29px 0px 28px;
 }
@@ -3027,7 +3032,7 @@ header.header-sticky.tf-header-landing {
 }
 .tab-product_list.style-2 {
   gap: 64px;
-  padding: 6px 0;
+  padding: 9px 0;
 }
 @media (max-width: 767px) {
   .tab-product_list.style-2 {
@@ -3335,6 +3340,20 @@ button.animate-btn::after,
   background-image: linear-gradient(90deg, transparent, rgb(220, 70, 70), transparent);
 }
 
+.animate-fill.btn-bg-white > * {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.animate-fill.btn-bg-white:hover {
+  background: var(--Primary);
+  color: var(--White);
+}
+.animate-fill.btn-bg-white:hover > * {
+  color: var(--White);
+}
 .animate-fill.btn-border-primary > *, .animate-fill.btn-border > * {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -4187,7 +4206,7 @@ form .form-content-2 {
 .form-newsletter fieldset input {
   height: 46px;
   padding: 10px 16px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .form-newsletter .btn-submit {
   padding: 11px 30px;
@@ -4439,6 +4458,11 @@ form .form-content-2 {
 .entry__label {
   margin: 0 !important;
   font-family: "Satoshi", sans-serif;
+}
+
+.sib-form .entry__error {
+  font-size: 14px !important;
+  line-height: 24px !important;
 }
 
 .sib-form-block {
@@ -5189,6 +5213,15 @@ form .form-content-2 {
 @media (max-width: 767px) {
   .modal-auto-newletter .modal-body {
     flex-direction: column;
+  }
+  .modal-auto-newletter .image {
+    max-height: 450px;
+  }
+  .modal-auto-newletter .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 370px;
   }
 }
 
@@ -12312,7 +12345,7 @@ form .form-content-2 {
   object-fit: cover;
 }
 .s-banner-v03 .content {
-  padding: 190px 0 189px;
+  padding: 221px 0 221px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -12360,6 +12393,11 @@ form .form-content-2 {
 }
 .s-banner-v03.style-2 .btn_link i {
   font-size: 16px;
+}
+@media (min-width: 992px) {
+  .s-banner-v03.style-3 .content {
+    padding: 231px 0;
+  }
 }
 
 .s-shop-intro .row {
@@ -12686,6 +12724,10 @@ form .form-content-2 {
     padding-bottom: 130px;
   }
 }
+.s-instagram .tf-container {
+  position: relative;
+  z-index: 3;
+}
 .s-instagram .tf-btn {
   border-color: #ababab;
 }
@@ -12694,16 +12736,13 @@ form .form-content-2 {
     height: 58px;
   }
 }
-.s-instagram img {
-  z-index: -1;
-}
 @media (max-width: 1199px) {
-  .s-instagram img {
+  .s-instagram .hover-image {
     width: 21%;
   }
 }
 @media (max-width: 575px) {
-  .s-instagram img {
+  .s-instagram .hover-image {
     width: 25%;
   }
 }

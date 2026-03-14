@@ -168,6 +168,20 @@ button.animate-btn::after,
 }
 
 .animate-fill {
+    &.btn-bg-white{
+        >* {
+            @include transition3();
+        }
+
+        &:hover {
+            background: var(--Primary);
+            color: var(--White);
+
+            >* {
+                color: var(--White);
+            }
+        }
+    }
 
     &.btn-border-primary,
     &.btn-border {
