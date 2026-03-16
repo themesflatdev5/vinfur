@@ -517,12 +517,12 @@
 
         &.sz-large {
             @include res(lg, min) {
-                width: 38px;
-                height: 38px;
+                width: 30px;
+                height: 30px;
 
                 .swatch-value {
-                    width: 30px;
-                    height: 30px;
+                    width: 22px;
+                    height: 22px;
                 }
             }
         }
@@ -1057,7 +1057,7 @@
                 border-color: var(--Black);
             }
 
-            @include res(sm){
+            @include res(sm) {
 
                 width: 32px;
                 height: 32px;
@@ -1492,7 +1492,6 @@
 
     .wg-quantity {
         background-color: #f1f1f1;
-        border-radius: 43px;
     }
 }
 
@@ -1508,6 +1507,17 @@
 
 .product-thumbs-slider {
 
+    &.style-row-left {
+
+        @include res(xl, min) {
+            .tf-product-media-thumbs {
+                .swiper-slide {
+                    max-height: 127px;
+                }
+            }
+        }
+    }
+
     @include res(lg, min) {
         &.style-row-left {
             padding-right: 10px;
@@ -1522,7 +1532,7 @@
 .tf-product-media-thumbs {
     width: 127px;
     flex-shrink: 0;
-    max-height: 684px;
+    // max-height: 684px;
 
     .swiper-slide {
         height: max-content;
@@ -1955,7 +1965,6 @@
 
     .wg-quantity {
         background-color: #f1f1f1;
-        border-radius: 43px;
     }
 
     .tf-sticky-atc-infos form {
@@ -1997,10 +2006,11 @@
     }
 
     @include res(xl) {
-        bottom: 79px;
+        bottom: 84px;
     }
 
     @include res(md) {
+        bottom: 72px;
 
         .title,
         .tf-sticky-atc-product {
@@ -2450,6 +2460,8 @@
         -webkit-box-orient: vertical;
         display: -webkit-box;
         overflow: hidden;
+        font-size: 16px;
+        line-height: 24px;
     }
 
     .prd-image {

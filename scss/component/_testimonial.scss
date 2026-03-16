@@ -58,6 +58,19 @@
             }
         }
 
+        .img-style {
+
+            @include res(lg) {
+                max-height: 550px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
         .wrap-sw-button {
 
             @include res(md, min) {
@@ -104,22 +117,18 @@
 
     .wrap-gallery {
         height: 999px;
-        -webkit-mask-image: linear-gradient(
-            360deg,
-            transparent 0%,
-            black 18%,
-            black 82%,
-            transparent 100%
-        );
+        -webkit-mask-image: linear-gradient(360deg,
+                transparent 0%,
+                black 18%,
+                black 82%,
+                transparent 100%);
         -webkit-mask-mode: alpha;
         -webkit-mask-repeat: no-repeat;
-        mask-image: linear-gradient(
-            360deg,
-            transparent 0%,
-            black 18%,
-            black 82%,
-            transparent 100%
-        );
+        mask-image: linear-gradient(360deg,
+                transparent 0%,
+                black 18%,
+                black 82%,
+                transparent 100%);
         mask-mode: alpha;
         mask-repeat: no-repeat;
 

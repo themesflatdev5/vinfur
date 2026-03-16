@@ -3,7 +3,10 @@
 .tf-page-title {
     padding: 137px 15px 26px;
     background: linear-gradient(90deg, #ffffff 0%, #ecdfd0 50%, #ffffff 100%);
-    margin-left: 37px;
+    max-width: 1750px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 
     .title {
         margin-bottom: 101px;
@@ -21,6 +24,12 @@
 
 .s-related-products,
 .s-product-main {
+
+    .swiper {
+        padding-bottom: 50px;
+        margin-bottom: -50px;
+    }
+
     .sw-button {
         position: absolute;
         top: calc(50% - 59px);
@@ -238,7 +247,7 @@
                 position: absolute;
                 inset: 0;
                 content: "";
-                background: #00000033;
+                background: #00000055;
             }
         }
 
@@ -864,6 +873,10 @@
     }
 }
 
+.s-colection-v03 {
+    background-color: var(--Primary);
+}
+
 .section-box-image {
     .left {
 
@@ -984,5 +997,43 @@
     @include res(md) {
         flex-wrap: wrap;
         justify-content: center;
+    }
+}
+
+
+.section-404 {
+
+    .image,
+    .content {
+        margin-bottom: 40px;
+    }
+
+    .title {
+        margin-bottom: 12px;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .wrap {
+        max-width: 448px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .group-btn {
+        gap: 12px;
+        justify-content: center;
+
+        >* {
+            width: 100%;
+        }
+    }
+
+    @include res(sm) {
+        .group-btn {
+            flex-wrap: wrap;
+        }
     }
 }

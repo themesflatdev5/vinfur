@@ -112,6 +112,10 @@
     .thumb {
         position: absolute;
         inset: 0;
+        background-color: var(--Secondary);
+        img{
+            opacity: 0.8;
+        }
     }
 
     .content {

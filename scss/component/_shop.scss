@@ -76,7 +76,8 @@
     &:hover {
         background-color: var(--Primary);
         border-color: var(--Primary);
-        color: var(--Secondary);
+        color: var(--White);
+        
     }
 }
 
@@ -457,7 +458,8 @@
         }
 
         &:hover {
-            background: var(--Secondary);
+            border-color: var(--Primary);
+            background: var(--Primary);
             color: var(--White);
         }
     }
@@ -1348,4 +1350,39 @@
         letter-spacing: 0;
     }
 
+}
+
+
+.btn-sidebar-mb {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    z-index: 50;
+
+    button {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--Secondary);
+        background-color: var(--Secondary);
+        color: var(--White);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            font-size: 20px;
+        }
+    }
+
+    &.right {
+        left: unset;
+        right: 0;
+        transform: rotate(180deg);
+    }
+}
+
+.wrapper-wishlist {
+    @include res(xl, min) {
+        row-gap: 60px;
+    }
 }

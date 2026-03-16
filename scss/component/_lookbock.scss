@@ -148,6 +148,11 @@
             backdrop-filter: blur(10px);
             justify-content: space-between;
             width: 100%;
+
+            @include res(sm) {
+                right: 15px;
+                width: unset;
+            }
         }
     }
 }

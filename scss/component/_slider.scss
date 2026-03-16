@@ -67,6 +67,19 @@
             border-color: var(--White);
         }
 
+        &.type-cl-dark {
+            .swiper-pagination-bullet-active {
+                border-color: var(--Secondary);
+            }
+
+            .swiper-pagination-bullet {
+
+                &::after {
+                    background-color: var(--Secondary);
+                }
+            }
+        }
+
         &.type-small {
             gap: 5px;
 
@@ -89,6 +102,7 @@
                 }
             }
         }
+
     }
 }
 

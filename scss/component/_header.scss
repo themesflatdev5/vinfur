@@ -500,6 +500,7 @@ header {
     gap: 24px;
 }
 
+
 .mega-menu {
     width: 100%;
     left: 0;
@@ -514,6 +515,11 @@ header {
 
     .col-nav-link {
         width: 234px;
+        white-space: nowrap;
+
+        @include res(xxxl) {
+            width: unset;
+        }
     }
 
     &.mega-shop {
@@ -533,10 +539,24 @@ header {
     &.mega-product {
         left: 0;
         right: 0;
-        padding-left: 171px;
-        padding-right: 40px;
+        padding-left: 150px;
+        padding-right: 150px;
         display: flex;
         justify-content: space-between;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+
+        @media (max-width:1700px) {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        @include res(xxl) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
 
         a {
             display: flex;
@@ -634,6 +654,7 @@ header {
     align-items: center;
     flex-direction: column;
     gap: 12px;
+    padding-bottom: 12px;
     backdrop-filter: blur(4px);
     border: 1px solid transparent;
     background-color: var(--bg-8);
@@ -694,6 +715,7 @@ header {
         right: 0;
         top: 0;
         padding: 10px;
+        z-index: 2;
     }
 
     .tf-btn {

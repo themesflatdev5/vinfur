@@ -1,7 +1,6 @@
 @use "../abstracts/index" as *;
 
 .tf-table-compare {
-    border-radius: 16px;
     overflow-x: scroll;
 
     &::-webkit-scrollbar {

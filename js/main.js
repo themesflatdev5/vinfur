@@ -643,7 +643,10 @@
                 var footerOffset = $(".footer").offset().top;
                 var windowHeight = $(window).height();
 
-                if (scrollPosition >= 500 && scrollPosition + windowHeight < footerOffset) {
+                if (
+                    scrollPosition >= 500 &&
+                    scrollPosition + windowHeight < footerOffset
+                ) {
                     myElement.addClass("show");
                 } else {
                     myElement.removeClass("show");
@@ -1150,6 +1153,14 @@
         }
     };
 
+    /* Sidebar Mobile
+    -------------------------------------------------------------------------*/
+    var sidebarMobile = function () {
+        if ($(".sidebar-content-wrap").length > 0) {
+            var sidebar = $(".sidebar-content-wrap").html();
+            $(".sidebar-mobile-append").append(sidebar);
+        }
+    };
 
     /* Preloader
     -------------------------------------------------------------------------*/
@@ -1191,6 +1202,7 @@
         autoPopup();
         wow();
         handleProgress();
+        sidebarMobile();
         preloader();
     });
 })(jQuery);

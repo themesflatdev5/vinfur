@@ -1597,6 +1597,7 @@ a {
 .sticky-top {
     position: sticky !important;
     z-index: 50;
+    @include transition3();
 }
 
 .swiper-slide {
@@ -1654,6 +1655,12 @@ a {
 .group-btn {
     display: flex;
     align-items: center;
+}
+
+.heading-section {
+    @include res(md) {
+        margin-bottom: 45px;
+    }
 }
 
 #goTop {
@@ -1778,7 +1785,7 @@ a {
     }
 }
 
-.site-logo{
+.site-logo {
     @include res(md) {
         max-width: 132px;
     }

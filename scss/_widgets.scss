@@ -29,6 +29,7 @@
         border: 1px solid var(--Line);
         border-radius: 50%;
         font-size: 42px;
+        flex-shrink: 0;
     }
 
     &.style-col {
@@ -221,7 +222,7 @@
     }
 }
 
-.countdown_v01  {
+.countdown_v01 {
     padding: 16px 8px;
     border: 1px solid #b5b5b5;
 
@@ -473,6 +474,16 @@
 .box-imgae_v01 {
     position: relative;
 
+    .box-image {
+        background-color: var(--Secondary);
+
+        img {
+            opacity: 0.8;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
     .content {
         position: absolute;
         inset: 0;
@@ -506,6 +517,10 @@
         .title {
             color: #c7c7c7;
             text-transform: uppercase;
+            @include transition3();
+            &:hover {
+                color: var(--Secondary);
+            }
         }
 
         i {
