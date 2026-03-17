@@ -1162,6 +1162,43 @@
         }
     };
 
+    /* Update Bundle Total 
+    -------------------------------------------------------------------------*/
+    var updateBundleTotal = function () {
+        var $bundleItems = $(".tf-bundle-product-item");
+        var $firstCheck = $bundleItems.first().find(".tf-check");
+        $firstCheck.prop("checked", true).prop("disabled", true);
+
+        var updateBundleTotal = function () {
+            var totalPrice = 0;
+
+            $bundleItems.each(function () {
+                var $this = $(this);
+                if ($this.find(".tf-check").prop("checked")) {
+                    var newPrice =
+                        parseFloat(
+                            $this
+                                .find(".price-new")
+                                .text()
+                                .replace(/[$,]/g, ""),
+                        ) || 0;
+
+                    totalPrice += newPrice;
+                }
+            });
+
+            $(".total-price").text(
+                `$${totalPrice.toLocaleString("en-US", { minimumFractionDigits: 2 })}`,
+            );
+        };
+
+        updateBundleTotal();
+
+        $(".tf-check").on("change", function () {
+            updateBundleTotal();
+        });
+    };
+
     /* Preloader
     -------------------------------------------------------------------------*/
     var preloader = function () {
@@ -1203,6 +1240,7 @@
         wow();
         handleProgress();
         sidebarMobile();
+        updateBundleTotal();
         preloader();
     });
 })(jQuery);

@@ -416,6 +416,8 @@
                 transform: translateY(-16px);
                 transition-delay: unset !important;
             }
+
+
         }
     }
 
@@ -1516,11 +1518,18 @@
                 }
             }
         }
+
+        @include res(xl, min) {
+            .tf-product-media-thumbs {
+                max-height: 684px;
+            }
+        }
     }
 
     @include res(lg, min) {
         &.style-row-left {
             padding-right: 10px;
+
         }
     }
 
@@ -2075,18 +2084,7 @@
     }
 }
 
-.stagger-wrap {
-    .stagger-item {
-        transition: 0.3s ease-in-out;
-        transform: scale(0.5) rotate(90deg) skew(15deg);
-        opacity: 0;
 
-        &.stagger-finished {
-            transform: scale(1) rotate(0deg) skew(0deg);
-            opacity: 1;
-        }
-    }
-}
 
 .product-grid-img {
     @include res(lg, min) {
@@ -2497,4 +2495,74 @@
             gap: 8px;
         }
     }
+}
+
+.tf-product-fbt {
+    margin-top: 38px;
+
+    .title {
+        margin-bottom: 24px;
+    }
+
+    .bundle-image {
+        max-width: 129px;
+        flex-shrink: 0;
+
+        img {
+            aspect-ratio: 1;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        @include res(sm) {
+            max-width: 100px;
+        }
+    }
+
+    .tf-product-form-bundle {
+        border: 1px solid var(--Line);
+        padding: 20px 15px;
+
+        @include res(sm, min) {
+            padding: 30px;
+        }
+
+        @include res(xl, min) {
+            padding: 64px;
+        }
+    }
+
+    .tf-bundle-products {
+        margin-bottom: 40px;
+    }
+
+    .tf-bundle-product-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 24px 10px;
+        background-color: #f9f9f9;
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+
+        .bundle-info {
+            display: grid;
+            gap: 10px;
+
+            .name {
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                overflow: hidden;
+            }
+        }
+
+        @include res(sm) {
+            gap: 10px;
+        }
+    }
+
+
 }

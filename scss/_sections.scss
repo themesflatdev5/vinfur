@@ -890,6 +890,10 @@
         }
     }
 
+    .right {
+        background-color: #D4C8B8;
+    }
+
     @include res(xxl) {
 
         .left,

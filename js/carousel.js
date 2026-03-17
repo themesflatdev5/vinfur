@@ -103,8 +103,8 @@ if ($(".sw-layout").length > 0) {
         var spacingLg = swiperContainer.data("space-lg") || spacing;    
         var spacingXl = swiperContainer.data("space-xl") || spacingLg;
         var perGroup = swiperContainer.data("pagination") || 1;
-        var perGroupMd = swiperContainer.data("pagination-md") || 1;
-        var perGroupLg = swiperContainer.data("pagination-lg") || 1;
+        var perGroupMd = swiperContainer.data("pagination-md") || perGroup;
+        var perGroupLg = swiperContainer.data("pagination-lg") || perGroup;
         var center = swiperContainer.data("slide-center") || false;
         var initSlide = swiperContainer.data("init-slide") || 0;
         var autoplay =

@@ -5,13 +5,33 @@
     z-index: 3;
 
     .swiper-pagination-bullet {
-        background-color: #d9d9d9;
-        height: 12px;
-        width: 12px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        height: 22px;
+        width: 22px;
+        position: relative;
+        background: transparent;
+        opacity: 1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 8px;
+            width: 8px;
+            background-color: var(--White);
+            border-radius: 50%;
+            @include center();
+        }
     }
 
     .swiper-pagination-bullet-active {
-        background-color: var(--Secondary);
+        border-color: var(--Secondary);
+    }
+
+    .swiper-pagination-bullet {
+        &::after {
+            background-color: var(--Secondary);
+        }
     }
 
     &.style-1 {

@@ -784,7 +784,7 @@
             maxItems = 12;
             initItem = 3;
         } else if (layoutClassGrid.includes("tf-col-4")) {
-            maxItems = 16;
+            maxItems = 12;
             initItem = 4;
         } else if (layoutClassGrid.includes("tf-col-5")) {
             maxItems = 10;
