@@ -2137,7 +2137,10 @@ a:focus, a:hover {
   font-size: 12px;
   line-height: 18px;
 }
-.top-bar p {
+.top-bar > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   font-size: 12px;
   line-height: 18px;
 }

@@ -1,6 +1,34 @@
 /**
  
- * 
+ * Header Sticky
+ * Go Top
+ * Variantpicker
+ * Dropdown Select
+ * Handle MobileMenu
+ * Total Price Variant
+ * Add WishList
+ * Click Modal Second
+ * Delete File
+ * Estimate Shipping
+ * Table Compare Remove
+ * Swatch Color
+ * Scroll Bottom Sticky
+ * Btn Quantity
+ * Stagger Wrap
+ * Check Click
+ * Infiniteslide
+ * Handle Sidebar Filter
+ * Show Password
+ * Checkout
+ * Height Table
+ * Click Control
+ * Delete WishList
+ * Auto Popup
+ * Ưow
+ * Handle Progress
+ * Sidebar Mobile
+ * Update Bundle Total
+ * Preloader
  
 **/
 
