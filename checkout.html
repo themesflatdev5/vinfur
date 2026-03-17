@@ -15,9 +15,6 @@
         content="VinFur offers modern, durable furniture from Vietnam — stylish sofas, dining sets, storage, and decor at fair prices with fast delivery.">
     <meta name="keywords"
         content="VinFur, furniture, modern furniture, home decor, sofas, dining sets, storage solutions, affordable furniture, stylish interiors">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -489,7 +486,7 @@
                                 </div>
                             </li>
                             <li class="text-menu menu-item">
-                                <a href="constacts.html" class="toggle splitting item-link">
+                                <a href="contact.html" class="toggle splitting item-link">
                                     Buy Template!
                                 </a>
                             </li>
@@ -556,7 +553,7 @@
                             <div class="s-wrap">
                                 <form class="form-checkout-cart-main style-border">
                                     <div class="box-ip-checkout">
-                                        <h5 class="checkout-title fw-5">DELIVERY</h5>
+                                        <div class="h5 checkout-title fw-5">DELIVERY</div>
                                         <div class="form-content-2">
                                             <div class="cols tf-grid-layout sm-col-2">
                                                 <fieldset class="tf-field-2">
@@ -589,7 +586,7 @@
                                                     <!-- <input class="tf-input" type="text" placeholder="">
                                                 <label class="tf-lable">State</label> -->
                                                     <div class="tf-select">
-                                                        <select class="w-100" id="shipping-country-form"
+                                                        <select class="w-100" id="shipping-country-checkout"
                                                             name="address[country]" data-default="">
                                                             <option value="Australia"
                                                                 data-provinces='[["Australian Capital Territory","Australian Capital Territory"],["New South Wales","New South Wales"],["Northern Territory","Northern Territory"],["Queensland","Queensland"],["South Australia","South Australia"],["Tasmania","Tasmania"],["Victoria","Victoria"],["Western Australia","Western Australia"]]'>
@@ -627,7 +624,7 @@
                                                 </fieldset>
                                                 <fieldset class="tf-field-2">
                                                     <input class="tf-input" type="text" data-opend-focus placeholder=""
-                                                        id="zipcode" name="address[zip]" value="">
+                                                        id="zipcode-checkout" name="address[zip]" value="">
                                                     <label class="tf-lable">Zipcode/Postal</label>
                                                 </fieldset>
                                             </div>
@@ -638,26 +635,26 @@
                                         </div>
                                     </div>
                                     <div class="box-ip-contact">
-                                        <h5 class="checkout-title fw-5">
+                                        <div class="h5 checkout-title fw-5">
                                             CONTACT INFORMATION
                                             <a href="#login" data-bs-toggle="offcanvas"
                                                 class="tf-btn-line text-caption-1 hover-underline-link">
                                                 Log in
                                             </a>
-                                        </h5>
+                                        </div>
                                         <fieldset class="tf-field-2">
                                             <input class="tf-input" type="text" placeholder="">
                                             <label class="tf-lable">Email or phone number</label>
                                         </fieldset>
                                     </div>
                                     <div class="box-ip-shipping">
-                                        <h5 class="checkout-title fw-5">
+                                        <div class="h5 checkout-title fw-5">
                                             SHIPPING METHOD
                                             <a href="#login" data-bs-toggle="offcanvas"
                                                 class="tf-btn-line text-caption-1 hover-underline-link">
                                                 Log in
                                             </a>
-                                        </h5>
+                                        </div>
                                         <div class="form-content-2">
                                             <label for="freeship" class="check-ship">
                                                 <input type="radio" id="freeship" class="tf-check-rounded"
@@ -678,7 +675,7 @@
                                         </div>
                                     </div>
                                     <div class="box-ip-payment">
-                                        <h5 class="checkout-title fw-5 mb_12">PAYMENT</h5>
+                                        <div class="h5 checkout-title fw-5 mb_12">PAYMENT</div>
                                         <p class="sub-title text_body-color-2">
                                             All transactions are secure and encrypted.
                                         </p>
@@ -699,8 +696,7 @@
                                         <div class="payment-method-box" id="payment-method-box">
                                             <div class="payment-item">
                                                 <label for="delivery" class="check-payment collapsed"
-                                                    data-bs-toggle="collapse" data-bs-target="#delivery-payment"
-                                                    aria-controls="delivery-payment">
+                                                    data-bs-toggle="collapse" data-bs-target="#delivery-payment">
                                                     <input type="radio" name="payment-method" class="tf-check-rounded"
                                                         id="delivery">
                                                     <span class="pay-title">Cash on delivery</span>
@@ -710,8 +706,7 @@
                                             </div>
                                             <div class="payment-item">
                                                 <label for="credit-card" class="check-payment" data-bs-toggle="collapse"
-                                                    data-bs-target="#credit-card-payment"
-                                                    aria-controls="credit-card-payment">
+                                                    data-bs-target="#credit-card-payment">
                                                     <input type="radio" name="payment-method" class="tf-check-rounded"
                                                         id="credit-card" checked>
                                                     <span class="pay-title">Credit card</span>
@@ -732,7 +727,7 @@
                                                             </fieldset>
                                                             <fieldset class="tf-field-2">
                                                                 <input class="tf-input" type="text" placeholder="">
-                                                                <label class="tf-lable">Sercurity code</label>
+                                                                <label class="tf-lable">Security code</label>
                                                             </fieldset>
                                                         </div>
                                                         <fieldset class="tf-field-2">
@@ -751,8 +746,7 @@
                                             </div>
                                             <div class="payment-item">
                                                 <label for="paypal" class="check-payment collapsed"
-                                                    data-bs-toggle="collapse" data-bs-target="#paypal-payment"
-                                                    aria-controls="paypal-payment">
+                                                    data-bs-toggle="collapse" data-bs-target="#paypal-payment">
                                                     <input type="radio" name="payment-method" class="tf-check-rounded"
                                                         id="paypal">
                                                     <span class="pay-title">PayPal
@@ -778,7 +772,7 @@
                         </div>
                         <div class="right-col sticky-top">
                             <div class="tf-page-cart-sidebar">
-                                <h5 class="checkout-title fw-5">YOUR CART</h5>
+                                <div class="h5 checkout-title fw-5">YOUR CART</div>
                                 <ul class="list-order-product">
                                     <li class="order-item">
                                         <div class="content">
@@ -792,7 +786,7 @@
                                                 <span class="variant text-caption-1">Walnut Frame / Grey Fabric</span>
                                             </div>
                                         </div>
-                                        <h6 class="price">$260.00</h6>
+                                        <div class="h6 price">$260.00</div>
                                     </li>
                                     <li class="order-item">
                                         <div class="content">
@@ -805,7 +799,7 @@
                                                 <span class="variant text-caption-1">8-Seater / Dark Walnut</span>
                                             </div>
                                         </div>
-                                        <h6 class="price">$260.00</h6>
+                                        <div class="h6 price">$260.00</div>
                                     </li>
                                     <li class="order-item">
                                         <div class="content">
@@ -818,7 +812,7 @@
                                                 <span class="variant text-caption-1">King / Matte Black</span>
                                             </div>
                                         </div>
-                                        <h6 class="price">$260.00</h6>
+                                        <div class="h6 price">$260.00</div>
                                     </li>
                                 </ul>
                                 <span class="br-line"></span>
@@ -841,10 +835,10 @@
                                     </li>
                                 </ul>
                                 <span class="br-line"></span>
-                                <h5 class=" fw-5 last-total d-flex justify-content-between">
+                                <div class="h5 fw-5 last-total d-flex justify-content-between">
                                     <span>SUBTOTAL:</span>
                                     <span class="total-price-order">$490.00 USD</span>
-                                </h5>
+                                </div>
                                 <a href="thank-you.html" class="tf-btn btn-bg-secondary  animate-btn w-full">
                                     Place order
                                 </a>
@@ -1964,7 +1958,7 @@
                     </div>
                     <div class="bottom">
                         <div class="checkbox-wrap">
-                            <input type="checkbox" class="tf-check" id="checksave">
+                            <input type="checkbox" class="tf-check" id="checksave2">
                             <span>Remember me</span>
                         </div>
                         <a href="#resetPass" data-bs-toggle="offcanvas" class="link">
