@@ -1974,6 +1974,10 @@ a:focus, a:hover {
 .tf-loading.loadmore .spinner-circle {
   display: none;
 }
+.tf-loading.loadmore.loading {
+  background-color: var(--Primary);
+  border-color: var(--Primary);
+}
 .tf-loading.loadmore.loading .spinner-circle {
   display: block;
 }
@@ -1981,7 +1985,7 @@ a:focus, a:hover {
   display: none;
 }
 .tf-loading.loadmore:hover .spinner-child::before {
-  background-color: var(--Secondary);
+  background-color: var(--White);
 }
 
 .spinner-circle {
@@ -2002,7 +2006,7 @@ a:focus, a:hover {
   margin: 0 auto;
   width: 20%;
   height: 20%;
-  background-color: var(--Secondary);
+  background-color: var(--White);
   border-radius: 100%;
   animation: spinner-circleBounceDelay 1s infinite ease-in-out both;
 }

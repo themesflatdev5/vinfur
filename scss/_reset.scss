@@ -2032,12 +2032,15 @@ a {
 }
 
 .tf-loading {
+    
     &.loadmore {
         .spinner-circle {
             display: none;
         }
 
         &.loading {
+            background-color: var(--Primary);
+            border-color: var(--Primary);
             .spinner-circle {
                 display: block;
             }
@@ -2049,7 +2052,7 @@ a {
 
         &:hover {
             .spinner-child::before {
-                background-color: var(--Secondary);
+                background-color: var(--White);
             }
         }
 
@@ -2074,7 +2077,7 @@ a {
             margin: 0 auto;
             width: 20%;
             height: 20%;
-            background-color: var(--Secondary);
+            background-color: var(--White);
             border-radius: 100%;
             animation: spinner-circleBounceDelay 1s infinite ease-in-out both;
         }
