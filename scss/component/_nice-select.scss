@@ -1,4 +1,4 @@
-@use "../abstracts/index" as *;
+@use "../abstracts/index"as *;
 
 // image select
 @import url(./bootstrap-select.min.css);
@@ -10,11 +10,11 @@
         width: unset !important;
         display: flex;
 
-        > select {
+        >select {
             display: none !important;
         }
 
-        > .dropdown-toggle {
+        >.dropdown-toggle {
             padding: 0px;
             padding-right: 18px;
             background-color: transparent !important;
@@ -50,7 +50,7 @@
             }
         }
 
-        > .dropdown-menu {
+        >.dropdown-menu {
             overflow: unset !important;
             margin-top: 17px !important;
             margin-bottom: 17px !important;
@@ -72,7 +72,6 @@
 
                     img {
                         width: 20px;
-                        height: 20px;
                     }
                 }
 
@@ -116,26 +115,26 @@
         }
 
         .dropdown-menu {
-            > .inner {
+            >.inner {
                 overflow-y: hidden !important;
             }
         }
     }
 
     &.type-currencies {
-        > .dropdown-menu {
+        >.dropdown-menu {
             width: 115px !important;
         }
     }
 
     &.type-languages {
-        > .dropdown-menu {
+        >.dropdown-menu {
             width: 110px !important;
         }
     }
 
     &.color-White {
-        > .dropdown-toggle {
+        >.dropdown-toggle {
             color: var(--White);
 
             &::after {
@@ -145,7 +144,7 @@
     }
 
     &.color-White-2 {
-        > .dropdown-toggle {
+        >.dropdown-toggle {
             color: var(--text);
 
             &::after {
@@ -155,7 +154,7 @@
     }
 
     &.color-White-3 {
-        > .dropdown-toggle {
+        >.dropdown-toggle {
             color: var(--line-4);
 
             &::after {

@@ -38,6 +38,26 @@
         }
     }
 
+    &::after,
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-radius: 9999px;
+        animation: ripple 3s infinite;
+    }
+
+    &::after {
+        animation-delay: .5s;
+    }
+
+    &::before {
+        animation-delay: .9s;
+    }
+
     &.style-lg {
         span {
             width: 28px;
@@ -179,6 +199,14 @@
         border-radius: 0;
         background-color: transparent;
     }
+
+    &.style-2 {
+        >img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 }
 
 .s-banner-lookbook {
@@ -278,11 +306,6 @@
     .sw-dots {
         @include res(lg, min) {
             margin-top: 38px;
-        }
-
-        .swiper-pagination-bullet {
-            height: 12px;
-            width: 12px;
         }
     }
 }

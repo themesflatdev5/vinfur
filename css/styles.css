@@ -2460,6 +2460,7 @@ header.header-sticky.tf-header-landing {
 }
 .navigation li.menu-item > a {
   text-transform: uppercase;
+  font-weight: 500;
 }
 .navigation li a {
   display: inline-block;
@@ -2544,9 +2545,8 @@ header.header-sticky.tf-header-landing {
   }
 }
 .mega-menu.mega-shop {
-  max-width: 1438px;
   width: 100%;
-  left: unset;
+  left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
@@ -10589,7 +10589,6 @@ form .form-content-2 {
 }
 .tf-dropdown-select.style-default > .dropdown-menu a .text img {
   width: 20px;
-  height: 20px;
 }
 .tf-dropdown-select.style-default > .dropdown-menu a:hover, .tf-dropdown-select.style-default > .dropdown-menu a:active, .tf-dropdown-select.style-default > .dropdown-menu a.active {
   color: var(--Primary) !important;
@@ -11354,6 +11353,17 @@ form .form-content-2 {
     transform: scale(1);
   }
 }
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
 .slider_effect_fade .swiper-slide.swiper-slide-active .fade-item {
   transform: translateY(0);
   opacity: 1;
@@ -11470,6 +11480,22 @@ form .form-content-2 {
 }
 .tf-pin-btn span:hover::after {
   animation: ripple-line 2s 1s linear infinite;
+}
+.tf-pin-btn::after, .tf-pin-btn::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 9999px;
+  animation: ripple 3s infinite;
+}
+.tf-pin-btn::after {
+  animation-delay: 0.5s;
+}
+.tf-pin-btn::before {
+  animation-delay: 0.9s;
 }
 .tf-pin-btn.style-lg span {
   width: 28px;
@@ -11598,6 +11624,11 @@ form .form-content-2 {
   border-radius: 0;
   background-color: transparent;
 }
+.lookbook-item.style-2 > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .s-banner-lookbook {
   position: relative;
@@ -11676,10 +11707,6 @@ form .form-content-2 {
   .s-banner-lookbook-v02 .sw-dots {
     margin-top: 38px;
   }
-}
-.s-banner-lookbook-v02 .sw-dots .swiper-pagination-bullet {
-  height: 12px;
-  width: 12px;
 }
 
 /*------------ widgets ---------------- */
@@ -11830,6 +11857,11 @@ form .form-content-2 {
 }
 .gallery-item .image {
   position: relative;
+}
+.gallery-item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .gallery-item .image::after {
   position: absolute;

@@ -423,6 +423,7 @@ header {
         &.menu-item {
             >a {
                 text-transform: uppercase;
+                font-weight: 500;
             }
 
         }
@@ -526,9 +527,8 @@ header {
     }
 
     &.mega-shop {
-        max-width: 1438px;
         width: 100%;
-        left: unset;
+        left: 0;
         right: 0;
         display: flex;
         justify-content: space-between;
