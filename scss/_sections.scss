@@ -412,7 +412,7 @@
 
     @include res(lg) {
         .row {
-            gap: 40px;
+            row-gap: 40px;
         }
 
         .heading {

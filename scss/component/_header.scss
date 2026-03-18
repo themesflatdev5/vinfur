@@ -21,6 +21,9 @@
         font-size: 12px;
         line-height: 18px;
 
+        @include res(sm) {
+            flex-direction: column;
+        }
     }
 
     &.style-default {
@@ -149,6 +152,7 @@ header {
     @include transition3;
 
     &.header-sticky {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
         &:not(.header-s5, .header-abs) {
             background: var(--White);
         }

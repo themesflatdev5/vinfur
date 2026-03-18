@@ -824,7 +824,7 @@ a:focus, a:hover {
   color: inherit;
 }
 .link-2:hover {
-  color: var(--Secondary);
+  text-decoration: underline;
 }
 
 /* text-color
@@ -2148,6 +2148,11 @@ a:focus, a:hover {
   font-size: 12px;
   line-height: 18px;
 }
+@media (max-width: 575px) {
+  .top-bar > div {
+    flex-direction: column;
+  }
+}
 .top-bar.style-default {
   background-color: var(--Secondary);
   color: var(--White);
@@ -2249,6 +2254,9 @@ header {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+header.header-sticky {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 header.header-sticky:not(.header-s5, .header-abs) {
   background: var(--White);
@@ -5047,7 +5055,7 @@ form .form-content-2 {
 }
 
 .modal-order-detail .modal-dialog {
-  max-width: 1125px;
+  max-width: 1140px;
 }
 .modal-order-detail .modal-top {
   margin-bottom: 24px;
@@ -7606,12 +7614,19 @@ form .form-content-2 {
   border-left: 1px solid var(--White);
 }
 .table-order-detail::-webkit-scrollbar {
-  width: 100%;
+  width: 4px;
   height: 4px;
+}
+.table-order-detail::-webkit-scrollbar-track {
+  background: var(--Line);
 }
 .table-order-detail::-webkit-scrollbar-thumb {
   background-color: var(--Secondary);
   cursor: grab;
+  border-radius: 999px;
+}
+.table-order-detail::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
 }
 .table-order-detail .order_subtotal {
   text-align: end;
@@ -12793,7 +12808,7 @@ form .form-content-2 {
 }
 @media (max-width: 991px) {
   .s-contact-us .row {
-    gap: 40px;
+    row-gap: 40px;
   }
   .s-contact-us .heading {
     margin-bottom: 24px;
