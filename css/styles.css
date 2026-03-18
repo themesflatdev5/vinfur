@@ -2532,11 +2532,10 @@ header.header-sticky.tf-header-landing {
   overflow: auto;
 }
 .mega-menu .wrap-nav-link {
-  padding-left: 217px;
   gap: 24px;
 }
 .mega-menu .col-nav-link {
-  width: 234px;
+  flex: 1;
   white-space: nowrap;
 }
 @media (max-width: 1599px) {
@@ -2545,38 +2544,33 @@ header.header-sticky.tf-header-landing {
   }
 }
 .mega-menu.mega-shop {
-  width: 100%;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: space-between;
   padding-block: 0;
 }
+.mega-menu.mega-shop > div {
+  display: flex;
+  justify-content: space-between;
+}
 .mega-menu.mega-shop .wrap-nav-link {
+  flex: 20%;
+  max-width: 750px;
+  width: 100%;
   padding-top: 42px;
+  justify-content: space-between;
+}
+.mega-menu.mega-shop .wrap-banner {
+  flex: 20%;
+  justify-content: end;
 }
 .mega-menu.mega-product {
   left: 0;
   right: 0;
-  padding-left: 150px;
-  padding-right: 150px;
-  display: flex;
-  justify-content: space-between;
+}
+.mega-menu.mega-product > div {
   display: flex;
   justify-content: space-between;
   gap: 40px;
-}
-@media (max-width: 1700px) {
-  .mega-menu.mega-product {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-@media (max-width: 1439px) {
-  .mega-menu.mega-product {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
 }
 .mega-menu.mega-product a {
   display: flex;
@@ -2585,6 +2579,7 @@ header.header-sticky.tf-header-landing {
 }
 .mega-menu.mega-product .wrap-nav-link {
   padding-left: 0;
+  flex: 20%;
 }
 .mega-menu.mega-product .tag {
   padding: 1px 6px;
@@ -2600,19 +2595,18 @@ header.header-sticky.tf-header-landing {
   background-color: #e2530b;
 }
 .mega-menu.mega-page {
-  max-width: 1283px;
-  width: 100%;
+  max-width: max-content;
   left: unset;
-  right: 0;
   display: flex;
   justify-content: space-between;
   padding-top: 0;
   padding-bottom: 0;
+  min-width: 292px;
 }
 .mega-menu.mega-page .wrap-nav-link {
   padding-top: 40px;
   padding-bottom: 40px;
-  padding-left: 175px;
+  padding: 40px;
 }
 
 .prd-nav-item .img-style {
