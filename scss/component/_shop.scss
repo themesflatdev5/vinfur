@@ -372,7 +372,8 @@
         cursor: pointer;
         display: flex;
         align-items: center;
-
+        font-size: 16px;
+        line-height: 24px;
         gap: 14px;
         width: 100%;
 
@@ -444,6 +445,7 @@
 
         .topbar-filter {
             padding-block: 32px;
+            padding-top: 64px;
         }
 
         .row {

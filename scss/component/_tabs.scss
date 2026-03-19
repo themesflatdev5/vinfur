@@ -5,6 +5,16 @@
     gap: 48px;
     padding: 6px 0;
 
+    &::-webkit-scrollbar {
+        height: 3px;
+        background-color: var(--Line);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--Primary);
+        border-radius: 999px;
+    }
+
     .tf-btn-tab {
         position: relative;
         text-wrap: nowrap;
@@ -32,10 +42,12 @@
     &.style-2 {
         gap: 64px;
         padding: 9px 0;
+        
 
         @include res(md) {
             gap: 24px;
-            padding: 10px 0;
+            padding: 10px 0 18px;
+
         }
 
         .tf-btn-tab {

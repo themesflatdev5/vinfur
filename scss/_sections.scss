@@ -780,6 +780,18 @@
 
         @include res(md) {
             padding: 60px 15px;
+
+            >div {
+                text-align: center;
+            }
+
+            .title {
+                margin-bottom: 12px;
+            }
+
+            .desc {
+                margin-bottom: 30px;
+            }
         }
     }
 
@@ -806,6 +818,11 @@
     .right-product {
         padding-top: 64px;
         padding-bottom: 66px;
+
+        @include res(lg) {
+            padding-bottom: 0;
+        }
+
     }
 
     .cls-lookbook {
@@ -822,6 +839,19 @@
 
     .tf-sw-lookbook {
         max-width: 338px;
+    }
+
+    @include res(sm) {
+
+        .tf-sw-lookbook,
+        .wrap-swiper {
+            max-width: unset;
+        }
+
+        .wrap-swiper {
+            padding-inline: 15px;
+
+        }
     }
 
     .tf-pin-btn span {

@@ -102,7 +102,7 @@ if ($(".sw-layout").length > 0) {
         var spacingMd = swiperContainer.data("space-md") || spacing;
         var spacingLg = swiperContainer.data("space-lg") || spacing;    
         var spacingXl = swiperContainer.data("space-xl") || spacingLg;
-        var perGroup = swiperContainer.data("pagination") || 1;
+        var perGroup = swiperContainer.data("pagination") ||2;
         var perGroupMd = swiperContainer.data("pagination-md") || perGroup;
         var perGroupLg = swiperContainer.data("pagination-lg") || perGroup;
         var center = swiperContainer.data("slide-center") || false;
@@ -132,6 +132,7 @@ if ($(".sw-layout").length > 0) {
             loop: loop,
             observer: true,
             observeParents: true,
+            slidesPerGroup: perGroup,
             autoplay: autoplay
                 ? {
                       delay: 4000,

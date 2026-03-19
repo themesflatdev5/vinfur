@@ -604,13 +604,25 @@
         }
 
         .image {
-            max-height: 450px;
+            max-height: 400px;
 
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 max-height: 370px;
+            }
+        }
+    }
+
+    @include res(sm) {
+
+
+        .image {
+            max-height: 170px;
+
+            img {
+                max-height: 170px;
             }
         }
     }
