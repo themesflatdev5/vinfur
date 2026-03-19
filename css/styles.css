@@ -3365,6 +3365,7 @@ header.header-sticky.tf-header-landing {
 
 .btn_link {
   padding: 4px 0;
+  font-weight: 500;
 }
 .btn_link i {
   font-size: 10px;
@@ -11074,7 +11075,7 @@ form .form-content-2 {
 .hero-banner-v03 .content-inner {
   max-width: 620px;
   padding: 60px 52px;
-  background: rgba(255, 255, 255, 0.1019607843);
+  background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1019607843);
   backdrop-filter: blur(56px);
 }

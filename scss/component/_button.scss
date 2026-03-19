@@ -115,6 +115,7 @@
 
 .btn_link {
     padding: 4px 0;
+    font-weight: 500;
 
     i {
         font-size: 10px;
@@ -168,7 +169,7 @@ button.animate-btn::after,
 }
 
 .animate-fill {
-    &.btn-bg-white{
+    &.btn-bg-white {
         >* {
             @include transition3();
         }

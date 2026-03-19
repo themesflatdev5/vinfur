@@ -102,7 +102,7 @@ if ($(".sw-layout").length > 0) {
         var spacingMd = swiperContainer.data("space-md") || spacing;
         var spacingLg = swiperContainer.data("space-lg") || spacing;    
         var spacingXl = swiperContainer.data("space-xl") || spacingLg;
-        var perGroup = swiperContainer.data("pagination") ||2;
+        var perGroup = swiperContainer.data("pagination") ||1;
         var perGroupMd = swiperContainer.data("pagination-md") || perGroup;
         var perGroupLg = swiperContainer.data("pagination-lg") || perGroup;
         var center = swiperContainer.data("slide-center") || false;
