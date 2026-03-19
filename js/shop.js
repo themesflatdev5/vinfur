@@ -473,8 +473,7 @@
             updatePagination();
         });
         $('input[name="availability"]').on("change", function () {
-            filters.availability =
-                $(this).attr("id") === "inStock" ? "In Stock" : "Out of stock";
+            filters.availability = $(this).attr("id") === "inStock" ? "In Stock" : "Out of stock";
             applyFilters();
             updateMetaFilter();
             updatePagination();
