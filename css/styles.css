@@ -7475,10 +7475,12 @@ form .form-content-2 {
   display: none;
 }
 
+.wrap-shop-layout {
+  padding-top: 32px;
+}
+
 .tf-shop-control {
   background-color: var(--White);
-  padding-block: 10px;
-  margin-bottom: 22px;
 }
 .tf-shop-control .wrapper-shop {
   gap: 40px 10px;
@@ -7487,6 +7489,10 @@ form .form-content-2 {
   .tf-shop-control .wrapper-shop {
     gap: 64px 10px;
   }
+}
+.tf-shop-control.sticky-top {
+  padding-block: 10px;
+  margin-bottom: 22px;
 }
 .tf-shop-control.style-2 .tf-btn-filter, .tf-shop-control.style-3 .tf-btn-filter {
   padding: 0;
@@ -7502,10 +7508,6 @@ form .form-content-2 {
     font-size: 24px;
     line-height: 32px;
   }
-}
-.tf-shop-control.style-3 .topbar-filter {
-  padding-block: 32px;
-  padding-top: 64px;
 }
 .tf-shop-control.style-3 .row {
   row-gap: 24px;

@@ -412,10 +412,12 @@
     }
 }
 
+.wrap-shop-layout {
+    padding-top: 32px;
+}
+
 .tf-shop-control {
     background-color: var(--White);
-    padding-block: 10px;
-    margin-bottom: 22px;
 
     .wrapper-shop {
         gap: 40px 10px;
@@ -423,6 +425,11 @@
         @include res(lg, min) {
             gap: 64px 10px;
         }
+    }
+
+    &.sticky-top {
+        padding-block: 10px;
+        margin-bottom: 22px;
     }
 
     &.style-2,
@@ -445,11 +452,6 @@
     }
 
     &.style-3 {
-
-        .topbar-filter {
-            padding-block: 32px;
-            padding-top: 64px;
-        }
 
         .row {
             row-gap: 24px;
