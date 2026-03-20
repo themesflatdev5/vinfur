@@ -5978,6 +5978,14 @@ form .form-content-2 {
   overflow-y: auto;
   flex: 1;
 }
+.canvas-body::-webkit-scrollbar {
+  width: 3px;
+  background-color: var(--Line);
+}
+.canvas-body::-webkit-scrollbar-thumb {
+  background: var(--Secondary);
+  border-radius: 999px;
+}
 
 .canvas-footer,
 .canvas-bottom {
@@ -7467,6 +7475,11 @@ form .form-content-2 {
   display: none;
 }
 
+.tf-shop-control {
+  background-color: var(--White);
+  padding-block: 10px;
+  margin-bottom: 22px;
+}
 .tf-shop-control .wrapper-shop {
   gap: 40px 10px;
 }
