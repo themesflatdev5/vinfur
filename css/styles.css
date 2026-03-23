@@ -2093,6 +2093,11 @@ a:focus, a:hover {
   width: unset;
   padding: 0 30px;
 }
+@media (max-width: 575px) {
+  .wg-pagination li:last-child a, .wg-pagination li:first-child a {
+    padding: 0 18px;
+  }
+}
 .wg-pagination li:hover a, .wg-pagination li.active a {
   background-color: var(--Primary);
   color: var(--White);
@@ -7717,8 +7722,8 @@ form .form-content-2 {
   }
   .table-order-detail th:nth-child(2),
   .table-order-detail td:nth-child(2) {
-    min-width: 183px;
-    width: 183px;
+    min-width: 182px;
+    width: 182px;
   }
   .table-order-detail th:nth-child(3),
   .table-order-detail td:nth-child(3) {

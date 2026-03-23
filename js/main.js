@@ -672,7 +672,7 @@
                 var windowHeight = $(window).height();
 
                 if (
-                    scrollPosition >= 500 &&
+                    scrollPosition >= 800 &&
                     scrollPosition + windowHeight < footerOffset
                 ) {
                     myElement.addClass("show");
