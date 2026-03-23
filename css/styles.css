@@ -13295,6 +13295,9 @@ form .form-content-2 {
   background-color: var(--Primary);
 }
 
+.section-box-image .left {
+  background-color: #717171;
+}
 .section-box-image .left .box-imgae_v01 {
   height: 100%;
 }
